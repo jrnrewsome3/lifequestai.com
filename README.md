@@ -132,12 +132,6 @@ If you ever move the site somewhere else, change `BASE_PATH`, update `docs/CNAME
 
 ## Known limitations
 
-**The forms don't collect anything yet.** The newsletter and contact forms validate input
-and show a success message, but a static site has no server to receive submissions, so
-nothing is stored or emailed. To make them real, connect them to a form service
-(Formspree, Buttondown, Mailchimp, or similar) — that's an edit to the two `<form>` blocks,
-not a rebuild of the site.
-
 **Some content is sample content.** Instructor profiles, testimonials, the events calendar,
 and the member dashboard are illustrative placeholders, and they're labeled as such on the
 site. Replace them with real details before running paid traffic to the site.
@@ -145,6 +139,47 @@ site. Replace them with real details before running paid traffic to the site.
 **The photos are stock.** They're free-license images from [Unsplash](https://unsplash.com)
 and fine to use commercially, but they're generic. Swapping in photos of your actual classes
 and learners is the single biggest credibility upgrade available here.
+
+---
+
+## Forms and submissions
+
+The newsletter and contact forms post to a small **Cloudflare Worker in your own Cloudflare
+account** — no third-party form service, no monthly fee, and you own the data.
+
+- Worker source: `worker/worker.js` in this repo
+- Deployed as: `lifequest-forms` (endpoint `https://lifequest-forms.jrnewsome.workers.dev`)
+- Storage: the `lifequest-forms` **D1** database, table `submissions`
+- The endpoint URL lives in `src/config.mjs` as `FORMS_ENDPOINT`
+
+### Reading your submissions
+
+Two ways:
+
+1. **Download a CSV** — open this in a browser (replace `YOUR_KEY` with the export key):
+   `https://lifequest-forms.jrnewsome.workers.dev/export?key=YOUR_KEY`
+   Add `&kind=newsletter` or `&kind=contact` to filter.
+2. **In the Cloudflare dashboard** — Workers & Pages → D1 → `lifequest-forms` → Console, then run:
+   `SELECT * FROM submissions ORDER BY id DESC;`
+
+`/count?key=YOUR_KEY` returns how many of each kind you have.
+
+The export key is stored as a secret on the Worker (Cloudflare dashboard → Workers & Pages →
+`lifequest-forms` → Settings → Variables). Treat it like a password — anyone with it can
+download your subscriber list. To rotate it, change the secret in the dashboard.
+
+### What the Worker protects against
+
+- **Spam bots** — a hidden honeypot field. Bots fill it, real people can't see it. Those
+  submissions are silently discarded.
+- **Double submissions** — the same email to the same form inside two minutes is ignored.
+- **Other sites posting to it** — CORS only allows `lifequestai.com` and `www.lifequestai.com`.
+
+### One thing it does not do yet
+
+It **stores** submissions but doesn't **email** you when one arrives — you have to check.
+Your DNS shows a Resend setup (`resend._domainkey`), so if you add a Resend API key as a
+Worker secret, the Worker can email you on each submission. Ask and it's a small addition.
 
 ---
 
