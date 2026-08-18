@@ -1,0 +1,12 @@
+{
+  "name": "lifequest-ai-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LifeQuest AI — practical AI education website. Static site, no dependencies.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && node --eval \"const h=require('node:http'),f=require('node:fs'),p=require('node:path');const R=p.join(process.cwd(),'docs');const T={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.xml':'application/xml','.txt':'text/plain'};h.createServer((q,s)=>{let u=decodeURIComponent(q.url.split('?')[0]);u=u.replace(/^\\/lifequestai.com/,'');let t=p.join(R,u);if(f.existsSync(t)&&f.statSync(t).isDirectory())t=p.join(t,'index.html');if(!f.existsSync(t)){s.writeHead(404);return s.end(f.existsSync(p.join(R,'404.html'))?f.readFileSync(p.join(R,'404.html')):'404')}s.writeHead(200,{'content-type':T[p.extname(t)]||'application/octet-stream'});s.end(f.readFileSync(t))}).listen(8080,()=>console.log('\\n  Preview: http://localhost:8080/lifequestai.com/\\n'))\""
+  },
+  "engines": { "node": ">=18" }
+}
