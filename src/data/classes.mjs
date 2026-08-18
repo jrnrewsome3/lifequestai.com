@@ -21,7 +21,7 @@ const CLASSES = [
     tools:['ChatGPT','Claude','Gemini','Microsoft Copilot'],
     outcomes:['You can explain AI to someone else in plain language','You have a primary AI tool set up and in use','You have completed five real tasks with AI','You have a personal safety and verification habit'],
     skills:['AI fundamentals','Tool selection','Verification habits','AI safety basics'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Foundations Faculty', bio:'Sample instructor profile for this prototype. Final instructor bios will be added before launch.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Foundations Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:2, relatedIds:[2,3,5]
   },
   {
@@ -44,7 +44,7 @@ const CLASSES = [
     tools:['ChatGPT','Claude','A notes app or document of your choice'],
     outcomes:['A personal library of at least ten reusable prompts','A repeatable method you can teach to someone else','Noticeably better first-attempt results'],
     skills:['Prompt design','Context setting','Iterative refinement','Template building'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Practice Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Practice Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:3, relatedIds:[1,3,4]
   },
   {
@@ -68,7 +68,7 @@ const CLASSES = [
     tools:['ChatGPT (Projects / Custom GPTs)','Claude (Projects)','Your calendar and notes app'],
     outcomes:['A configured personal AI assistant you actually use','Three responsibilities meaningfully lighter','A weekly rhythm for planning with AI'],
     skills:['Assistant configuration','Context management','Planning workflows','Decision support'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Applied Practice Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Applied Practice Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:4, relatedIds:[2,4,8]
   },
   {
@@ -92,7 +92,7 @@ const CLASSES = [
     tools:['ChatGPT','Claude','Microsoft 365 Copilot','Google Workspace'],
     outcomes:['A measurable reduction in weekly admin time','Repeatable workflows for email, meetings, and documents','A one-page brief method you will keep using'],
     skills:['Workflow design','Summarization','Business writing','Meeting management'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Workplace Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Workplace Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:8, relatedIds:[2,3,8]
   },
   {
@@ -115,7 +115,7 @@ const CLASSES = [
     tools:['ChatGPT','Claude','Gemini','A shared calendar and notes app'],
     outcomes:['Two household workflows running on AI','A written family AI agreement','Improved AI literacy across generations'],
     skills:['Household planning','Family digital literacy','AI safety for kids','Practical research'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Family Learning Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Family Learning Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:6, relatedIds:[1,2,6]
   },
   {
@@ -140,7 +140,7 @@ const CLASSES = [
     tools:['ChatGPT','Claude','Your spreadsheet tool of choice'],
     outcomes:['A clear picture of where your money goes','A budget you built from real data','A prepared agenda for a professional conversation'],
     skills:['Spending analysis','Budget building','Financial literacy','Scenario comparison'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Financial Literacy Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Financial Literacy Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:3, relatedIds:[5,3,4]
   },
   {
@@ -164,7 +164,7 @@ const CLASSES = [
     tools:['ChatGPT','Claude','Canva','Google Workspace or Microsoft 365','Your CRM'],
     outcomes:['A prioritized AI opportunity map for your organization','One documented SOP in active use','A simple, sane internal AI policy'],
     skills:['Opportunity mapping','Marketing content','Proposal writing','SOP documentation'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Organizational Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Organizational Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:9, relatedIds:[9,10,4]
   },
   {
@@ -187,7 +187,7 @@ const CLASSES = [
     tools:['ChatGPT or Claude','Gmail or Outlook','Google Calendar or Outlook Calendar','Zapier or Make','A notes or docs tool'],
     outcomes:['At least three working modules in daily use','A daily brief you actually read','A documented blueprint you can extend for years'],
     skills:['System architecture','Monitoring workflows','Executive reporting','Modular design'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Systems Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Systems Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:9, relatedIds:[4,9,10]
   },
   {
@@ -211,7 +211,7 @@ const CLASSES = [
     tools:['Zapier or Make','Google Sheets or Airtable','ChatGPT or Claude API-connected step','Gmail or Outlook'],
     outcomes:['One automation running in production','A documented workflow diagram','The judgment to know what should stay manual'],
     skills:['Workflow automation','No-code integration','Human-in-the-loop design','Error handling'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Automation Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Automation Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:10, relatedIds:[8,10,7]
   },
   {
@@ -234,7 +234,7 @@ const CLASSES = [
     tools:['ChatGPT Agent tools or Claude','An agent platform (no-code options provided)','Zapier or Make','A data source you control'],
     outcomes:['A working AI agent or a complete, credible agent blueprint','A guardrail and approval model you trust','The judgment to scope agents responsibly'],
     skills:['Agent design','Guardrails and approvals','Tool integration','Capstone delivery'],
-    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Agentic Systems Faculty', bio:'Sample instructor profile for this prototype.'},
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Agentic Systems Faculty', bio:'Instructor details for this class are being finalized.'},
     nextId:null, relatedIds:[9,8,7]
   }
 ];
