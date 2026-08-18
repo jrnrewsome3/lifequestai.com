@@ -140,7 +140,7 @@ function viewAssessment(){
         </div>
       </div>
       <div id="quiz-result" class="hide"></div>
-      <p class="tiny muted center" style="margin-top:22px">No account required. In this prototype your answers stay in your browser and are not stored or sent anywhere.</p>
+      <p class="tiny muted center" style="margin-top:22px">No account required. Your answers stay in your browser — nothing is stored or sent anywhere.</p>
     </div></section>`;
 }
 
@@ -164,10 +164,12 @@ function viewMember(){
 
 function viewContact(){
   return PageHero('Contact','Talk to LifeQuest AI',
-    'Questions about classes, group enrollment, workshops for your organization, or partnerships. Prototype form — nothing is submitted.')
+    'Questions about classes, group enrollment, workshops for your organization, or partnerships. Send a note and we’ll get back to you.')
   + `<section class="sec-tight"><div class="wrap"><div class="grid g2" style="gap:clamp(28px,5vw,56px);align-items:start">
       <div class="form-card">
-        <form id="ct-form" novalidate>
+        <form id="ct-form" novalidate action="${SITE.FORMS_ENDPOINT}/contact" method="post">
+          <input type="text" name="company" id="ct-company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input type="hidden" name="page" value="/contact/">
           <div class="field" id="c-name"><label for="ct-name">Name</label>
             <input id="ct-name" type="text" placeholder="Your name"><p class="err">Please enter your name.</p></div>
           <div class="field" id="c-email"><label for="ct-email">Email</label>
@@ -179,11 +181,12 @@ function viewContact(){
           <div class="field" id="c-msg"><label for="ct-msg">Message</label>
             <textarea id="ct-msg" rows="5" placeholder="Tell us a little about what you’re trying to accomplish."></textarea>
             <p class="err">Please add a short message.</p></div>
-          <button class="btn btn-primary btn-lg" style="width:100%" type="submit">Send message</button>
+          <button class="btn btn-primary btn-lg" style="width:100%" type="submit" id="ct-submit">Send message</button>
+          <p class="err" id="ct-error" style="text-align:center;margin-top:12px"></p>
         </form>
         <div class="success hide" id="ct-success" role="status">
           <div class="card-icon teal" style="margin:0;width:38px;height:38px;border-radius:11px;flex:none">${I('check',20)}</div>
-          <div><h4>Message received.</h4><p>We typically reply within two business days. Nothing was actually sent in this prototype.</p></div>
+          <div><h4>Message received.</h4><p>Thanks — we typically reply within two business days.</p></div>
         </div>
       </div>
       <div class="stack">
