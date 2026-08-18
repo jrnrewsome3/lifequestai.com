@@ -4,12 +4,11 @@
 
    BASE_PATH controls every internal link on the site.
 
-   • Hosting on GitHub Pages inside a repo?  BASE_PATH = '/lifequestai.com/'
-     (your site lives at jrnrewsome3.github.io/lifequestai.com/)
+   • Live on your own domain (current setup): BASE_PATH = '/'
+     The file docs/CNAME holds the domain name. The build never deletes it.
 
-   • Moved to your own domain (lifequestai.com)?  BASE_PATH = '/'
-     Then also create a file named CNAME in the docs folder containing
-     just your domain name, and run: npm run build
+   • Hosting inside a GitHub repo path instead? BASE_PATH = '/repo-name/'
+     (the site would then live at jrnrewsome3.github.io/repo-name/)
 
    Nothing else in the project needs to change.
    ===================================================================== */
@@ -21,10 +20,10 @@ export const SITE = {
     'LifeQuest AI helps everyday people, professionals, families, entrepreneurs, nonprofits, and small businesses confidently use artificial intelligence through practical classes, guided learning paths, and hands-on labs.',
 
   // ---- change this one line when you move to your own domain ----
-  BASE_PATH: '/lifequestai.com/',
+  BASE_PATH: '/',
 
   // Used for absolute URLs in sitemap + social share tags.
-  origin: 'https://jrnrewsome3.github.io',
+  origin: 'https://lifequestai.com',
 
   author: 'LifeQuest AI',
   year: new Date().getFullYear()
