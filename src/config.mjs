@@ -25,6 +25,11 @@ export const SITE = {
   // Used for absolute URLs in sitemap + social share tags.
   origin: 'https://lifequestai.com',
 
+  // Where the newsletter + contact forms send submissions.
+  // This is a Cloudflare Worker in your own account, storing rows in the
+  // "lifequest-forms" D1 database. See worker/worker.js in this repo.
+  FORMS_ENDPOINT: 'https://lifequest-forms.jrnewsome.workers.dev',
+
   author: 'LifeQuest AI',
   year: new Date().getFullYear()
 };
