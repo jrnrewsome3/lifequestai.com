@@ -1,0 +1,242 @@
+/* LifeQuest AI — content data. Edit these files to change site content. */
+
+const CLASSES = [
+  {
+    id:1, num:'01', slug:'ai-made-simple', title:'AI Made Simple',
+    level:'Beginner', levels:['Beginner'], duration:'3 hours', lessons:8, format:'Self-paced video + guided practice',
+    tracks:['me','families','nonprofits'],
+    blurb:'Understand ChatGPT, Claude, Gemini, Copilot, and today’s major AI tools without technical jargon.',
+    overview:'This is the front door to LifeQuest AI. In three hours you will get a clear, plain-language picture of what today’s AI tools actually are, what they do well, where they fail, and how to start using them safely. No math, no code, no hype — just a working understanding you can act on the same day.',
+    audience:['Anyone who has heard about AI but never really used it','People who tried ChatGPT once and were not sure what to do next','Professionals who need to speak credibly about AI at work','Family members helping others get started'],
+    learn:['What AI tools actually do when you type into them','How ChatGPT, Claude, Gemini, and Copilot differ and when to pick each','Why AI sometimes gets things confidently wrong, and how to catch it','What is safe to share with an AI tool and what is not','How to set up free and paid accounts sensibly','Your first five useful, repeatable uses'],
+    modules:[
+      {title:'What AI Is — In Plain Language', lessons:['A short, honest explanation of how these tools work','The vocabulary you actually need (and what to ignore)','Why the tools feel human but are not']},
+      {title:'The Major Tools, Compared', lessons:['ChatGPT: the versatile generalist','Claude: long documents and careful reasoning','Gemini: Google ecosystem and research','Copilot: AI inside Microsoft 365','Choosing your primary tool and your backup']},
+      {title:'Your First Real Conversation', lessons:['Setting up your account and workspace','Your first useful task, start to finish','Following up instead of starting over']},
+      {title:'Limits, Errors, and Trust', lessons:['Hallucinations: what they are and how to spot them','Where AI is strong and where it is weak','A simple verification habit for anything that matters']},
+      {title:'Safety, Privacy, and Good Judgment', lessons:['What not to paste into an AI tool','Personal data, work data, and client data','Settings worth changing on day one']},
+      {title:'Five Uses You Can Start Today', lessons:['Explain something confusing','Draft something you have been avoiding','Summarize something long','Compare two options','Plan something with many steps']}
+    ],
+    exercises:['Run the same task in two different AI tools and compare the results','Catch a deliberate error planted in an AI response','Write your personal AI ground rules (one page)'],
+    tools:['ChatGPT','Claude','Gemini','Microsoft Copilot'],
+    outcomes:['You can explain AI to someone else in plain language','You have a primary AI tool set up and in use','You have completed five real tasks with AI','You have a personal safety and verification habit'],
+    skills:['AI fundamentals','Tool selection','Verification habits','AI safety basics'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Foundations Faculty', bio:'Sample instructor profile for this prototype. Final instructor bios will be added before launch.'},
+    nextId:2, relatedIds:[2,3,5]
+  },
+  {
+    id:2, num:'02', slug:'prompting-for-real-life', title:'Prompting for Real Life',
+    level:'Beginner', levels:['Beginner'], duration:'4 hours', lessons:10, format:'Self-paced + prompt workshop',
+    tracks:['me','families','work','small-business','nonprofits'],
+    blurb:'Learn how to communicate effectively with AI — context, roles, examples, refinement, and reusable templates.',
+    overview:'Most disappointing AI results are communication problems, not capability problems. This class teaches you a repeatable way to ask, so you get useful output the first time instead of the fifth. You leave with a personal prompt library built around the things you actually do each week.',
+    audience:['Anyone whose AI results feel generic or shallow','People who rewrite prompts over and over','Teams that want a shared way of working with AI','Graduates of AI Made Simple'],
+    learn:['The four elements that make almost any prompt better','How to give context without writing an essay','Using roles and examples to raise quality','Refining and following up instead of restarting','Building reusable templates for recurring tasks','Getting structured output you can actually use'],
+    modules:[
+      {title:'Why Prompts Fail', lessons:['The three most common mistakes','Vague in, vague out: a side-by-side demonstration']},
+      {title:'The Four Elements', lessons:['Context: what the AI needs to know','Task: what you actually want','Format: how you want it back','Constraints: what to avoid or include']},
+      {title:'Roles and Examples', lessons:['Assigning a useful perspective','Showing one good example instead of describing ten rules','When roles help and when they get in the way']},
+      {title:'Refinement and Follow-Up', lessons:['The five follow-ups that improve almost any answer','Asking AI to critique its own output','Steering long conversations without losing the thread']},
+      {title:'Structured Output', lessons:['Tables, checklists, and outlines on demand','Getting output that drops straight into a document or email']},
+      {title:'Build Your Prompt Library', lessons:['Identifying your weekly repeatable tasks','Turning a good prompt into a reusable template','Where to store and organize your library']}
+    ],
+    exercises:['Rewrite three weak prompts using the four elements','Build five reusable templates for your own recurring tasks','Run a refinement round on your worst result and document the improvement'],
+    tools:['ChatGPT','Claude','A notes app or document of your choice'],
+    outcomes:['A personal library of at least ten reusable prompts','A repeatable method you can teach to someone else','Noticeably better first-attempt results'],
+    skills:['Prompt design','Context setting','Iterative refinement','Template building'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Practice Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:3, relatedIds:[1,3,4]
+  },
+  {
+    id:3, num:'03', slug:'your-ai-personal-assistant', title:'Your AI Personal Assistant',
+    level:'Beginner → Intermediate', levels:['Beginner','Intermediate'], duration:'5 hours', lessons:11, format:'Self-paced + build project',
+    tracks:['me','families','work'],
+    blurb:'Turn AI into a genuine assistant for planning, writing, research, organization, learning, and decisions.',
+    overview:'This is where AI stops being a novelty and starts being useful every day. You will configure an assistant that knows your context, your preferences, and your recurring responsibilities — then put it to work on planning, writing, research, and decision support. The final project is your own personalized assistant.',
+    audience:['People who use AI occasionally and want it to become a habit','Anyone juggling work, home, and personal projects','Graduates of Prompting for Real Life'],
+    learn:['Giving an assistant persistent context about you','Designing an assistant for a specific set of responsibilities','Planning, writing, and research workflows','Using AI for decision support without outsourcing the decision','Weekly and daily rhythms that keep it useful','Knowing when not to use your assistant'],
+    modules:[
+      {title:'What an AI Assistant Should Do For You', lessons:['Auditing where your time actually goes','Choosing three responsibilities to delegate first']},
+      {title:'Giving It Memory and Context', lessons:['Custom instructions and profiles','Projects, folders, and persistent context','A reusable personal context document']},
+      {title:'Planning and Organization', lessons:['Turning a messy brain dump into a plan','Weekly planning with AI','Breaking large projects into real next steps']},
+      {title:'Writing and Communication', lessons:['Drafting in your own voice','Difficult messages and delicate replies','Editing rather than generating from scratch']},
+      {title:'Research and Learning', lessons:['Understanding a new subject quickly','Study aids and explanations at your level','Verifying what you learn']},
+      {title:'Decision Support', lessons:['Structured comparisons and tradeoffs','Pressure-testing your own thinking','Where human judgment must stay in charge']},
+      {title:'Build Project: Your Assistant', lessons:['Assembling your assistant’s instructions','Testing it against real tasks','Refining after a week of use']}
+    ],
+    exercises:['Write your personal context document','Configure a custom assistant and test it on five real tasks','Run one week using the assistant daily, then revise it'],
+    tools:['ChatGPT (Projects / Custom GPTs)','Claude (Projects)','Your calendar and notes app'],
+    outcomes:['A configured personal AI assistant you actually use','Three responsibilities meaningfully lighter','A weekly rhythm for planning with AI'],
+    skills:['Assistant configuration','Context management','Planning workflows','Decision support'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Applied Practice Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:4, relatedIds:[2,4,8]
+  },
+  {
+    id:4, num:'04', slug:'ai-for-everyday-productivity', title:'AI for Everyday Productivity',
+    level:'Beginner → Intermediate', levels:['Beginner','Intermediate'], duration:'5 hours', lessons:12, format:'Self-paced + workplace practice',
+    tracks:['me','work'],
+    blurb:'Use AI to handle everyday work faster: email, meetings, research, documents, summaries, planning, and presentations.',
+    overview:'A practical, task-by-task walkthrough of the work most people do every week. Each lesson takes one recurring task and shows the AI-assisted version end to end — including where the AI draft needs your judgment before it goes anywhere.',
+    audience:['Professionals in any role or industry','Managers with heavy communication loads','Anyone drowning in email, documents, and meetings'],
+    learn:['An email workflow that saves real time daily','Meeting preparation, notes, and follow-up','Research and summarization you can trust','Document drafting and rewriting','Presentation outlines and speaker notes','Brainstorming that produces usable ideas','Task and project management support'],
+    modules:[
+      {title:'Email Without the Backlog', lessons:['Triage and drafting patterns','Replies that still sound like you','Recurring email templates']},
+      {title:'Meetings, Start to Finish', lessons:['Preparing in five minutes','Notes and action items','Follow-up messages that actually get sent']},
+      {title:'Research and Summaries', lessons:['Summarizing long documents reliably','Comparing sources','Turning research into a one-page brief']},
+      {title:'Documents and Writing at Work', lessons:['Reports, memos, and proposals','Rewriting for a specific audience','Editing passes that improve quality']},
+      {title:'Presentations', lessons:['From idea to outline','Slide content and speaker notes','Tightening a deck that is too long']},
+      {title:'Brainstorming and Problem Solving', lessons:['Generating options worth considering','Structured critique of your own plan']},
+      {title:'Tasks and Projects', lessons:['Breaking work down','Weekly review with AI support']}
+    ],
+    exercises:['Rebuild your real email workflow with AI and measure the time difference','Prepare for an actual upcoming meeting using the class method','Produce a one-page brief from a long document you have been avoiding'],
+    tools:['ChatGPT','Claude','Microsoft 365 Copilot','Google Workspace'],
+    outcomes:['A measurable reduction in weekly admin time','Repeatable workflows for email, meetings, and documents','A one-page brief method you will keep using'],
+    skills:['Workflow design','Summarization','Business writing','Meeting management'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Workplace Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:8, relatedIds:[2,3,8]
+  },
+  {
+    id:5, num:'05', slug:'ai-for-family-and-personal-life', title:'AI for Your Family & Personal Life',
+    level:'Beginner', levels:['Beginner'], duration:'4 hours', lessons:10, format:'Self-paced + family sessions',
+    tracks:['families','me'],
+    blurb:'Practical, safe ways families use AI — meal planning, travel, education, schedules, major purchases, and household projects.',
+    overview:'Built to be taken together. This class covers the everyday household uses of AI that genuinely reduce friction, alongside the digital literacy and safety conversations every family should have. Designed so a parent, a grandparent, and a teenager can each get something out of the same lesson.',
+    audience:['Parents and caregivers','Multi-generational households learning together','Grandparents who want to keep up with the grandkids','Anyone managing a busy household'],
+    learn:['Meal planning and grocery workflows that stick','Trip planning from idea to itinerary','Homework help that teaches instead of doing the work','Household schedules and shared calendars','Researching major purchases and big decisions','Home projects, repairs, and planning','Career and education conversations','Talking with your kids about AI honestly'],
+    modules:[
+      {title:'Everyday Household Wins', lessons:['Meal planning around real constraints','Groceries, budgets, and leftovers','Household routines and chore systems']},
+      {title:'Travel and Time Together', lessons:['Trip research and itineraries','Family activities on a budget','Packing and logistics']},
+      {title:'Learning and School', lessons:['Homework help that builds understanding','Explaining hard subjects at the right level','Study support and test preparation','Where AI crosses the line into cheating']},
+      {title:'Big Family Decisions', lessons:['Major purchase research','Comparing options as a family','Preparing questions for professionals']},
+      {title:'Digital Literacy Across Generations', lessons:['Teaching a parent or grandparent','Teaching a teenager','Spotting AI-generated content and scams']},
+      {title:'Family Safety and Responsible Use', lessons:['What kids should never share with AI','Family AI ground rules','Privacy settings worth checking']}
+    ],
+    exercises:['Build a two-week family meal plan with your actual constraints','Plan a real trip or outing end to end','Write your household AI ground rules together'],
+    tools:['ChatGPT','Claude','Gemini','A shared calendar and notes app'],
+    outcomes:['Two household workflows running on AI','A written family AI agreement','Improved AI literacy across generations'],
+    skills:['Household planning','Family digital literacy','AI safety for kids','Practical research'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Family Learning Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:6, relatedIds:[1,2,6]
+  },
+  {
+    id:6, num:'06', slug:'ai-for-financial-empowerment', title:'AI for Financial Empowerment',
+    level:'Beginner → Intermediate', levels:['Beginner','Intermediate'], duration:'4.5 hours', lessons:10, format:'Self-paced + spending lab',
+    tracks:['families','me'],
+    blurb:'Use AI to understand your financial life — budgeting, spending analysis, savings goals, documents, and scenario planning.',
+    notice:'This class is financial education, not financial advice. AI tools can help you organize information, understand terminology, analyze your own numbers, and prepare better questions. They cannot provide personalized professional financial, tax, legal, or investment advice. For decisions that affect your financial future, work with a qualified professional.',
+    overview:'Most people do not have a math problem — they have a clarity problem. This class uses AI to turn scattered financial information into a picture you can actually reason about: where the money goes, what your options are, what the documents mean, and what questions to bring to a professional.',
+    audience:['Anyone who feels behind on their financial picture','Households building their first real budget','People preparing for a major financial decision','Anyone intimidated by financial paperwork'],
+    learn:['Building a budget from your actual spending','Categorizing and analyzing spending patterns safely','Setting savings goals and tracking progress','Understanding financial documents and terminology','Comparing options side by side','Scenario planning: what happens if…','Preparing sharper questions for professionals','Protecting your financial data when using AI'],
+    modules:[
+      {title:'Getting Your Numbers in One Place', lessons:['What to gather, and what to anonymize first','Data privacy rules for financial information','Your starting snapshot']},
+      {title:'Spending Analysis', lessons:['Categorizing a real statement','Finding the patterns you did not expect','Recurring costs and subscription audits']},
+      {title:'Budgeting That Survives Real Life', lessons:['Building from actuals, not aspirations','Handling irregular income and expenses','Monthly review rhythm']},
+      {title:'Savings and Goals', lessons:['Goal math made simple','Tradeoff conversations','Tracking without obsessing']},
+      {title:'Understanding the Paperwork', lessons:['Decoding statements, plans, and policies','Terminology on demand','Red flags worth asking about']},
+      {title:'Scenario Planning', lessons:['Comparing two real options','Stress-testing a plan','What AI can and cannot model']},
+      {title:'Working With Professionals', lessons:['Preparing an agenda before a meeting','Questions that get better answers','Where advice must come from a human']}
+    ],
+    exercises:['Analyze one month of anonymized spending and write three findings','Build a budget from your actual numbers','Prepare a one-page agenda for a financial professional'],
+    tools:['ChatGPT','Claude','Your spreadsheet tool of choice'],
+    outcomes:['A clear picture of where your money goes','A budget you built from real data','A prepared agenda for a professional conversation'],
+    skills:['Spending analysis','Budget building','Financial literacy','Scenario comparison'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Financial Literacy Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:3, relatedIds:[5,3,4]
+  },
+  {
+    id:7, num:'07', slug:'ai-for-small-business-and-nonprofits', title:'AI for Small Business & Nonprofits',
+    level:'Intermediate', levels:['Intermediate'], duration:'6 hours', lessons:13, format:'Self-paced + organizational project',
+    tracks:['small-business','nonprofits'],
+    blurb:'Use AI as a practical operating tool across marketing, communication, proposals, research, SOPs, and operations.',
+    overview:'For the people who run things. This class treats AI as an operating tool rather than a curiosity: where it creates leverage in a small organization, which processes to target first, and how to build it into the way the team actually works. You will finish with a prioritized opportunity map for your own organization.',
+    audience:['Small business owners and operators','Nonprofit executive directors and staff','Marketing and operations teams of one','Community and faith organization leaders'],
+    learn:['Finding your organization’s highest-value AI opportunities','Marketing content and campaign support','Customer and donor communication','Proposals, quotes, and applications','Market and grant research','Writing SOPs and internal documentation','Turning institutional knowledge into a usable library','Business analysis and reporting','Rolling AI out to a team responsibly'],
+    modules:[
+      {title:'Where AI Actually Pays Off', lessons:['Mapping your recurring processes','Scoring opportunities by value and effort','Choosing your first three']},
+      {title:'Marketing and Content', lessons:['Content that sounds like your organization','Campaign planning and repurposing','Social, email, and web copy']},
+      {title:'Customer and Donor Communication', lessons:['Response templates and tone','Difficult conversations','Personalization at small scale']},
+      {title:'Proposals and Applications', lessons:['Proposal and quote drafting','Grant research and narrative support','Reusable boilerplate that stays current']},
+      {title:'Research and Analysis', lessons:['Market and competitor research','Reading reports quickly','Simple business analysis with AI']},
+      {title:'Operations and Documentation', lessons:['Writing SOPs from how you actually work','Onboarding materials','Internal knowledge library']},
+      {title:'Organizational Project', lessons:['Building your AI opportunity map','Team rollout and simple policy','Measuring what improved']}
+    ],
+    exercises:['Score and rank ten processes in your organization','Draft a complete SOP for one recurring process','Produce a full campaign or appeal from brief to assets'],
+    tools:['ChatGPT','Claude','Canva','Google Workspace or Microsoft 365','Your CRM'],
+    outcomes:['A prioritized AI opportunity map for your organization','One documented SOP in active use','A simple, sane internal AI policy'],
+    skills:['Opportunity mapping','Marketing content','Proposal writing','SOP documentation'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Organizational Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:9, relatedIds:[9,10,4]
+  },
+  {
+    id:8, num:'08', slug:'build-your-ai-chief-of-staff', title:'Build Your AI Chief of Staff',
+    level:'Intermediate', levels:['Intermediate'], duration:'7 hours', lessons:14, format:'Hands-on build + blueprint project', lab:true,
+    tracks:['work','small-business'],
+    blurb:'Build an AI-powered executive assistant system that monitors, prepares, briefs, and follows up.',
+    overview:'A Chief of Staff does not just answer questions — it watches what matters and tells you what needs attention. In this class you build a modular system: monitoring modules for email, calendar, documents and finances; preparation modules for meetings and research; and reporting modules that produce a daily brief and a weekly executive summary. You finish with your own blueprint and at least three working modules.',
+    audience:['Executives, managers, and founders','Professionals with high coordination loads','Graduates of AI for Everyday Productivity','Anyone who ends each week feeling behind on inputs'],
+    learn:['The architecture of a modular assistant system','Email and calendar monitoring modules','Meeting preparation that runs before you ask','Document and file monitoring','Follow-up tracking that nothing falls out of','Research modules on standing topics','Financial and website activity monitoring','Daily briefings and weekly executive summaries','Designing your own Chief of Staff blueprint'],
+    modules:[
+      {title:'The Chief of Staff Model', lessons:['What a real chief of staff does','Monitor, prepare, brief, follow up','Modular design so you can start small']},
+      {title:'Monitoring Modules', lessons:['Email monitoring and triage','Calendar monitoring and conflict spotting','Document and file change monitoring','Financial monitoring basics','Website and mention monitoring']},
+      {title:'Preparation Modules', lessons:['Automated meeting preparation','Standing research topics','Pre-read packets']},
+      {title:'Follow-Up and Accountability', lessons:['Capturing commitments','Open-loop tracking','Nudges that are actually useful']},
+      {title:'Reporting Modules', lessons:['The daily briefing','The weekly executive summary','Tuning signal versus noise']},
+      {title:'Blueprint Project', lessons:['Mapping your own responsibilities','Selecting your first three modules','Building, testing, and refining','Documenting your blueprint']}
+    ],
+    exercises:['Build a working daily briefing module','Build an automated meeting-preparation module','Document your complete Chief of Staff blueprint'],
+    tools:['ChatGPT or Claude','Gmail or Outlook','Google Calendar or Outlook Calendar','Zapier or Make','A notes or docs tool'],
+    outcomes:['At least three working modules in daily use','A daily brief you actually read','A documented blueprint you can extend for years'],
+    skills:['System architecture','Monitoring workflows','Executive reporting','Modular design'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Systems Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:9, relatedIds:[4,9,10]
+  },
+  {
+    id:9, num:'09', slug:'ai-automation-lab', title:'AI Automation Lab',
+    level:'Intermediate → Advanced', levels:['Intermediate','Advanced'], duration:'8 hours', lessons:14, format:'Hands-on lab — build a working automation', lab:true,
+    tracks:['work','small-business','nonprofits'],
+    blurb:'Move beyond prompting into AI-powered workflows: triggers, actions, connected apps, and human-in-the-loop approval.',
+    overview:'The step where AI stops waiting for you. You will learn how automated workflows are actually structured — triggers, actions, data, conditions, approvals — and build at least one real automation that runs without you. No coding required; everything is built with no-code tools, with an optional look at APIs for the curious.',
+    audience:['People who have hit the ceiling of manual prompting','Operators with obvious repetitive processes','Graduates of Chief of Staff or Small Business & Nonprofits'],
+    learn:['How automations are structured','Triggers: time, event, and manual','Actions and multi-step chains','Connecting the apps you already use','Where AI fits inside a workflow','Working with data sources','Conditions and branching','Approval steps and human-in-the-loop design','Testing, error handling, and monitoring','A responsible look at APIs'],
+    modules:[
+      {title:'Automation Fundamentals', lessons:['Trigger, action, condition, output','Picking a first automation that will not break','No-code platform tour']},
+      {title:'Triggers and Actions', lessons:['Scheduled versus event triggers','Multi-step action chains','Passing data between steps']},
+      {title:'Adding AI to the Middle', lessons:['AI steps inside a workflow','Prompting for machine-readable output','Handling unpredictable AI responses']},
+      {title:'Data and Connections', lessons:['Spreadsheets and databases as sources','Email, calendar, forms, and storage','A gentle introduction to APIs and webhooks']},
+      {title:'Conditions and Approvals', lessons:['Branching logic','Human-in-the-loop approval steps','Deciding what must never be automatic']},
+      {title:'Reliability', lessons:['Testing before you trust it','Error handling and notifications','Monitoring and maintenance']},
+      {title:'Lab Build', lessons:['Scoping your automation','Building it live','Testing with real data','Documenting and handing it off']}
+    ],
+    exercises:['Build and ship one working automation with an approval step','Document the workflow so someone else could maintain it','Break your own automation on purpose and fix the error handling'],
+    tools:['Zapier or Make','Google Sheets or Airtable','ChatGPT or Claude API-connected step','Gmail or Outlook'],
+    outcomes:['One automation running in production','A documented workflow diagram','The judgment to know what should stay manual'],
+    skills:['Workflow automation','No-code integration','Human-in-the-loop design','Error handling'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Automation Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:10, relatedIds:[8,10,7]
+  },
+  {
+    id:10, num:'10', slug:'build-your-first-ai-agent', title:'Build Your First AI Agent',
+    level:'Advanced', levels:['Advanced'], duration:'10 hours', lessons:15, format:'Hands-on lab + capstone project', lab:true,
+    tracks:['small-business','work'],
+    blurb:'Introduce agentic AI — tools, memory, instructions, data, actions, guardrails, and approvals — and ship a working agent.',
+    overview:'The top of the LifeQuest ladder. An agent is not a chatbot: it has instructions, tools it can use, memory, access to data, and the ability to take multi-step action toward a goal. This capstone class covers how agents are designed, where they break, how to constrain them responsibly, and how to build one that solves a real problem you have.',
+    audience:['Graduates of AI Automation Lab','Operators ready to delegate whole processes','Technically curious learners who still do not want to code','Anyone who has built automations and wants adaptive behavior'],
+    learn:['What an agent is, and what it is not','Instructions and role definition','Tools: giving an agent capabilities','Memory: short-term and persistent','Data and knowledge access','Actions and side effects','Guardrails and permission boundaries','Human approval checkpoints','Multi-step task decomposition','Testing, observing, and improving an agent','Cost, reliability, and when not to use an agent'],
+    modules:[
+      {title:'From Automation to Agency', lessons:['Workflow versus agent','When adaptive behavior is worth the complexity','Realistic expectations']},
+      {title:'Anatomy of an Agent', lessons:['Instructions and objectives','Tools and capabilities','Memory and state','Knowledge and data access']},
+      {title:'Guardrails and Trust', lessons:['Permission boundaries','Approval checkpoints','What an agent must never do alone','Logging and observability']},
+      {title:'Multi-Step Work', lessons:['Task decomposition','Handling failure mid-task','Knowing when to stop and ask']},
+      {title:'Building Your Agent', lessons:['Choosing a problem worth an agent','Platform options compared','Build session one: instructions and tools','Build session two: data and memory','Build session three: guardrails and approvals']},
+      {title:'Capstone', lessons:['Testing against real scenarios','Measuring whether it actually helped','Presenting your agent or blueprint','Where to go next']}
+    ],
+    exercises:['Define an agent specification: objective, tools, data, guardrails','Build and test a working agent (or a complete blueprint)','Run a failure review and document what you changed'],
+    tools:['ChatGPT Agent tools or Claude','An agent platform (no-code options provided)','Zapier or Make','A data source you control'],
+    outcomes:['A working AI agent or a complete, credible agent blueprint','A guardrail and approval model you trust','The judgment to scope agents responsibly'],
+    skills:['Agent design','Guardrails and approvals','Tool integration','Capstone delivery'],
+    instructor:{name:'Instructor Placeholder', role:'LifeQuest AI Agentic Systems Faculty', bio:'Sample instructor profile for this prototype.'},
+    nextId:null, relatedIds:[9,8,7]
+  }
+];
+
+export {CLASSES};
