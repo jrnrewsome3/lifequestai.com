@@ -96,7 +96,9 @@
         <p class="tiny muted" style="margin-top:16px">Sample past issues shown for this prototype.</p>
       </div>
       <div class="form-card">
-        <form id="nl-form" novalidate>
+        <form id="nl-form" novalidate action="https://lifequest-forms.jrnewsome.workers.dev/newsletter" method="post">
+          <input type="text" name="company" id="nl-company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <input type="hidden" name="page" value="/newsletter/">
           <h3 style="margin-bottom:8px">Join the newsletter</h3>
           <p class="small muted" style="margin-bottom:24px">One email a week. Useful AI, no hype.</p>
           <div class="field" id="f-name">
@@ -118,14 +120,15 @@
               <option>AI for Nonprofits</option><option>AI Automation &amp; Agents</option>
             </select>
           </div>
-          <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px" type="submit">Join the LifeQuest AI Newsletter</button>
+          <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px" type="submit" id="nl-submit">Join the LifeQuest AI Newsletter</button>
+          <p class="err" id="nl-error" style="text-align:center;margin-top:12px"></p>
           <p class="hint" style="text-align:center;margin-top:14px">Useful AI. No hype. Unsubscribe anytime.</p>
-          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it. Prototype form — nothing is submitted.</p>
+          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it, and you can unsubscribe from any issue.</p>
         </form>
         <div class="success hide" id="nl-success" role="status">
           <div class="card-icon teal" style="margin:0;width:38px;height:38px;border-radius:11px;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
           <div><h4>You’re on the list.</h4>
-          <p>Check your inbox for a confirmation and your first practical AI challenge. In this prototype no email is actually sent.</p></div>
+          <p>We’ve got your details — you’ll be on the next issue.</p></div>
         </div>
       </div>
     </div>
