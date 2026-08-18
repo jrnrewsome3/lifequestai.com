@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jrnrewsome3.github.io/lifequestai.com/sitemap.xml
