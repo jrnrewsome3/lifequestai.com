@@ -24,7 +24,7 @@ function NewsletterSection(){
             <div><div class="t">${n.title}</div><div class="s">${n.no} — ${n.teaser}</div></div>
           </div>`).join('')}
         </div>
-        <p class="tiny muted" style="margin-top:16px">Sample past issues shown for this prototype.</p>
+        <p class="tiny muted" style="margin-top:16px">Illustrative examples of the kind of thing you’ll get.</p>
       </div>
       <div class="form-card">
         <form id="nl-form" novalidate action="${SITE.FORMS_ENDPOINT}/newsletter" method="post">
