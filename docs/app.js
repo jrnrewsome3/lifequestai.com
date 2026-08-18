@@ -160,48 +160,135 @@
   /* ---------------- forms ---------------- */
   function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(v).trim()); }
 
-  (function () {
-    var nl = document.getElementById('nl-form');
-    if (!nl) return;
-    nl.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = document.getElementById('nl-name');
-      var email = document.getElementById('nl-email');
-      var fName = document.getElementById('f-name');
-      var fEmail = document.getElementById('f-email');
-      var ok = true;
-      if (!name.value.trim()) { fName.classList.add('invalid'); ok = false; } else fName.classList.remove('invalid');
-      if (!validEmail(email.value)) { fEmail.classList.add('invalid'); ok = false; } else fEmail.classList.remove('invalid');
-      if (!ok) { (fName.classList.contains('invalid') ? name : email).focus(); return; }
-      nl.classList.add('hide');
-      document.getElementById('nl-success').classList.remove('hide');
-    });
-    ['nl-name', 'nl-email'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) el.addEventListener('input', function () { el.closest('.field').classList.remove('invalid'); });
-    });
-  })();
+  /**
+   * Submit a form to the LifeQuest forms endpoint.
+   * Shows the success panel on success; shows a real error (and keeps the
+   * user's typing) if the network or the server fails. Never fakes success.
+   */
+  function wireForm(opts) {
+    var form = document.getElementById(opts.formId);
+    if (!form) return;
+    var btn = document.getElementById(opts.submitId);
+    var errBox = document.getElementById(opts.errorId);
+    var successBox = document.getElementById(opts.successId);
+    var originalLabel = btn ? btn.textContent : '';
 
-  (function () {
-    var ct = document.getElementById('ct-form');
-    if (!ct) return;
-    ct.addEventListener('submit', function (e) {
+    function showError(msg) {
+      if (!errBox) return;
+      errBox.textContent = msg;
+      errBox.style.display = 'block';
+    }
+    function clearError() {
+      if (!errBox) return;
+      errBox.textContent = '';
+      errBox.style.display = 'none';
+    }
+
+    // clear field-level errors as the user types
+    opts.fields.forEach(function (f) {
+      var el = document.getElementById(f.input);
+      if (!el) return;
+      el.addEventListener('input', function () {
+        var wrap = document.getElementById(f.wrap);
+        if (wrap) wrap.classList.remove('invalid');
+        clearError();
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var n = document.getElementById('ct-name'), em = document.getElementById('ct-email'), m = document.getElementById('ct-msg');
-      var fn = document.getElementById('c-name'), fe = document.getElementById('c-email'), fm = document.getElementById('c-msg');
+      clearError();
+
+      // client-side validation first
+      var firstBad = null;
       var ok = true;
-      if (!n.value.trim()) { fn.classList.add('invalid'); ok = false; } else fn.classList.remove('invalid');
-      if (!validEmail(em.value)) { fe.classList.add('invalid'); ok = false; } else fe.classList.remove('invalid');
-      if (m.value.trim().length < 5) { fm.classList.add('invalid'); ok = false; } else fm.classList.remove('invalid');
-      if (!ok) return;
-      ct.classList.add('hide');
-      document.getElementById('ct-success').classList.remove('hide');
+      opts.fields.forEach(function (f) {
+        var el = document.getElementById(f.input);
+        var wrap = document.getElementById(f.wrap);
+        if (!el || !wrap) return;
+        var v = el.value;
+        var bad = f.type === 'email' ? !validEmail(v)
+                : f.type === 'text-min' ? v.trim().length < 5
+                : !v.trim();
+        wrap.classList.toggle('invalid', bad);
+        if (bad) { ok = false; if (!firstBad) firstBad = el; }
+      });
+      if (!ok) { if (firstBad) firstBad.focus(); return; }
+
+      if (btn) { btn.disabled = true; btn.textContent = opts.sendingLabel; }
+
+      fetch(form.getAttribute('action'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(opts.payload())
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            return { status: res.status, data: data };
+          });
+        })
+        .then(function (r) {
+          if (r.status === 200 && r.data && r.data.ok) {
+            form.classList.add('hide');
+            if (successBox) successBox.classList.remove('hide');
+            return;
+          }
+          if (r.status === 422 && r.data && r.data.errors) {
+            // server disagreed with a field — mark it
+            opts.fields.forEach(function (f) {
+              var wrap = document.getElementById(f.wrap);
+              if (wrap && r.data.errors[f.name]) wrap.classList.add('invalid');
+            });
+            showError('Please check the highlighted fields.');
+          } else {
+            showError('Something went wrong sending that. Please try again, or email us directly.');
+          }
+          if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
+        })
+        .catch(function () {
+          showError('We could not reach the server. Check your connection and try again.');
+          if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
+        });
     });
-    ['ct-name', 'ct-email', 'ct-msg'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) el.addEventListener('input', function () { el.closest('.field').classList.remove('invalid'); });
-    });
-  })();
+  }
+
+  var val = function (id) {
+    var el = document.getElementById(id);
+    return el ? el.value : '';
+  };
+
+  wireForm({
+    formId: 'nl-form', submitId: 'nl-submit', errorId: 'nl-error', successId: 'nl-success',
+    sendingLabel: 'Joining…',
+    fields: [
+      { input: 'nl-name', wrap: 'f-name', name: 'name', type: 'required' },
+      { input: 'nl-email', wrap: 'f-email', name: 'email', type: 'email' }
+    ],
+    payload: function () {
+      return {
+        name: val('nl-name'), email: val('nl-email'),
+        interest: val('nl-interest'), company: val('nl-company'),
+        page: location.pathname
+      };
+    }
+  });
+
+  wireForm({
+    formId: 'ct-form', submitId: 'ct-submit', errorId: 'ct-error', successId: 'ct-success',
+    sendingLabel: 'Sending…',
+    fields: [
+      { input: 'ct-name', wrap: 'c-name', name: 'name', type: 'required' },
+      { input: 'ct-email', wrap: 'c-email', name: 'email', type: 'email' },
+      { input: 'ct-msg', wrap: 'c-msg', name: 'message', type: 'text-min' }
+    ],
+    payload: function () {
+      return {
+        name: val('ct-name'), email: val('ct-email'),
+        topic: val('ct-topic'), message: val('ct-msg'),
+        company: val('ct-company'), page: location.pathname
+      };
+    }
+  });
 
   /* ---------------- assessment ---------------- */
   (function () {
