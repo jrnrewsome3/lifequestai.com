@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LifeQuest AI — Practical AI for Real Life</title>
+<meta name="description" content="LifeQuest AI helps everyday people, professionals, families, entrepreneurs, nonprofits, and small businesses confidently use artificial intelligence through practical classes, guided learning paths, and hands-on labs.">
+<link rel="canonical" href="https://jrnrewsome3.github.io/lifequestai.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LifeQuest AI">
+<meta property="og:title" content="LifeQuest AI — Practical AI for Real Life">
+<meta property="og:description" content="LifeQuest AI helps everyday people, professionals, families, entrepreneurs, nonprofits, and small businesses confidently use artificial intelligence through practical classes, guided learning paths, and hands-on labs.">
+<meta property="og:url" content="https://jrnrewsome3.github.io/lifequestai.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1758270705518-b61b40527e76?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=68&fm=jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LifeQuest AI — Practical AI for Real Life">
+<meta name="twitter:description" content="LifeQuest AI helps everyday people, professionals, families, entrepreneurs, nonprofits, and small businesses confidently use artificial intelligence through practical classes, guided learning paths, and hands-on labs.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1758270705518-b61b40527e76?w=1200&h=630&fit=crop&crop=entropy&auto=format&q=68&fm=jpg">
+
+<meta name="theme-color" content="#FCFBF8">
+<link rel="icon" href="/lifequestai.com/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lifequestai.com/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" id="header"><div class="wrap header-in">
+    <a class="brand" href="/lifequestai.com/"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+  <rect width="40" height="40" rx="11" fill="url(#lqg)"/>
+  <path d="M11 27.5V12.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M11 27.5h8.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="26" cy="15.5" r="4.6" stroke="#fff" stroke-width="2.4"/>
+  <path d="M29.4 19.2L32 22" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <defs><linearGradient id="lqg" x1="0" y1="0" x2="40" y2="40">
+    <stop stop-color="#1F6FB2"/><stop offset="1" stop-color="#2C8F86"/></linearGradient></defs>
+</svg><span>LifeQuest<em> AI</em></span></a>
+    <nav class="nav" aria-label="Primary"><a href="/lifequestai.com/" class="active" aria-current="page">Home</a><a href="/lifequestai.com/classes/">Classes</a><a href="/lifequestai.com/paths/">Learning Paths</a><a href="/lifequestai.com/labs/">AI Labs</a><a href="/lifequestai.com/blog/">Blog</a><a href="/lifequestai.com/resources/">Resources</a><a href="/lifequestai.com/about/">About</a></nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/">Explore Classes</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/assessment/">Start Learning</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
+    <div class="drawer-top">
+      <a class="brand" href="/lifequestai.com/"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+  <rect width="40" height="40" rx="11" fill="url(#lqg)"/>
+  <path d="M11 27.5V12.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M11 27.5h8.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="26" cy="15.5" r="4.6" stroke="#fff" stroke-width="2.4"/>
+  <path d="M29.4 19.2L32 22" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <defs><linearGradient id="lqg" x1="0" y1="0" x2="40" y2="40">
+    <stop stop-color="#1F6FB2"/><stop offset="1" stop-color="#2C8F86"/></linearGradient></defs>
+</svg><span>LifeQuest<em> AI</em></span></a>
+      <button class="icon-btn" id="drawer-close" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <nav aria-label="Mobile"><a href="/lifequestai.com/" class="active">Home</a><a href="/lifequestai.com/classes/">Classes</a><a href="/lifequestai.com/paths/">Learning Paths</a><a href="/lifequestai.com/labs/">AI Labs</a><a href="/lifequestai.com/blog/">Blog</a><a href="/lifequestai.com/resources/">Resources</a><a href="/lifequestai.com/about/">About</a>
+      <a href="/lifequestai.com/assessment/">Find My Starting Point</a>
+      <a href="/lifequestai.com/newsletter/">Newsletter</a>
+      <a href="/lifequestai.com/member/">Member Preview</a>
+      <a href="/lifequestai.com/contact/">Contact</a>
+    </nav>
+    <div class="divider"></div>
+    <div class="stack" style="gap:10px">
+      <a class="btn btn-primary" href="/lifequestai.com/assessment/">Start Learning</a>
+      <a class="btn btn-ghost" href="/lifequestai.com/classes/">Explore Classes</a>
+    </div>
+  </aside>
+<main id="main">
+
+  <section class="hero"><div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Practical AI for Real Life</p>
+      <h1>Learn AI. Apply It.<br><span class="grad">Change What’s Possible.</span></h1>
+      <p class="lede">LifeQuest AI helps people move from AI curiosity to real-world capability through practical classes, guided learning paths, hands-on labs, and tools they can immediately use at home, at work, and in their communities.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn-primary btn-lg" href="/lifequestai.com/classes/">Explore Classes</a>
+        <a class="btn btn-ghost btn-lg" href="/lifequestai.com/assessment/">Find Your AI Starting Point</a>
+      </div>
+      <div class="trust">
+        <span>No coding required</span><span>Practical lessons</span><span>Hands-on labs</span><span>Learn at your pace</span>
+      </div>
+    </div>
+    <div class="prog reveal">
+      <div class="prog-head">
+        <div><p class="tiny" style="margin:0">The LifeQuest Model</p></div>
+        <span class="tiny muted">4 stages</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">1</div>
+        <div class="step-body"><h4>CONNECT</h4><p>Discover what AI can do and identify opportunities in your life or organization.</p></div>
+      </div><div class="step">
+        <div class="step-dot">2</div>
+        <div class="step-body"><h4>LEARN</h4><p>Develop practical skills through short, understandable lessons.</p></div>
+      </div><div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-body"><h4>APPLY</h4><p>Use those skills on real projects, workflows, problems, and decisions.</p></div>
+      </div><div class="step">
+        <div class="step-dot">4</div>
+        <div class="step-body"><h4>ELEVATE</h4><p>Build automation, assistants, and increasingly advanced AI systems.</p></div>
+      </div>
+      <div class="prog-foot"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg> Every class and lab moves you one stage forward.</div>
+    </div>
+  </div></section>
+
+  <section class="sec-tight" style="padding-top:0"><div class="wrap">
+    <figure class="figure ">
+    <img src="https://images.unsplash.com/photo-1758270705518-b61b40527e76?w=1600&h=900&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A group of adult learners gathered around a laptop together" loading="lazy" decoding="async">
+    <figcaption>Learning together, in plain language.<span class="sub">LifeQuest AI classes and labs are built around real people doing real work — not demos.</span></figcaption>
+  </figure>
+    <p class="credit">Photography via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+  </div></section>
+
+  <section class="sec tint"><div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow teal">Outcomes First</p>
+      <h2>Don’t Just Learn AI. Put It to Work.</h2>
+      <p class="lede">Every class is built backwards from something you want to be able to do — not from a list of features.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card card-hover">
+        <div class="card-icon "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Save Time</h3><p>Use AI to eliminate repetitive work and simplify everyday tasks.</p>
+      </article><article class="card card-hover">
+        <div class="card-icon teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div>
+        <h3>Make Better Decisions</h3><p>Turn information into useful insights, comparisons, and action plans.</p>
+      </article><article class="card card-hover">
+        <div class="card-icon "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 01-8 8H8l-5 3 1.2-4.2A8 8 0 1121 12z"/></svg></div>
+        <h3>Communicate Better</h3><p>Create stronger emails, documents, presentations, and ideas.</p>
+      </article><article class="card card-hover">
+        <div class="card-icon teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <h3>Organize Your Life</h3><p>Use AI for planning, research, learning, finances, projects, and family needs.</p>
+      </article><article class="card card-hover">
+        <div class="card-icon amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg></div>
+        <h3>Automate Your Work</h3><p>Connect AI with the tools you already use and automate repeatable processes.</p>
+      </article><article class="card card-hover">
+        <div class="card-icon amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 5V8M9 14h.01M15 14h.01M9 17h6"/></svg></div>
+        <h3>Build AI Assistants</h3><p>Progress toward personalized assistants and agents capable of helping manage real responsibilities.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The Progression</p>
+      <h2>Your AI Journey</h2>
+      <p class="lede">LifeQuest AI does not teach random AI tricks. It teaches progression — a route from your first useful conversation to systems that work on your behalf.</p>
+    </div>
+    <div class="journey">
+      <div class="jcard">
+        <div class="jnum">STAGE 01</div>
+        <h3>CONNECT</h3><p>Discover what AI can do and identify opportunities in your life or organization.</p>
+        <ul><li>Take the starting-point assessment</li><li>Map where your time actually goes</li><li>Choose your learning path</li></ul>
+      </div><div class="jcard">
+        <div class="jnum">STAGE 02</div>
+        <h3>LEARN</h3><p>Develop practical skills through short, understandable lessons.</p>
+        <ul><li>Plain-language classes</li><li>No coding required</li><li>Learn at your own pace</li></ul>
+      </div><div class="jcard">
+        <div class="jnum">STAGE 03</div>
+        <h3>APPLY</h3><p>Use those skills on real projects, workflows, problems, and decisions.</p>
+        <ul><li>Hands-on labs</li><li>Your own real work as the assignment</li><li>Something finished every week</li></ul>
+      </div><div class="jcard">
+        <div class="jnum">STAGE 04</div>
+        <h3>ELEVATE</h3><p>Build automation, assistants, and increasingly advanced AI systems.</p>
+        <ul><li>Workflows that run without you</li><li>A Chief of Staff system</li><li>Your first working agent</li></ul>
+      </div>
+    </div>
+    <div style="margin-top:36px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-sm)">
+      <p class="eyebrow amber" style="margin-bottom:14px">Where this takes you</p>
+      <div class="ladder"><span class="rung">AI Literacy</span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span class="rung">AI Assistance</span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span class="rung">AI Productivity</span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span class="rung">AI Workflows</span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span class="rung">AI Automation</span><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span class="rung">AI Agents</span></div>
+    </div>
+    <div class="btn-row" style="margin-top:28px">
+      <a class="btn btn-ghost" href="/lifequestai.com/about/">See How LifeQuest Learning Works <span class="arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div></section>
+
+  <section class="sec tint"><div class="wrap">
+    <div class="row-between sec-head" style="margin-bottom:40px;max-width:none;align-items:flex-end">
+      <div style="max-width:62ch">
+        <p class="eyebrow">Launch Catalog</p>
+        <h2>Ten Classes. One Clear Path.</h2>
+        <p class="lede">Start wherever you are. Each class hands off to the next, so nothing ever feels like a leap.</p>
+      </div>
+      <a class="btn btn-ghost" href="/lifequestai.com/classes/">All classes & filters <span class="arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="grid g3"><article class="course-card" data-levels="Beginner" data-tracks="me|families|nonprofits" data-search="ai made simple understand chatgpt, claude, gemini, copilot, and today’s major ai tools without technical jargon. ai fundamentals tool selection verification habits ai safety basics beginner chatgpt claude gemini microsoft copilot what ai tools actually do when you type into them how chatgpt, claude, gemini, and copilot differ and when to pick each why ai sometimes gets things confidently wrong, and how to catch it what is safe to share with an ai tool and what is not how to set up free and paid accounts sensibly your first five useful, repeatable uses">
+    <a href="/lifequestai.com/classes/ai-made-simple/" aria-hidden="true" tabindex="-1"><span class="media media-16-10">
+    <img src="https://images.unsplash.com/photo-1623679681421-6db68b92d5f5?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="An older adult working at a laptop in a bright office" loading="lazy" decoding="async" width="800" height="500">
+  </span></a>
+    <div class="course-body">
+    <div class="course-top">
+      <span class="course-num">01</span>
+      <div class="badges"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span></div>
+    </div>
+    <h3><a href="/lifequestai.com/classes/ai-made-simple/" style="color:inherit">AI Made Simple</a></h3>
+    <p>Understand ChatGPT, Claude, Gemini, Copilot, and today’s major AI tools without technical jargon.</p>
+    <div class="meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 3 hours</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 8 lessons</span>
+    </div>
+    <div class="meta" style="margin-top:8px"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg> Self-paced video + guided practice</span></div>
+    <div class="skills"><span class="skill-tag">AI fundamentals</span><span class="skill-tag">Tool selection</span><span class="skill-tag">Verification habits</span><span class="skill-tag">AI safety basics</span></div>
+    <div class="card-foot btn-row">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/ai-made-simple/">View Class</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/classes/ai-made-simple/#enroll">Enroll</a>
+    </div>
+    </div>
+  </article><article class="course-card" data-levels="Beginner" data-tracks="me|families|work|small-business|nonprofits" data-search="prompting for real life learn how to communicate effectively with ai — context, roles, examples, refinement, and reusable templates. prompt design context setting iterative refinement template building beginner chatgpt claude a notes app or document of your choice the four elements that make almost any prompt better how to give context without writing an essay using roles and examples to raise quality refining and following up instead of restarting building reusable templates for recurring tasks getting structured output you can actually use">
+    <a href="/lifequestai.com/classes/prompting-for-real-life/" aria-hidden="true" tabindex="-1"><span class="media media-16-10">
+    <img src="https://images.unsplash.com/photo-1758874573150-05c1b6b56407?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="Close-up of hands typing on a laptop keyboard" loading="lazy" decoding="async" width="800" height="500">
+  </span></a>
+    <div class="course-body">
+    <div class="course-top">
+      <span class="course-num">02</span>
+      <div class="badges"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span></div>
+    </div>
+    <h3><a href="/lifequestai.com/classes/prompting-for-real-life/" style="color:inherit">Prompting for Real Life</a></h3>
+    <p>Learn how to communicate effectively with AI — context, roles, examples, refinement, and reusable templates.</p>
+    <div class="meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 4 hours</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 10 lessons</span>
+    </div>
+    <div class="meta" style="margin-top:8px"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg> Self-paced + prompt workshop</span></div>
+    <div class="skills"><span class="skill-tag">Prompt design</span><span class="skill-tag">Context setting</span><span class="skill-tag">Iterative refinement</span><span class="skill-tag">Template building</span></div>
+    <div class="card-foot btn-row">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/prompting-for-real-life/">View Class</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/classes/prompting-for-real-life/#enroll">Enroll</a>
+    </div>
+    </div>
+  </article><article class="course-card" data-levels="Beginner|Intermediate" data-tracks="me|families|work" data-search="your ai personal assistant turn ai into a genuine assistant for planning, writing, research, organization, learning, and decisions. assistant configuration context management planning workflows decision support beginner → intermediate chatgpt (projects / custom gpts) claude (projects) your calendar and notes app giving an assistant persistent context about you designing an assistant for a specific set of responsibilities planning, writing, and research workflows using ai for decision support without outsourcing the decision weekly and daily rhythms that keep it useful knowing when not to use your assistant">
+    <a href="/lifequestai.com/classes/your-ai-personal-assistant/" aria-hidden="true" tabindex="-1"><span class="media media-16-10">
+    <img src="https://images.unsplash.com/photo-1758876020200-1e19cddaf656?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A person taking notes beside a laptop at a tidy desk" loading="lazy" decoding="async" width="800" height="500">
+  </span></a>
+    <div class="course-body">
+    <div class="course-top">
+      <span class="course-num">03</span>
+      <div class="badges"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span><span class="badge b-intermediate"><span class="badge-dot"></span>Intermediate</span></div>
+    </div>
+    <h3><a href="/lifequestai.com/classes/your-ai-personal-assistant/" style="color:inherit">Your AI Personal Assistant</a></h3>
+    <p>Turn AI into a genuine assistant for planning, writing, research, organization, learning, and decisions.</p>
+    <div class="meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 5 hours</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 11 lessons</span>
+    </div>
+    <div class="meta" style="margin-top:8px"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg> Self-paced + build project</span></div>
+    <div class="skills"><span class="skill-tag">Assistant configuration</span><span class="skill-tag">Context management</span><span class="skill-tag">Planning workflows</span><span class="skill-tag">Decision support</span></div>
+    <div class="card-foot btn-row">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/your-ai-personal-assistant/">View Class</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/classes/your-ai-personal-assistant/#enroll">Enroll</a>
+    </div>
+    </div>
+  </article><article class="course-card" data-levels="Beginner|Intermediate" data-tracks="me|work" data-search="ai for everyday productivity use ai to handle everyday work faster: email, meetings, research, documents, summaries, planning, and presentations. workflow design summarization business writing meeting management beginner → intermediate chatgpt claude microsoft 365 copilot google workspace an email workflow that saves real time daily meeting preparation, notes, and follow-up research and summarization you can trust document drafting and rewriting presentation outlines and speaker notes brainstorming that produces usable ideas task and project management support">
+    <a href="/lifequestai.com/classes/ai-for-everyday-productivity/" aria-hidden="true" tabindex="-1"><span class="media media-16-10">
+    <img src="https://images.unsplash.com/photo-1758598304540-1ac6fd7d477b?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A professional working intently at a laptop at her desk" loading="lazy" decoding="async" width="800" height="500">
+  </span></a>
+    <div class="course-body">
+    <div class="course-top">
+      <span class="course-num">04</span>
+      <div class="badges"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span><span class="badge b-intermediate"><span class="badge-dot"></span>Intermediate</span></div>
+    </div>
+    <h3><a href="/lifequestai.com/classes/ai-for-everyday-productivity/" style="color:inherit">AI for Everyday Productivity</a></h3>
+    <p>Use AI to handle everyday work faster: email, meetings, research, documents, summaries, planning, and presentations.</p>
+    <div class="meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 5 hours</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 12 lessons</span>
+    </div>
+    <div class="meta" style="margin-top:8px"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg> Self-paced + workplace practice</span></div>
+    <div class="skills"><span class="skill-tag">Workflow design</span><span class="skill-tag">Summarization</span><span class="skill-tag">Business writing</span><span class="skill-tag">Meeting management</span></div>
+    <div class="card-foot btn-row">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/ai-for-everyday-productivity/">View Class</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/classes/ai-for-everyday-productivity/#enroll">Enroll</a>
+    </div>
+    </div>
+  </article><article class="course-card" data-levels="Beginner" data-tracks="families|me" data-search="ai for your family & personal life practical, safe ways families use ai — meal planning, travel, education, schedules, major purchases, and household projects. household planning family digital literacy ai safety for kids practical research beginner chatgpt claude gemini a shared calendar and notes app meal planning and grocery workflows that stick trip planning from idea to itinerary homework help that teaches instead of doing the work household schedules and shared calendars researching major purchases and big decisions home projects, repairs, and planning career and education conversations talking with your kids about ai honestly">
+    <a href="/lifequestai.com/classes/ai-for-family-and-personal-life/" aria-hidden="true" tabindex="-1"><span class="media media-16-10">
+    <img src="https://images.unsplash.com/photo-1629360021730-3d258452c425?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A family sitting together at a table with a laptop" loading="lazy" decoding="async" width="800" height="500">
+  </span></a>
+    <div class="course-body">
+    <div class="course-top">
+      <span class="course-num">05</span>
+      <div class="badges"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span></div>
+    </div>
+    <h3><a href="/lifequestai.com/classes/ai-for-family-and-personal-life/" style="color:inherit">AI for Your Family & Personal Life</a></h3>
+    <p>Practical, safe ways families use AI — meal planning, travel, education, schedules, major purchases, and household projects.</p>
+    <div class="meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 4 hours</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 10 lessons</span>
+    </div>
+    <div class="meta" style="margin-top:8px"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg> Self-paced + family sessions</span></div>
+    <div class="skills"><span class="skill-tag">Household planning</span><span class="skill-tag">Family digital literacy</span><span class="skill-tag">AI safety for kids</span><span class="skill-tag">Practical research</span></div>
+    <div class="card-foot btn-row">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/ai-for-family-and-personal-life/">View Class</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/classes/ai-for-family-and-personal-life/#enroll">Enroll</a>
+    </div>
+    </div>
+  </article><article class="course-card" data-levels="Beginner|Intermediate" data-tracks="families|me" data-search="ai for financial empowerment use ai to understand your financial life — budgeting, spending analysis, savings goals, documents, and scenario planning. spending analysis budget building financial literacy scenario comparison beginner → intermediate chatgpt claude your spreadsheet tool of choice building a budget from your actual spending categorizing and analyzing spending patterns safely setting savings goals and tracking progress understanding financial documents and terminology comparing options side by side scenario planning: what happens if… preparing sharper questions for professionals protecting your financial data when using ai">
+    <a href="/lifequestai.com/classes/ai-for-financial-empowerment/" aria-hidden="true" tabindex="-1"><span class="media media-16-10">
+    <img src="https://images.unsplash.com/photo-1772588627327-1eeddcf73c11?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="Hands reviewing financial paperwork beside a calculator" loading="lazy" decoding="async" width="800" height="500">
+  </span></a>
+    <div class="course-body">
+    <div class="course-top">
+      <span class="course-num">06</span>
+      <div class="badges"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span><span class="badge b-intermediate"><span class="badge-dot"></span>Intermediate</span></div>
+    </div>
+    <h3><a href="/lifequestai.com/classes/ai-for-financial-empowerment/" style="color:inherit">AI for Financial Empowerment</a></h3>
+    <p>Use AI to understand your financial life — budgeting, spending analysis, savings goals, documents, and scenario planning.</p>
+    <div class="meta">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 4.5 hours</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 10 lessons</span>
+    </div>
+    <div class="meta" style="margin-top:8px"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z"/></svg> Self-paced + spending lab</span></div>
+    <div class="skills"><span class="skill-tag">Spending analysis</span><span class="skill-tag">Budget building</span><span class="skill-tag">Financial literacy</span><span class="skill-tag">Scenario comparison</span></div>
+    <div class="card-foot btn-row">
+      <a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/ai-for-financial-empowerment/">View Class</a>
+      <a class="btn btn-primary btn-sm" href="/lifequestai.com/classes/ai-for-financial-empowerment/#enroll">Enroll</a>
+    </div>
+    </div>
+  </article></div>
+    <div class="center" style="margin-top:36px"><a class="btn btn-primary" href="/lifequestai.com/classes/">See All 10 Classes</a></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow teal">Learning Paths</p>
+      <h2>Choose Your Path</h2>
+      <p class="lede">Nobody should be forced through the same curriculum. Pick the track that matches your life, and we sequence the classes and labs for you.</p>
+    </div>
+    <div class="grid g3"><article class="path-card">
+    <a href="/lifequestai.com/paths/me/" aria-hidden="true" tabindex="-1"><span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1664575198308-3959904fa430?w=800&h=450&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A woman working alone at a laptop beside a sunny window" loading="lazy" decoding="async" width="800" height="450">
+  </span></a>
+    <div class="path-body">
+      <div class="card-icon "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+      <h3>AI for Me</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">Personal productivity, learning, organization, and everyday life.</p>
+      <div class="divider"></div>
+      <div class="meta"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 4 classes</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg> 3 labs</span></div>
+      <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/paths/me/">View this path <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+  </article><article class="path-card">
+    <a href="/lifequestai.com/paths/families/" aria-hidden="true" tabindex="-1"><span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1758598738092-a7cd486baadd?w=800&h=450&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A parent and child looking at a laptop together" loading="lazy" decoding="async" width="800" height="450">
+  </span></a>
+    <div class="path-body">
+      <div class="card-icon teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg></div>
+      <h3>AI for Families</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">Digital literacy and practical AI for households and multiple generations.</p>
+      <div class="divider"></div>
+      <div class="meta"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 4 classes</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg> 3 labs</span></div>
+      <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/paths/families/">View this path <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+  </article><article class="path-card">
+    <a href="/lifequestai.com/paths/work/" aria-hidden="true" tabindex="-1"><span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&h=450&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A small team collaborating around a meeting table" loading="lazy" decoding="async" width="800" height="450">
+  </span></a>
+    <div class="path-body">
+      <div class="card-icon "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18"/></svg></div>
+      <h3>AI for Work</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">Productivity, communication, research, Microsoft 365, and workplace automation.</p>
+      <div class="divider"></div>
+      <div class="meta"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 4 classes</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg> 3 labs</span></div>
+      <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/paths/work/">View this path <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+  </article><article class="path-card">
+    <a href="/lifequestai.com/paths/small-business/" aria-hidden="true" tabindex="-1"><span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1757691918960-e1ff33f70e3e?w=800&h=450&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="Staff working behind the counter of a small shop" loading="lazy" decoding="async" width="800" height="450">
+  </span></a>
+    <div class="path-body">
+      <div class="card-icon "><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16v10a1 1 0 01-1 1H5a1 1 0 01-1-1z"/><path d="M3 9l2-5h14l2 5"/><path d="M9 20v-6h6v6"/></svg></div>
+      <h3>AI for Small Business</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">Marketing, operations, customer service, automation, and decision support.</p>
+      <div class="divider"></div>
+      <div class="meta"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 4 classes</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg> 3 labs</span></div>
+      <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/paths/small-business/">View this path <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+  </article><article class="path-card">
+    <a href="/lifequestai.com/paths/nonprofits/" aria-hidden="true" tabindex="-1"><span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1529209076408-5a115ec9f1c6?w=800&h=450&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A community group gathered around a table for a meeting" loading="lazy" decoding="async" width="800" height="450">
+  </span></a>
+    <div class="path-body">
+      <div class="card-icon teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0112 8a3.9 3.9 0 017 2.5C19 15.5 12 20 12 20z"/></svg></div>
+      <h3>AI for Nonprofits & Communities</h3>
+      <p style="color:var(--ink-2);font-size:.95rem">AI adoption, communications, fundraising support, program development, and community impact.</p>
+      <div class="divider"></div>
+      <div class="meta"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg> 4 classes</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg> 3 labs</span></div>
+      <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/paths/nonprofits/">View this path <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+  </article></div>
+  </div></section>
+
+  <section class="sec tint"><div class="wrap">
+    <div class="row-between sec-head" style="margin-bottom:40px;max-width:none;align-items:flex-end">
+      <div style="max-width:62ch">
+        <p class="eyebrow amber">AI Labs</p>
+        <h2>Learn By Building</h2>
+        <p class="lede">Labs turn lessons into working solutions. You bring your own real problem; you leave with something that runs.</p>
+      </div>
+      <a class="btn btn-ghost" href="/lifequestai.com/labs/">Explore AI Labs <span class="arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="grid g3"><article class="lab-card">
+    <div class="row-between" style="gap:10px">
+      <span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span>
+      <span class="tiny muted">60 min</span>
+    </div>
+    <h3 style="font-size:1.08rem">Build Your AI Morning Brief</h3>
+    <p style="font-size:.93rem;color:var(--ink-2);margin:0">Assemble a single daily brief that pulls together your calendar, priorities, and the two or three things you actually need to know before 9am.</p>
+    <div class="divider" style="margin:6px 0"></div>
+    <p class="small" style="margin:0"><strong style="font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">You leave with</strong><br>A repeatable morning brief you receive or generate daily.</p>
+    <div class="skills" style="margin-top:4px"><span class="skill-tag">ChatGPT</span><span class="skill-tag">Calendar</span></div>
+    <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/your-ai-personal-assistant/">Paired with 03 — Your AI Personal Assistant <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </article><article class="lab-card">
+    <div class="row-between" style="gap:10px">
+      <span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span>
+      <span class="tiny muted">75 min</span>
+    </div>
+    <h3 style="font-size:1.08rem">Create a Personal Research Assistant</h3>
+    <p style="font-size:.93rem;color:var(--ink-2);margin:0">Configure an assistant that researches a topic properly — gathering, comparing, citing, and summarizing into a one-page brief you can act on.</p>
+    <div class="divider" style="margin:6px 0"></div>
+    <p class="small" style="margin:0"><strong style="font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">You leave with</strong><br>A research assistant plus a finished one-page brief.</p>
+    <div class="skills" style="margin-top:4px"><span class="skill-tag">Claude</span><span class="skill-tag">ChatGPT</span></div>
+    <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/your-ai-personal-assistant/">Paired with 03 — Your AI Personal Assistant <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </article><article class="lab-card">
+    <div class="row-between" style="gap:10px">
+      <span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span>
+      <span class="tiny muted">90 min</span>
+    </div>
+    <h3 style="font-size:1.08rem">Analyze Your Monthly Spending</h3>
+    <p style="font-size:.93rem;color:var(--ink-2);margin:0">Turn one month of anonymized transactions into a clear picture: categories, patterns, recurring costs, and three findings worth acting on.</p>
+    <div class="divider" style="margin:6px 0"></div>
+    <p class="small" style="margin:0"><strong style="font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">You leave with</strong><br>A spending analysis and three documented findings.</p>
+    <div class="skills" style="margin-top:4px"><span class="skill-tag">ChatGPT</span><span class="skill-tag">Spreadsheet</span></div>
+    <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/ai-for-financial-empowerment/">Paired with 06 — AI for Financial Empowerment <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </article><article class="lab-card">
+    <div class="row-between" style="gap:10px">
+      <span class="badge b-intermediate"><span class="badge-dot"></span>Intermediate</span>
+      <span class="tiny muted">90 min</span>
+    </div>
+    <h3 style="font-size:1.08rem">Build a Meeting Preparation Assistant</h3>
+    <p style="font-size:.93rem;color:var(--ink-2);margin:0">Create an assistant that prepares you before every meeting: who is attending, what happened last time, what is outstanding, and what you should ask.</p>
+    <div class="divider" style="margin:6px 0"></div>
+    <p class="small" style="margin:0"><strong style="font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">You leave with</strong><br>An automated meeting-prep packet.</p>
+    <div class="skills" style="margin-top:4px"><span class="skill-tag">ChatGPT</span><span class="skill-tag">Calendar</span><span class="skill-tag">Email</span></div>
+    <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/build-your-ai-chief-of-staff/">Paired with 08 — Build Your AI Chief of Staff <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </article><article class="lab-card">
+    <div class="row-between" style="gap:10px">
+      <span class="badge b-intermediate"><span class="badge-dot"></span>Intermediate</span>
+      <span class="tiny muted">2 hours</span>
+    </div>
+    <h3 style="font-size:1.08rem">Create an AI Newsletter Workflow</h3>
+    <p style="font-size:.93rem;color:var(--ink-2);margin:0">Build the full pipeline for a recurring newsletter — source gathering, drafting, review, and scheduling — with a human approval step before anything sends.</p>
+    <div class="divider" style="margin:6px 0"></div>
+    <p class="small" style="margin:0"><strong style="font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">You leave with</strong><br>A working newsletter workflow with approval.</p>
+    <div class="skills" style="margin-top:4px"><span class="skill-tag">Claude</span><span class="skill-tag">Zapier</span><span class="skill-tag">Email platform</span></div>
+    <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/ai-for-small-business-and-nonprofits/">Paired with 07 — AI for Small Business & Nonprofits <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </article><article class="lab-card">
+    <div class="row-between" style="gap:10px">
+      <span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span>
+      <span class="tiny muted">75 min</span>
+    </div>
+    <h3 style="font-size:1.08rem">Build a Family Planning Assistant</h3>
+    <p style="font-size:.93rem;color:var(--ink-2);margin:0">Set up a shared assistant for meals, schedules, activities, and household logistics that the whole family can actually use.</p>
+    <div class="divider" style="margin:6px 0"></div>
+    <p class="small" style="margin:0"><strong style="font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">You leave with</strong><br>A shared family planning assistant.</p>
+    <div class="skills" style="margin-top:4px"><span class="skill-tag">ChatGPT</span><span class="skill-tag">Shared calendar</span></div>
+    <div class="card-foot"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/ai-for-family-and-personal-life/">Paired with 05 — AI for Your Family & Personal Life <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </article></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="grid g2" style="gap:clamp(28px,5vw,64px);align-items:center">
+      <div>
+        <p class="eyebrow">Connect</p>
+        <h2>Not Sure Where to Start?</h2>
+        <p class="lede">Everyone enters the AI journey at a different level. Take a short assessment and LifeQuest AI will recommend the classes, labs, and learning path that best match your goals.</p>
+        <ul class="check-list" style="margin:24px 0">
+          <li>Four questions, about ninety seconds</li>
+          <li>A recommended path, first class, and first lab</li>
+          <li>No account required to see your result</li>
+        </ul>
+        <a class="btn btn-primary btn-lg" href="/lifequestai.com/assessment/">Find My Starting Point</a>
+      </div>
+      <div class="card" style="padding:clamp(24px,3vw,32px);box-shadow:var(--shadow-lg);border-radius:var(--r-xl)">
+        <p class="eyebrow teal" style="margin-bottom:18px">Sample questions</p>
+        <div class="stack" style="gap:14px">
+          <div class="mini" style="border:0;padding:0">
+              <div class="mini-ic">1</div>
+              <div><div class="t">How often do you currently use AI today?</div></div></div><div class="mini" style="border:0;padding:0">
+              <div class="mini-ic">2</div>
+              <div><div class="t">Where would AI help you most — personal life, family, career, business, or community?</div></div></div><div class="mini" style="border:0;padding:0">
+              <div class="mini-ic">3</div>
+              <div><div class="t">Which tools are you already using?</div></div></div><div class="mini" style="border:0;padding:0">
+              <div class="mini-ic">4</div>
+              <div><div class="t">What would you most like AI to help you accomplish?</div></div></div>
+        </div>
+        <div class="divider"></div>
+        <p class="small muted" style="margin:0">Your answers map to one of five learning paths and a recommended starting class and lab.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec tint"><div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow">Member Experience</p>
+      <h2>A Home For Your Progress</h2>
+      <p class="lede">A preview of the LifeQuest AI member experience — your journey stage, current class, recommended next step, and the toolkit you build as you go.</p>
+      <div style="margin-top:14px"><span class="sample-note">Visual prototype — sample data</span></div>
+    </div>
+    <div class="dash">
+    <div class="dash-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="tiny muted" style="margin-left:10px;font-family:var(--sans);font-weight:600">LifeQuest AI — Member Dashboard (prototype)</span>
+    </div>
+    <div class="dash-body">
+      <div class="stack">
+        <div>
+          <p class="eyebrow" style="margin-bottom:6px">Welcome back</p>
+          <h3 style="font-size:1.5rem">Good afternoon, sample member.</h3>
+          <p class="small muted" style="margin:6px 0 0">You’re three lessons from finishing your current class.</p>
+        </div>
+        <div class="panel">
+          <h4>Continue learning</h4>
+          <div class="badges" style="margin-bottom:10px"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span><span class="badge b-intermediate"><span class="badge-dot"></span>Intermediate</span></div>
+          <h3 style="font-size:1.12rem">04 — AI for Everyday Productivity</h3>
+          <div class="bar"><i style="width:68%"></i></div>
+          <div class="row-between"><span class="tiny muted">Lesson 8 of 12 · 68% complete</span>
+          <a class="btn btn-quiet btn-sm" href="/lifequestai.com/classes/ai-for-everyday-productivity/">Resume <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+        <div class="panel">
+          <h4>My AI journey</h4>
+          <p class="small" style="margin:0;color:var(--ink-2)">You are in the <strong>Apply</strong> stage — using AI on real work every week.</p>
+          <div class="stage-track">
+            <span class="stage done">Connect</span><span class="stage done">Learn</span>
+            <span class="stage now">Apply</span><span class="stage">Elevate</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>Recommended next</h4>
+          <div class="mini" style="border:0;padding:0">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div>
+            <div><div class="t">08 — Build Your AI Chief of Staff</div>
+            <div class="s">Because you finished the productivity workflows and asked about monitoring.</div></div>
+          </div>
+          <div style="margin-top:14px"><a class="btn btn-ghost btn-sm" href="/lifequestai.com/classes/build-your-ai-chief-of-staff/">Preview class</a></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="panel">
+          <h4>My toolkit</h4>
+          <div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/></svg></div><div><div class="t">14 saved prompts</div><div class="s">Email triage, meeting prep, research briefs</div></div></div>
+          <div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div><div><div class="t">4 connected tools</div><div class="s">ChatGPT, Claude, Outlook, Zapier</div></div></div>
+          <div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg></div><div><div class="t">2 labs completed</div><div class="s">Morning Brief · Meeting Prep Assistant</div></div></div>
+          <div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg></div><div><div class="t">1 automation live</div><div class="s">Weekly report draft — runs Fridays 7am</div></div></div>
+        </div>
+        <div class="panel">
+          <h4>Upcoming sessions</h4>
+          <div class="mini">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+            <div><div class="t">Live Workshop: Prompting Clinic</div><div class="s">Wed Sep 9 · 12:00 PM ET</div></div>
+          </div><div class="mini">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+            <div><div class="t">Family AI Night</div><div class="s">Wed Sep 16 · 7:00 PM ET</div></div>
+          </div><div class="mini">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+            <div><div class="t">Office Hours: Automation Lab</div><div class="s">Wed Sep 23 · 12:00 PM ET</div></div>
+          </div>
+          <div style="margin-top:12px"><a class="btn btn-quiet btn-sm" href="/lifequestai.com/resources/">All sessions <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-ghost" href="/lifequestai.com/member/">Open the full member preview <span class="arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow teal">Our Definition of Success</p>
+      <h2>Measure Progress By What You Can Do</h2>
+      <p class="lede">The goal isn’t finishing classes. Completion is easy and means very little. We measure whether you built practical AI capability you still use a month later.</p>
+    </div>
+    <div class="grid g4" style="background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow-sm);gap:0;overflow:hidden">
+      <div class="metric metric-cell">
+        <div class="num">Time</div><h4>TIME SAVED</h4><p>Hours returned each week from work you no longer do by hand.</p></div><div class="metric metric-cell">
+        <div class="num">Skills</div><h4>SKILLS DEVELOPED</h4><p>Capabilities you can demonstrate, not modules you clicked through.</p></div><div class="metric metric-cell">
+        <div class="num">Flows</div><h4>WORKFLOWS IMPROVED</h4><p>Real processes at home or at work that now run better.</p></div><div class="metric metric-cell">
+        <div class="num">Built</div><h4>SOLUTIONS BUILT</h4><p>Assistants, automations, and agents you created and still use.</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec tint"><div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Learner Voices</p>
+      <h2>What Progress Sounds Like</h2>
+      <p class="lede">These are illustrative personas created for this prototype, not real customer endorsements.</p>
+    </div>
+    <div class="grid g3">
+      <div class="quote">
+        <span class="sample-note" style="align-self:flex-start;margin-bottom:18px">Sample persona</span>
+        <blockquote>“I came in able to use ChatGPT for maybe one thing. By the end of the automation class I had a workflow that handles my weekly reporting on its own. The progression is what made it stick — nothing ever felt like a leap.”</blockquote>
+        <div class="who"><div class="avatar">WP</div>
+          <div><div class="n">Sample Persona — Working Professional</div><div class="r">Illustrative testimonial for prototype</div></div></div>
+      </div><div class="quote">
+        <span class="sample-note" style="align-self:flex-start;margin-bottom:18px">Sample persona</span>
+        <blockquote>“We are a team of four doing the work of ten. The opportunity map alone changed how we spend our week. We stopped experimenting randomly and started fixing the three processes that were actually costing us money.”</blockquote>
+        <div class="who"><div class="avatar">SB</div>
+          <div><div class="n">Sample Persona — Small Business Owner</div><div class="r">Illustrative testimonial for prototype</div></div></div>
+      </div><div class="quote">
+        <span class="sample-note" style="align-self:flex-start;margin-bottom:18px">Sample persona</span>
+        <blockquote>“My mother and my fifteen-year-old took the family class with me. That has never happened with any technology before. We came out with actual household rules instead of everybody guessing.”</blockquote>
+        <div class="who"><div class="avatar">FC</div>
+          <div><div class="n">Sample Persona — Family & Community Learner</div><div class="r">Illustrative testimonial for prototype</div></div></div>
+      </div>
+    </div>
+  </div></section>
+
+
+  <section class="sec"><div class="wrap">
+    <div class="row-between sec-head" style="margin-bottom:40px;max-width:none;align-items:flex-end">
+      <div style="max-width:62ch">
+        <p class="eyebrow">From the blog</p>
+        <h2>Learn Something Useful Today</h2>
+        <p class="lede">Short, practical articles you can act on before lunch. Each one points to the class that goes deeper.</p>
+      </div>
+      <a class="btn btn-ghost" href="/lifequestai.com/blog/">All posts <span class="arrow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="grid g3"><article class="post-card" data-cat="Automation" data-search="automation vs. agent: which one does your problem actually need? both run without you. only one of them decides what to do next — and that difference determines which you should build. automation">
+    <a class="post-card-link" href="/lifequestai.com/blog/automation-vs-agent/">
+      <span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1743385779347-1549dabf1320?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A hand-drawn workflow diagram on paper at a desk" loading="lazy" decoding="async" width="800" height="500">
+  </span>
+    </a>
+    <div class="post-body">
+      <div class="post-meta">
+        <span class="cat">Automation</span>
+        <span>August 14, 2026</span>
+        <span>3 min read</span>
+      </div>
+      <h3><a href="/lifequestai.com/blog/automation-vs-agent/">Automation vs. Agent: Which One Does Your Problem Actually Need?</a></h3>
+      <p>Both run without you. Only one of them decides what to do next — and that difference determines which you should build.</p>
+      <div class="card-foot">
+        <a class="btn btn-quiet btn-sm" href="/lifequestai.com/blog/automation-vs-agent/">Read the post <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </article><article class="post-card" data-cat="Small Business" data-search="don’t “adopt ai.” fix three processes. the organizations getting real value from ai didn’t roll out a strategy. they picked the three most repetitive things they do and attacked those. small business">
+    <a class="post-card-link" href="/lifequestai.com/blog/fix-three-processes/">
+      <span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1555953348-ab36203d4cad?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A shop owner preparing an order behind his café counter" loading="lazy" decoding="async" width="800" height="500">
+  </span>
+    </a>
+    <div class="post-body">
+      <div class="post-meta">
+        <span class="cat">Small Business</span>
+        <span>August 4, 2026</span>
+        <span>3 min read</span>
+      </div>
+      <h3><a href="/lifequestai.com/blog/fix-three-processes/">Don’t “Adopt AI.” Fix Three Processes.</a></h3>
+      <p>The organizations getting real value from AI didn’t roll out a strategy. They picked the three most repetitive things they do and attacked those.</p>
+      <div class="card-foot">
+        <a class="btn btn-quiet btn-sm" href="/lifequestai.com/blog/fix-three-processes/">Read the post <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </article><article class="post-card" data-cat="Families" data-search="your kid is already using ai for homework. here’s the conversation to have. the useful question isn’t whether they used ai. it’s whether the learning still happened — and that’s a line a family can actually agree on. families">
+    <a class="post-card-link" href="/lifequestai.com/blog/kids-ai-homework-conversation/">
+      <span class="media media-16-9">
+    <img src="https://images.unsplash.com/photo-1629360021730-3d258452c425?w=800&h=500&fit=crop&crop=entropy&auto=format&q=68&fm=jpg" alt="A family sitting together at a table with a laptop" loading="lazy" decoding="async" width="800" height="500">
+  </span>
+    </a>
+    <div class="post-body">
+      <div class="post-meta">
+        <span class="cat">Families</span>
+        <span>July 21, 2026</span>
+        <span>3 min read</span>
+      </div>
+      <h3><a href="/lifequestai.com/blog/kids-ai-homework-conversation/">Your Kid Is Already Using AI for Homework. Here’s the Conversation to Have.</a></h3>
+      <p>The useful question isn’t whether they used AI. It’s whether the learning still happened — and that’s a line a family can actually agree on.</p>
+      <div class="card-foot">
+        <a class="btn btn-quiet btn-sm" href="/lifequestai.com/blog/kids-ai-homework-conversation/">Read the post <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </article></div>
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    <div class="grid g2" style="gap:clamp(28px,5vw,60px);align-items:center">
+      <div>
+        <p class="eyebrow amber">Newsletter</p>
+        <h2>Stay Ahead Without Chasing AI News</h2>
+        <p class="lede">Get practical AI ideas, new tools, class announcements, tutorials, and one useful AI challenge delivered to your inbox.</p>
+        <div class="stack" style="gap:12px;margin-top:26px">
+          <div class="mini">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <div><div class="t">The five-minute meeting prep</div><div class="s">Issue 24 — One prompt, your calendar, and a habit that makes you the most prepared person in the room.</div></div>
+          </div><div class="mini">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <div><div class="t">Stop starting over</div><div class="s">Issue 23 — Why your second prompt should almost never be a rewrite of your first — plus the five follow-ups that fix most answers.</div></div>
+          </div><div class="mini">
+            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <div><div class="t">A spreadsheet, a statement, and an afternoon</div><div class="s">Issue 22 — How one learner found $214 a month in forgotten subscriptions.</div></div>
+          </div>
+        </div>
+        <p class="tiny muted" style="margin-top:16px">Sample past issues shown for this prototype.</p>
+      </div>
+      <div class="form-card">
+        <form id="nl-form" novalidate>
+          <h3 style="margin-bottom:8px">Join the newsletter</h3>
+          <p class="small muted" style="margin-bottom:24px">One email a week. Useful AI, no hype.</p>
+          <div class="field" id="f-name">
+            <label for="nl-name">First name</label>
+            <input id="nl-name" type="text" autocomplete="given-name" placeholder="Your first name">
+            <p class="err">Please enter your first name.</p>
+          </div>
+          <div class="field" id="f-email">
+            <label for="nl-email">Email address</label>
+            <input id="nl-email" type="email" autocomplete="email" placeholder="you@example.com">
+            <p class="err">Please enter a valid email address.</p>
+          </div>
+          <div class="field">
+            <label for="nl-interest">I’m most interested in <span class="muted" style="font-weight:400">(optional)</span></label>
+            <select id="nl-interest">
+              <option value="">Choose one…</option>
+              <option>AI for Personal Life</option><option>AI for Families</option>
+              <option>AI for Work</option><option>AI for Small Business</option>
+              <option>AI for Nonprofits</option><option>AI Automation &amp; Agents</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px" type="submit">Join the LifeQuest AI Newsletter</button>
+          <p class="hint" style="text-align:center;margin-top:14px">Useful AI. No hype. Unsubscribe anytime.</p>
+          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it. Prototype form — nothing is submitted.</p>
+        </form>
+        <div class="success hide" id="nl-success" role="status">
+          <div class="card-icon teal" style="margin:0;width:38px;height:38px;border-radius:11px;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><h4>You’re on the list.</h4>
+          <p>Check your inbox for a confirmation and your first practical AI challenge. In this prototype no email is actually sent.</p></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <section class="sec"><div class="wrap"><div class="cta-band">
+    <h2>Your Next Level Starts Here.</h2>
+    <p>You don’t need to become an AI expert overnight. You need a starting point, a practical roadmap, and opportunities to put what you learn into action.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary btn-lg" href="/lifequestai.com/assessment/">Start Learning</a>
+      <a class="btn btn-ghost btn-lg" href="/lifequestai.com/classes/">Explore Classes</a>
+    </div>
+  </div></div></section>
+</main>
+<footer class="footer"><div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/lifequestai.com/" style="margin-bottom:16px"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+  <rect width="40" height="40" rx="11" fill="url(#lqg)"/>
+  <path d="M11 27.5V12.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M11 27.5h8.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="26" cy="15.5" r="4.6" stroke="#fff" stroke-width="2.4"/>
+  <path d="M29.4 19.2L32 22" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <defs><linearGradient id="lqg" x1="0" y1="0" x2="40" y2="40">
+    <stop stop-color="#1F6FB2"/><stop offset="1" stop-color="#2C8F86"/></linearGradient></defs>
+</svg><span>LifeQuest<em> AI</em></span></a>
+        <p style="max-width:34ch;font-size:.94rem;color:#B9C6D4">Practical AI education for life, work, business, and community.</p>
+        <div class="socials" style="margin-top:20px">
+          <a href="/lifequestai.com/newsletter/" aria-label="Newsletter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="/lifequestai.com/blog/" aria-label="Blog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 012-2h13v18H6a2 2 0 01-2-2z"/><path d="M9 3v18"/></svg></a>
+          <a href="/lifequestai.com/resources/" aria-label="Sessions"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Learn</h4><div class="foot-links"><a href="/lifequestai.com/classes/">Classes</a><a href="/lifequestai.com/paths/">Learning Paths</a><a href="/lifequestai.com/labs/">AI Labs</a><a href="/lifequestai.com/resources/">Resources</a><a href="/lifequestai.com/assessment/">AI Assessment</a></div></div>
+      <div><h4>LifeQuest</h4><div class="foot-links"><a href="/lifequestai.com/about/">About</a><a href="/lifequestai.com/about/">Our Mission</a><a href="/lifequestai.com/blog/">Blog</a><a href="/lifequestai.com/newsletter/">Newsletter</a><a href="/lifequestai.com/contact/">Contact</a></div></div>
+      <div><h4>More</h4><div class="foot-links"><a href="/lifequestai.com/resources/">AI Tools</a><a href="/lifequestai.com/resources/">Guides</a><a href="/lifequestai.com/blog/">Articles</a><a href="/lifequestai.com/resources/">FAQs</a><a href="/lifequestai.com/member/">Member Preview</a></div></div>
+    </div>
+    <div class="foot-bottom">
+      <span class="tagline">Connect. Learn. Apply. Elevate.</span>
+      <nav aria-label="Legal">
+        <a href="/lifequestai.com/contact/">Privacy Policy</a><a href="/lifequestai.com/contact/">Terms</a><a href="/lifequestai.com/contact/">Accessibility</a><a href="/lifequestai.com/contact/">Contact</a>
+      </nav>
+    </div>
+    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© 2026 LifeQuest AI. Course content, instructor profiles, testimonials, events, and member dashboard data shown on this site are illustrative samples. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
+  </div></footer>
+<script src="/lifequestai.com/app.js" defer></script>
+</body>
+</html>
