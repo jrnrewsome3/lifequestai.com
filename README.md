@@ -5,7 +5,7 @@ The LifeQuest AI website: practical AI education for life, work, business, and c
 Static site. No frameworks, no dependencies to install, nothing to break. Content lives in
 plain data files; a small build script turns them into finished web pages.
 
-**Live site:** https://jrnrewsome3.github.io/lifequestai.com/
+**Live site:** https://lifequestai.com
 
 ---
 
@@ -17,7 +17,7 @@ plain data files; a small build script turns them into finished web pages.
 | Add or edit a class | Edit `src/data/classes.mjs`, run `npm run build`, commit |
 | Change wording on a page | Edit the matching file in `src/pages/`, run `npm run build`, commit |
 | Change colors or fonts | Edit the top of `src/styles.css`, run `npm run build`, commit |
-| Preview before publishing | `npm run serve` then open http://localhost:8080/lifequestai.com/ |
+| Preview before publishing | `npm run serve` then open http://localhost:8080/ |
 
 **The one rule: always run `npm run build` before you commit.** The `docs/` folder is what the
 public actually sees, so if you skip the build your change won't appear on the site.
@@ -113,19 +113,20 @@ The site goes live about a minute later, and every later push to `main` updates 
 remember `npm run build`), you can add a Pages workflow under `.github/workflows/` and switch
 the Pages source to **GitHub Actions**. Not required — the setup above works as-is.
 
-### Moving to your own domain
+### The custom domain
 
-When you're ready to use `lifequestai.com` instead of the github.io address:
+The site is served at **lifequestai.com**. Two things make that work:
 
-1. In `src/config.mjs`, change `BASE_PATH` from `'/lifequestai.com/'` to `'/'`
-2. Also set `origin` to `'https://lifequestai.com'`
-3. Run `npm run build`, commit, push
-4. In **Settings → Pages**, enter the domain under **Custom domain**
-5. At your domain registrar, point the DNS at GitHub Pages
-   ([GitHub's instructions](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site))
+- `docs/CNAME` contains the domain name. This is how GitHub Pages knows to claim it.
+  The build script never deletes this file.
+- `BASE_PATH` in `src/config.mjs` is `'/'`, so every internal link points at the domain root.
 
-Every internal link on the site is built from `BASE_PATH`, so that one edit updates all of them.
-The build script never deletes `docs/CNAME`, so a custom domain survives future builds.
+DNS lives at **Cloudflare**: four `A` records on the apex pointing at GitHub's Pages IPs, and a
+`CNAME` on `www` pointing at `jrnrewsome3.github.io`. Those records must stay **DNS only**
+(grey cloud, not proxied) — Cloudflare's proxy in front of GitHub Pages breaks certificate
+issuance and can cause redirect loops.
+
+If you ever move the site somewhere else, change `BASE_PATH`, update `docs/CNAME`, and rebuild.
 
 ---
 
