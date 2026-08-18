@@ -169,7 +169,7 @@ function viewHome(){
     <div class="sec-head">
       <p class="eyebrow">Learner Voices</p>
       <h2>What Progress Sounds Like</h2>
-      <p class="lede">These are illustrative personas created for this prototype, not real customer endorsements.</p>
+      <p class="lede">These are illustrative personas, not real customer endorsements.</p>
     </div>
     <div class="grid g3">
       ${TESTIMONIALS.map(t=>`<div class="quote">
