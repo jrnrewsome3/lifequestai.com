@@ -67,7 +67,7 @@ function Footer(){
           <a href="${url('/resources/')}" aria-label="Sessions">${I('calendar',18)}</a>
         </div>
       </div>
-      ${col('Learn',[['Classes','/classes/'],['Learning Paths','/paths/'],['AI Labs','/labs/'],['Resources','/resources/'],['AI Assessment','/assessment/']])}
+      ${col('Learn',[['Classes','/classes/'],['Learning Paths','/paths/'],['AI Labs','/labs/'],['Resources','/resources/'],['Older Adult Workshop','/workshop/'],['AI Assessment','/assessment/']])}
       ${col('LifeQuest',[['About','/about/'],['Our Mission','/about/'],['Blog','/blog/'],['Newsletter','/newsletter/'],['Contact','/contact/']])}
       ${col('More',[['AI Tools','/resources/'],['Guides','/resources/'],['Articles','/blog/'],['FAQs','/resources/'],['Member Preview','/member/']])}
     </div>

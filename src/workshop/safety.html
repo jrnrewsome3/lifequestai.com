@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety Tips & Scam Warnings — AI for Everyday Life</title>
+  <meta name="description" content="A complete safety reference for older adults using AI — scam warning signs, protection rules, and what to do if something goes wrong.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .master-rule {
+      background: var(--color-danger);
+      color: #fff;
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 6vw, var(--space-16));
+      text-align: center;
+      margin-block: var(--space-8);
+    }
+    .master-rule h2 { color: #fff; font-size: var(--text-2xl); margin-bottom: var(--space-4); }
+    .master-rule p { color: rgba(255,255,255,0.92); font-size: var(--text-lg); max-width: 52ch; margin-inline: auto; }
+
+    .safety-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6); margin-top: var(--space-8); }
+    .safety-section { background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); }
+    .safety-section h3 { font-size: var(--text-xl); margin-bottom: var(--space-5); display:flex; align-items:center; gap: var(--space-3); }
+    .safety-section ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); }
+    .safety-section li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-base); }
+    .safety-section li strong { display: block; margin-bottom: var(--space-1); }
+    .safety-section li .detail { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+    .quick-ref { background: var(--color-primary); color: #fff; border-radius: var(--radius-xl); padding: var(--space-8); }
+    .quick-ref h2 { color: #fff; font-size: var(--text-xl); margin-bottom: var(--space-6); }
+    .quick-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+    @media (max-width: 540px) { .quick-ref-grid { grid-template-columns: 1fr; } }
+    .quick-ref h3 { color: rgba(255,255,255,0.7); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-body); margin-bottom: var(--space-3); }
+    .quick-ref ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+    .quick-ref li { font-size: var(--text-sm); color: rgba(255,255,255,0.9); display: flex; gap: var(--space-2); }
+
+    @media print {
+      .site-header, .site-footer, .screen-only, .btn { display: none !important; }
+      body { background: white; color: black; }
+    }
+  </style>
+</head>
+<body data-page="safety">
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="AI for Everyday Life — Home">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true"><rect width="38" height="38" rx="10" fill="#1a4a7a"/><circle cx="19" cy="14" r="6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="19" cy="14" r="2.5" fill="#fff"/><path d="M10 30c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M26 10l3-3M12 10l-3-3M19 7V4" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><div class="logo-text">AI for Everyday Life</div><div class="logo-sub">LifeQuest AI · Older Adults</div></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="lessons/lesson-1.html" class="nav-link">Lessons</a>
+        <a href="handouts.html" class="nav-link">Handouts</a>
+        <a href="safety.html" class="nav-link active">Safety Tips</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="lesson-header">
+  <div class="container">
+    <h1>Safety Tips &amp; Scam Warnings</h1>
+    <p class="lead">A safety reference for your family, with a clean PDF fridge card to keep near your phone.</p>
+    <a href="downloads/family-safety-fridge-card.pdf" class="btn btn-outline" style="margin-top:var(--space-5);">Download Family Safety Card (PDF)</a>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <div class="master-rule" role="region" aria-label="The most important rule">
+      <h2>🛑 The One Rule That Never Changes</h2>
+      <p>
+        <strong>No legitimate organization ever asks you to pay using gift cards.</strong><br><br>
+        Not the IRS. Not Medicare. Not your electric company. Not your bank. Not a grandchild who says they're in jail.
+        If anyone — by phone, email, or text — asks you to buy gift cards to pay a bill or get someone out of trouble,
+        stop immediately. It is a scam. Every time. No exceptions.
+      </p>
+    </div>
+
+    __FAMILY_SAFETY__
+
+    <div class="safety-grid">
+
+      <div class="safety-section">
+        <h3>🚨 Warning Signs of a Scam</h3>
+        <ul>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔴</span>
+            <div>
+              <strong>Urgent pressure to act now</strong>
+              <span class="detail">Real organizations give you time to think. Scammers create panic — "Your account will be closed in 24 hours!"</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔴</span>
+            <div>
+              <strong>Gift card payment requests</strong>
+              <span class="detail">Google Play cards, iTunes cards, Amazon gift cards — no real bill collector ever accepts these.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔴</span>
+            <div>
+              <strong>Unexpected prize or refund</strong>
+              <span class="detail">"You've won $5,000 — just pay the processing fee first." You didn't win. There is no prize.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔴</span>
+            <div>
+              <strong>"Keep this secret"</strong>
+              <span class="detail">Any caller who tells you not to tell your family is a scammer. Real businesses never say this.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔴</span>
+            <div>
+              <strong>AI-cloned voice calls</strong>
+              <span class="detail">You may hear your grandchild's voice saying they're in trouble. It may be AI-generated. Always hang up and call them directly on their real number.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="safety-section">
+        <h3>🛡️ Your Protection Rules</h3>
+        <ul>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">📵</span>
+            <div>
+              <strong>Hang up and call back yourself</strong>
+              <span class="detail">Received an alarming call from your bank or government? Hang up. Look up the real number yourself and call it directly. Never trust a number a caller gives you.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">⏸️</span>
+            <div>
+              <strong>Pause before sharing anything online</strong>
+              <span class="detail">Before forwarding a news story, a health claim, or a warning message — wait. Check if it's true first.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">👨‍👩‍👧</span>
+            <div>
+              <strong>Tell a trusted person first</strong>
+              <span class="detail">If anything feels wrong — an urgent call, an unexpected email, an offer that sounds too good — tell a family member or friend before doing anything.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔒</span>
+            <div>
+              <strong>Protect your personal information</strong>
+              <span class="detail">Social Security number, Medicare ID, bank account numbers, and passwords should never be shared over the phone, by email, or typed into any AI tool.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">🔍</span>
+            <div>
+              <strong>Verify health information</strong>
+              <span class="detail">AI can explain things but can also be wrong. For anything affecting your health or medications, always confirm with your doctor or pharmacist.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="safety-section" style="border-color: var(--color-accent);">
+        <h3>💊 AI &amp; Health Safety</h3>
+        <ul>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">✅</span>
+            <div>
+              <strong>AI can explain — not prescribe</strong>
+              <span class="detail">Use AI to understand a diagnosis, prepare questions for your doctor, or learn about a condition. Never use it to change your medications on your own.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">✅</span>
+            <div>
+              <strong>Trusted health websites</strong>
+              <span class="detail">mayoclinic.org — nih.gov — cdc.gov — All end in .gov or are well-established institutions. Be careful with random health blogs.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">❌</span>
+            <div>
+              <strong>AI health scams</strong>
+              <span class="detail">Beware of ads claiming AI has "cured" cancer or discovered a miracle treatment. These are almost always scams designed to sell supplements or steal money.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="safety-section" style="border-color: var(--color-success);">
+        <h3>✅ If Something Goes Wrong</h3>
+        <ul>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">1️⃣</span>
+            <div>
+              <strong>Don't be embarrassed</strong>
+              <span class="detail">These scams fool very smart people. Scammers are professionals who do this all day long. Act quickly — that's all that matters.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">2️⃣</span>
+            <div>
+              <strong>Call your bank immediately</strong>
+              <span class="detail">Use the number on the back of your card. Ask them to freeze your account if you shared any financial information.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">3️⃣</span>
+            <div>
+              <strong>Report the fraud</strong>
+              <span class="detail">FTC: reportfraud.ftc.gov — AARP Helpline: 1-877-908-3360 — Your local police can also take a report.</span>
+            </div>
+          </li>
+          <li>
+            <span style="font-size:1.3rem;flex-shrink:0;">4️⃣</span>
+            <div>
+              <strong>Gift cards: call the card company</strong>
+              <span class="detail">If you bought gift cards for a scammer, call the gift card company immediately. Sometimes the funds can still be frozen.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- QUICK REFERENCE BOX -->
+    <div class="quick-ref" style="margin-top: var(--space-10);" role="region" aria-label="Quick reference numbers">
+      <h2>📞 Quick Reference Numbers</h2>
+      <div class="quick-ref-grid">
+        <div>
+          <h3>Report Fraud</h3>
+          <ul>
+            <li>🔗 FTC: reportfraud.ftc.gov</li>
+            <li>📞 AARP Fraud Helpline: 1-877-908-3360</li>
+            <li>📞 FBI Internet Crime: ic3.gov</li>
+            <li>📞 Social Security Fraud: 1-800-269-0271</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Trusted Information</h3>
+          <ul>
+            <li>🏥 Health: mayoclinic.org / nih.gov</li>
+            <li>🏛️ Medicare: medicare.gov</li>
+            <li>🏛️ Social Security: ssa.gov</li>
+            <li>💰 IRS: irs.gov (never calls you first)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Safe AI Tool Addresses</h3>
+          <ul>
+            <li>🤖 ChatGPT: chat.openai.com</li>
+            <li>💡 Claude: claude.ai</li>
+            <li>🔷 Copilot: copilot.microsoft.com</li>
+            <li>🔍 Perplexity: perplexity.ai</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Never Give These Out</h3>
+          <ul>
+            <li>❌ Social Security number</li>
+            <li>❌ Medicare ID or insurance number</li>
+            <li>❌ Bank account or routing numbers</li>
+            <li>❌ Passwords or PINs of any kind</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div style="padding-block: var(--space-10); border-top: 1.5px solid var(--color-divider); margin-top: var(--space-4);">
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:var(--space-4); align-items:center;">
+    <div>
+      <p style="font-size:var(--text-lg); font-weight:700; font-family:var(--font-display);">Continue learning</p>
+      <p style="font-size:var(--text-sm); color:var(--color-text-muted);">Go back to any lesson or download the printable handouts.</p>
+    </div>
+    <div style="display:flex; gap:var(--space-4); flex-wrap:wrap;">
+      <a href="lessons/lesson-1.html" class="btn btn-primary">Start From Lesson 1</a>
+      <a href="handouts.html" class="btn btn-outline">📄 Print Handouts</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col"><h5>AI for Everyday Life</h5><p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:28ch;">A plain-language curriculum for older adults and caregivers.</p></div>
+      <div class="footer-col"><h5>All Lessons</h5><ul><li><a href="lessons/lesson-1.html">1. What Is AI?</a></li><li><a href="lessons/lesson-2.html">2. Talking to AI</a></li><li><a href="lessons/lesson-3.html">3. Staying Safe</a></li><li><a href="lessons/lesson-4.html">4. AI as Research Helper</a></li><li><a href="lessons/lesson-5.html">5. What's Next</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="handouts.html">Printable Handouts</a></li><li><a href="safety.html">Safety Tips</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="__LIFEQUEST_HOME__">← Back to LifeQuest AI</a></p><p>Created for community workshops. Free to use and share.</p></div>
+  </div>
+</footer>
+<script>(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);if(t)t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';});const mb=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');if(mb&&nav)mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);});const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>12);},{passive:true});})();</script>
+</body>
+</html>

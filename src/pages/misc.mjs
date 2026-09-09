@@ -33,6 +33,12 @@ function viewResources(){
   return PageHero('Resources','Guides, Templates & Straight Answers',
     'Free material you can use before, during, or instead of a class. Updated as the tools change — because they change constantly.')
   + `<section class="sec-tight"><div class="wrap">
+      <article class="card" style="margin-bottom:32px">
+        <p class="eyebrow">Free workshop · Older adults & caregivers</p>
+        <h2>AI for Everyday Life</h2>
+        <p>Five friendly lessons on understanding AI, talking to an assistant, avoiding scams, checking information, and taking your next steps. Includes printable take-home handouts.</p>
+        <div><a class="btn btn-primary" href="${url('/workshop/')}">Explore the Workshop ${I('arrow',18)}</a></div>
+      </article>
       <div class="grid g3">
         ${RESOURCES.map(r=>`<article class="card card-hover">
           <div class="card-icon ${r.type==='Template'?'amber':r.type==='Guide'?'':'teal'}">${I(iconFor(r.type),22)}</div>

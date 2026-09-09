@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Everyday Life — A Workshop for Older Adults & Caregivers</title>
+  <meta name="description" content="Five short lessons to help older adults and caregivers understand AI tools safely and confidently. Plain language, safety tips, and printable handouts included.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-5); margin-top: var(--space-8); }
+    .why-card { background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); }
+    .why-card .icon { font-size: 2rem; margin-bottom: var(--space-3); }
+    .why-card h3 { font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-2); }
+    .why-card p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 100%; }
+
+    .quote-block {
+      background: var(--color-primary-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10) var(--space-12);
+      text-align: center;
+      margin-block: var(--space-8);
+    }
+    .quote-block blockquote { font-family: var(--font-display); font-size: var(--text-xl); font-style: italic; color: var(--color-primary); max-width: 52ch; margin-inline: auto; margin-bottom: var(--space-4); }
+    .quote-block cite { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+    .brain-svg { width: 180px; height: 180px; }
+
+    .how-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: center; }
+    @media (max-width: 640px) { .how-row { grid-template-columns: 1fr; } }
+
+    .handout-promo {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #0c2d5a 100%);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 6vw, var(--space-16));
+      color: #fff;
+      display: flex; gap: var(--space-8); align-items: center;
+      flex-wrap: wrap;
+    }
+    .handout-promo h2 { font-size: var(--text-xl); color: #fff; margin-bottom: var(--space-4); }
+    .handout-promo p { color: rgba(255,255,255,0.82); font-size: var(--text-base); max-width: 42ch; }
+    .handout-promo .btn-outline { border-color: rgba(255,255,255,0.5); color: #fff; }
+    .handout-promo .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+  </style>
+  <link rel="canonical" href="https://lifequestai.com/workshop/">
+</head>
+<body data-page="home">
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="AI for Everyday Life — Home">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+          <rect width="38" height="38" rx="10" fill="#1a4a7a"/>
+          <circle cx="19" cy="14" r="6" fill="none" stroke="#fff" stroke-width="2.2"/>
+          <circle cx="19" cy="14" r="2.5" fill="#fff"/>
+          <path d="M10 30c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M26 10l3-3M12 10l-3-3M19 7V4" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="logo-text">AI for Everyday Life</div>
+          <div class="logo-sub">LifeQuest AI · Older Adults</div>
+        </div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active" data-page="home">Home</a>
+        <a href="lessons/lesson-1.html" class="nav-link" data-page="lessons">Lessons</a>
+        <a href="handouts.html" class="nav-link" data-page="handouts">Handouts</a>
+        <a href="safety.html" class="nav-link" data-page="safety">Safety Tips</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          5-Lesson Workshop Curriculum
+        </div>
+        <h1 id="hero-heading">
+          Understanding <span>AI Tools</span><br>Without the Confusion
+        </h1>
+        <p class="hero-lead">
+          A friendly, plain-language guide to AI assistants like ChatGPT, Claude, and Copilot —
+          designed for older adults, caregivers, and anyone who wants to stay safe online.
+        </p>
+        <div class="hero-actions">
+          <a href="lessons/lesson-1.html" class="btn btn-primary btn-lg">
+            Start Lesson 1
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="downloads/my-everyday-ai-toolkit.pdf" class="btn btn-outline btn-lg">
+            Download Toolkit (PDF)
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="brain-svg" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="90" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
+          <!-- Brain shape -->
+          <ellipse cx="100" cy="95" rx="52" ry="44" fill="none" stroke="var(--color-primary)" stroke-width="2.5"/>
+          <!-- Left lobe -->
+          <path d="M68 80 Q48 65 52 88 Q42 100 58 108 Q56 122 72 118" stroke="var(--color-primary)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Right lobe -->
+          <path d="M132 80 Q152 65 148 88 Q158 100 142 108 Q144 122 128 118" stroke="var(--color-primary)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Center line -->
+          <path d="M100 52 Q97 75 100 95 Q103 115 100 138" stroke="var(--color-border)" stroke-width="1.5" fill="none"/>
+          <!-- Folds -->
+          <path d="M74 90 Q85 85 96 90 Q107 95 118 90" stroke="var(--color-primary)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M72 108 Q83 104 96 108 Q109 112 122 108" stroke="var(--color-primary)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Stars / sparkles -->
+          <path d="M148 42 l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="var(--color-accent)" opacity="0.9"/>
+          <path d="M40 55 l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="var(--color-accent)" opacity="0.7"/>
+          <path d="M158 130 l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="var(--color-primary)" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS -->
+<section aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-label">Why this workshop</div>
+    <h2 class="section-title" id="why-heading">AI is already in your life</h2>
+    <p class="section-desc">
+      From Siri on your phone to suggestions on YouTube, AI is everywhere.
+      This workshop helps you understand what it is, use it confidently, and avoid the traps.
+    </p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon">🤝</div>
+        <h3>Plain language, always</h3>
+        <p>No tech jargon. We explain everything the way a trusted friend would — clearly and patiently.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🛡️</div>
+        <h3>Safety first</h3>
+        <p>Every lesson includes what to watch out for — especially scams that target older adults online.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🖨️</div>
+        <h3>Take-home handouts</h3>
+        <p>Download large-print PDF activities to build useful AI skills and protect your family.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">⏱️</div>
+        <h3>Short lessons</h3>
+        <p>Each lesson is designed to fit a 20–30 minute session — no information overload.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON CARDS -->
+<section style="background: var(--color-surface);" aria-labelledby="lessons-heading">
+  <div class="container">
+    <div class="section-label">The curriculum</div>
+    <h2 class="section-title" id="lessons-heading">5 Lessons to Get You Started</h2>
+    <p class="section-desc">Each lesson builds on the last, but you can also jump straight to what interests you most.</p>
+
+    <div class="lesson-grid" role="list">
+
+      <a href="lessons/lesson-1.html" class="lesson-card" role="listitem">
+        <div class="lesson-number" aria-hidden="true">1</div>
+        <h3>What Is AI, Really?</h3>
+        <p>Understand what AI tools actually are — and what they aren't. We bust common myths and explain how they work in simple terms.</p>
+        <div class="lesson-meta">
+          <span class="lesson-tag">🕐 20 min</span>
+          <span class="lesson-tag">Beginner</span>
+        </div>
+      </a>
+
+      <a href="lessons/lesson-2.html" class="lesson-card" role="listitem">
+        <div class="lesson-number" aria-hidden="true">2</div>
+        <h3>Talking to an AI Assistant</h3>
+        <p>ChatGPT, Claude, and Copilot — what's the difference? Learn how to ask questions and get helpful answers in plain English.</p>
+        <div class="lesson-meta">
+          <span class="lesson-tag">🕐 25 min</span>
+          <span class="lesson-tag">Beginner</span>
+        </div>
+      </a>
+
+      <a href="lessons/lesson-3.html" class="lesson-card" role="listitem">
+        <div class="lesson-number" aria-hidden="true">3</div>
+        <h3>Staying Safe Online with AI</h3>
+        <p>Scams, misinformation, and privacy — the three biggest risks to know about, with easy rules to protect yourself every time.</p>
+        <div class="lesson-meta">
+          <span class="lesson-tag">🕐 25 min</span>
+          <span class="lesson-tag badge-red">⚠️ Important</span>
+        </div>
+      </a>
+
+      <a href="lessons/lesson-4.html" class="lesson-card" role="listitem">
+        <div class="lesson-number" aria-hidden="true">4</div>
+        <h3>AI as Your Research Helper</h3>
+        <p>Use AI to look up health information, plan travel, understand documents, and learn new things — without getting lost or misled.</p>
+        <div class="lesson-meta">
+          <span class="lesson-tag">🕐 20 min</span>
+          <span class="lesson-tag">Intermediate</span>
+        </div>
+      </a>
+
+      <a href="lessons/lesson-5.html" class="lesson-card" role="listitem">
+        <div class="lesson-number" aria-hidden="true">5</div>
+        <h3>What's Next: AI in Your Daily Life</h3>
+        <p>Obsidian for notes, AI agents, and where this technology is heading. A forward-looking look at how AI can work for you — not against you.</p>
+        <div class="lesson-meta">
+          <span class="lesson-tag">🕐 20 min</span>
+          <span class="lesson-tag">All levels</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section>
+  <div class="container--narrow" style="margin-inline:auto;padding-inline:clamp(var(--space-4),5vw,var(--space-12));">
+    <div class="quote-block">
+      <blockquote>"You don't have to understand everything about a car engine to drive safely. The same is true for AI."</blockquote>
+      <cite>— A guiding principle for this workshop</cite>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background: var(--color-surface);" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="how-row">
+      <div>
+        <div class="section-label">For facilitators</div>
+        <h2 class="section-title" id="how-heading">How to Run This Workshop</h2>
+        <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 52ch; margin-bottom: var(--space-6); line-height:1.7;">
+          This curriculum works in a library meeting room, a senior center, a faith community,
+          or even around a kitchen table. You don't need to be a tech expert — the lessons
+          guide you through everything.
+        </p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-body">
+              <h4>Print the handouts</h4>
+              <p>Download and print the one-page reference card for each lesson. Give one to each participant before you begin.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-body">
+              <h4>Read the lesson aloud or display it</h4>
+              <p>Project the lesson page on a screen, or simply read through each section together as a group.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-body">
+              <h4>Pause for questions</h4>
+              <p>The safety callouts are great discussion starters. Encourage participants to share experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="callout callout-info">
+          <div class="callout-icon">💡</div>
+          <div class="callout-body">
+            <h4>Workshop Tips</h4>
+            <ul>
+              <li>Keep sessions to 20–30 minutes each</li>
+              <li>Allow extra time for questions — they're a sign people are engaged</li>
+              <li>Encourage participants not to share personal info during demos</li>
+              <li>Use a laptop or tablet to demonstrate live when possible</li>
+              <li>Remind everyone: it's okay to go slowly</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout callout-safety">
+          <div class="callout-icon">✅</div>
+          <div class="callout-body">
+            <h4>No tech experience needed</h4>
+            <p>This curriculum is designed so any caring person with basic computer access can facilitate it confidently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HANDOUT PROMO -->
+<section>
+  <div class="container">
+    <div class="handout-promo">
+      <div style="flex:1; min-width:220px;">
+        <h2>Printable Handouts Included</h2>
+        <p>Build your Everyday AI Toolkit: five lesson worksheets, a family safety fridge card, and facilitator notes. Download clean PDFs with space to write.</p>
+        <div style="margin-top: var(--space-6); display:flex; gap: var(--space-4); flex-wrap:wrap;">
+          <a href="handouts.html" class="btn btn-outline" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); color:#fff;">
+            📄 View All Handouts
+          </a>
+          <a href="safety.html" class="btn btn-outline" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); color:#fff;">
+            🛡️ Safety Reference
+          </a>
+        </div>
+      </div>
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <rect x="20" y="15" width="70" height="90" rx="8" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+        <rect x="30" y="30" width="50" height="4" rx="2" fill="rgba(255,255,255,0.5)"/>
+        <rect x="30" y="42" width="40" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+        <rect x="30" y="54" width="45" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+        <rect x="30" y="66" width="35" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+        <rect x="30" y="78" width="42" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+        <circle cx="87" cy="90" r="20" fill="#f5a623"/>
+        <path d="M80 90l5 5 10-10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h5>AI for Everyday Life</h5>
+        <p style="font-size: var(--text-sm); color: var(--color-text-muted); max-width: 28ch;">A plain-language curriculum for older adults, caregivers, and workshop facilitators.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Lessons</h5>
+        <ul>
+          <li><a href="lessons/lesson-1.html">1. What Is AI?</a></li>
+          <li><a href="lessons/lesson-2.html">2. Talking to AI</a></li>
+          <li><a href="lessons/lesson-3.html">3. Staying Safe</a></li>
+          <li><a href="lessons/lesson-4.html">4. AI as Research Helper</a></li>
+          <li><a href="lessons/lesson-5.html">5. What's Next</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="handouts.html">Printable Handouts</a></li>
+          <li><a href="safety.html">Safety Tips & Scam Warnings</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="/">← Back to LifeQuest AI</a></p>
+      <p>Created for community workshops. Free to use and share. Always verify AI-generated information with trusted sources.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  if(t) t.addEventListener('click', () => {
+    d = d==='dark'?'light':'dark'; r.setAttribute('data-theme',d);
+    t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');
+    t.innerHTML = d==='dark'
+      ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+  const menuBtn=document.getElementById('menu-toggle'), nav=document.getElementById('main-nav');
+  if(menuBtn&&nav) menuBtn.addEventListener('click',()=>{ const o=nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded',o); });
+  const header=document.getElementById('site-header');
+  window.addEventListener('scroll',()=>{ header.classList.toggle('scrolled',window.scrollY>12); },{passive:true});
+})();
+</script>
+</body>
+</html>

@@ -11,6 +11,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import {buildWorkshop} from './src/lib/workshop.mjs';
 import {fileURLToPath} from 'node:url';
 
 import {SITE, url, absUrl} from './src/config.mjs';
@@ -193,11 +194,14 @@ fs.writeFileSync(path.join(OUT, 'favicon.svg'), `<svg xmlns="http://www.w3.org/2
 built.push('favicon.svg');
 
 /* .nojekyll stops GitHub Pages from running Jekyll over our files */
-fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
+fs.writeFileSync(path.join(OUT, '.nojekyll'), '\n');
+
+/* Workshop source, matching PDFs, activities and family safety guidance. */
+buildWorkshop(write);
 
 /* ---------- sitemap + robots ---------- */
 const pageUrls = built
-  .filter(f => f.endsWith('index.html'))
+  .filter(f => f.endsWith('.html') && f !== '404.html')
   .map(f => '/' + f.replace(/index\.html$/, ''))
   .map(p => (p === '/' ? '/' : p));
 

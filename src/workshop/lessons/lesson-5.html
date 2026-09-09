@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5: What's Next — AI in Your Daily Life — AI for Everyday Life</title>
+  <meta name="description" content="A forward-looking look at AI agents, Obsidian, OpenStax, and how AI can work for you — not against you.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .future-card { background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-surface) 100%); border: 1.5px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-6); }
+    .future-card h3 { font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-4); display:flex; align-items:center; gap: var(--space-3); }
+    .future-card p { max-width: 100%; }
+
+    .congrats { background: linear-gradient(135deg, var(--color-primary) 0%, #0c2d5a 100%); border-radius: var(--radius-xl); padding: clamp(var(--space-10), 8vw, var(--space-20)); text-align: center; margin-block: var(--space-8); }
+    .congrats h2 { color: #fff; font-size: var(--text-2xl); margin-bottom: var(--space-5); }
+    .congrats p { color: rgba(255,255,255,0.88); font-size: var(--text-lg); max-width: 48ch; margin-inline: auto; margin-bottom: var(--space-8); }
+    .congrats .btn-outline { border-color: rgba(255,255,255,0.5); color: #fff; }
+    .congrats .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+    .summary-item { background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); }
+    .summary-num { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2); }
+    .summary-item p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 100%; }
+  </style>
+</head>
+<body data-page="lessons">
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="AI for Everyday Life — Home">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true"><rect width="38" height="38" rx="10" fill="#1a4a7a"/><circle cx="19" cy="14" r="6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="19" cy="14" r="2.5" fill="#fff"/><path d="M10 30c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M26 10l3-3M12 10l-3-3M19 7V4" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><div class="logo-text">AI for Everyday Life</div><div class="logo-sub">LifeQuest AI · Older Adults</div></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="lesson-1.html" class="nav-link active">Lessons</a>
+        <a href="../handouts.html" class="nav-link">Handouts</a>
+        <a href="../safety.html" class="nav-link">Safety Tips</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="lesson-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Lesson 5</span></nav>
+    <div class="lesson-number-lg">
+      <span style="background:var(--color-primary);color:#fff;width:32px;height:32px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;">5</span>
+      Lesson 5 of 5 &nbsp;·&nbsp; About 20 minutes
+    </div>
+    <h1>What's Next: AI in Your Daily Life</h1>
+    <p class="lead">You've come a long way. This final lesson looks ahead — and gives you practical tools to keep learning confidently on your own terms.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <main class="lesson-content" id="main-content">
+
+      <h2>You're Already Ahead of Most People</h2>
+      <p>
+        The fact that you've worked through this curriculum puts you ahead of millions of people who simply feel confused
+        or scared about AI. You now know what it is, how to use it, how to stay safe, and how to verify information.
+      </p>
+      <p>
+        AI is going to keep evolving — but the core skills you've built here will help you navigate whatever comes next.
+        Let's look at a few more tools and ideas that are worth knowing about.
+      </p>
+
+      <h2>Tools Worth Knowing</h2>
+
+      <div class="future-card">
+        <h3><span>📓</span> Obsidian — Your Personal Notebook</h3>
+        <p>
+          <strong>Obsidian</strong> is a free note-taking app that stores everything on your own computer — not in anyone's cloud.
+          Think of it as a private digital notebook for keeping research, important documents, and notes from your AI conversations.
+        </p>
+        <p>
+          You can use it to store things like: the questions you want to ask your doctor, a summary of your insurance policy,
+          or a list of AI responses you found helpful. Because it's stored locally, it's private and works even without internet.
+        </p>
+        <div class="callout callout-info" style="margin-block: var(--space-5) 0;">
+          <div class="callout-icon">💡</div>
+          <div class="callout-body">
+            <p>Download Obsidian free at <strong>obsidian.md</strong>. When you first open it, create a "vault" — just a folder on your computer — and start typing notes. It's simpler than it sounds.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="future-card">
+        <h3><span>📚</span> OpenStax — Free Textbooks for Curious Minds</h3>
+        <p>
+          <strong>OpenStax</strong> is a nonprofit that provides free, peer-reviewed textbooks on subjects like biology, history,
+          psychology, economics, and more. If you've ever wanted to learn something deeply — not just Google it — OpenStax
+          gives you the same quality material used in college courses, for free.
+        </p>
+        <p>
+          You can pair OpenStax with an AI: read a chapter, then ask Claude or ChatGPT to explain anything that confused you
+          in plain language. It's like having a private tutor sitting next to you.
+        </p>
+        <div class="callout callout-info" style="margin-block: var(--space-5) 0;">
+          <div class="callout-icon">💡</div>
+          <div class="callout-body">
+            <p>Find free textbooks at <strong>openstax.org</strong>. All books are free to read online or download. No account required to browse.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="future-card">
+        <h3><span>🤖</span> AI Agents — What Are They?</h3>
+        <p>
+          You've been using AI like a conversation — you ask, it answers. But there's a newer type of AI called an <strong>agent</strong>
+          that can take actions on your behalf, like a very capable assistant.
+        </p>
+        <p>
+          An AI agent might help you: search multiple websites and summarize what it finds, fill out a form, send an email on your behalf,
+          or organize your calendar. Tools like Perplexity and Microsoft Copilot are already moving in this direction.
+        </p>
+        <p>
+          <strong>For now, the important thing to know:</strong> even when AI can take actions, you should always review what it's about to do
+          before it does it. A good AI agent will ask "Are you sure?" before sending anything or making changes. That's a safety feature — not an annoyance.
+        </p>
+        <div class="callout callout-warning" style="margin-block: var(--space-5) 0;">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-body">
+            <h4>Agents and Safety</h4>
+            <p>As AI becomes more capable of taking actions, safety becomes even more important. Only give an AI agent access to things you'd be comfortable with — and never give it access to your banking or financial accounts unless you fully understand and trust the tool.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="future-card">
+        <h3><span>🧩</span> How AI Keeps Getting Better</h3>
+        <p>
+          AI tools are improving rapidly. A few things to know:
+        </p>
+        <ul>
+          <li><strong>They'll get better at understanding context</strong> — meaning you'll need to explain yourself less</li>
+          <li><strong>They'll be built into more everyday devices</strong> — your phone, TV, hearing aids, and home appliances</li>
+          <li><strong>New scam tactics will emerge</strong> — staying informed is the best defense</li>
+          <li><strong>There will be regulation</strong> — governments around the world are working on rules for AI</li>
+        </ul>
+        <p>The skills you've developed in this workshop — healthy skepticism, verifying information, protecting personal data — will remain valuable no matter how AI evolves.</p>
+      </div>
+
+      <h2>The Mindset That Keeps You Safe</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">🌱</div>
+          <div class="step-body">
+            <h4>Stay curious, not fearful</h4>
+            <p>AI is a tool. Like electricity or the telephone, it can be misused — but it can also make life better. Curiosity is your greatest asset.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">🔍</div>
+          <div class="step-body">
+            <h4>Verify, then trust</h4>
+            <p>Check important things. Not everything — that would be exhausting. But health, money, and safety decisions always deserve a second opinion.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">🗣️</div>
+          <div class="step-body">
+            <h4>Talk about it</h4>
+            <p>Share what you've learned with family and friends. Discussing AI openly — especially with grandchildren — helps everyone in your family stay safer.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">📬</div>
+          <div class="step-body">
+            <h4>Keep learning at your own pace</h4>
+            <p>You don't need to know everything. Focus on what's useful to you right now — health research, writing, or planning — and let your confidence grow from there.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>What You've Learned in This Workshop</h2>
+
+      <div class="summary-grid">
+        <div class="summary-item"><div class="summary-num">1</div><p><strong>What AI is:</strong> A helpful but imperfect tool, not a robot or a person.</p></div>
+        <div class="summary-item"><div class="summary-num">2</div><p><strong>How to use it:</strong> Be specific, ask follow-ups, and it's always okay to ask for simpler explanations.</p></div>
+        <div class="summary-item"><div class="summary-num">3</div><p><strong>How to stay safe:</strong> Gift cards = scam. Verify. Never share personal IDs. Call back yourself.</p></div>
+        <div class="summary-item"><div class="summary-num">4</div><p><strong>AI as a research helper:</strong> Understand first, verify with professionals second.</p></div>
+        <div class="summary-item"><div class="summary-num">5</div><p><strong>What's coming:</strong> More capable AI, new tools, and the mindset to navigate it all confidently.</p></div>
+      </div>
+
+      <!-- CONGRATULATIONS -->
+      <div class="congrats" role="region" aria-label="Congratulations">
+        <h2>🎉 You've completed the workshop!</h2>
+        <p>Take the safety handout home, share what you've learned, and remember — it's always okay to go slowly. AI works for you, at your pace.</p>
+        <div style="display:flex; gap: var(--space-4); justify-content:center; flex-wrap:wrap;">
+          <a href="../handouts.html" class="btn btn-outline">📄 Download All Handouts</a>
+          <a href="../safety.html" class="btn btn-outline">🛡️ Safety Reference Card</a>
+          <a href="../index.html" class="btn btn-outline">🏠 Back to Home</a>
+        </div>
+      </div>
+
+      <div class="callout callout-safety">
+        <div class="callout-icon">✅</div>
+        <div class="callout-body">
+          <h4>Final Safety Reminders</h4>
+          <ul>
+            <li>AI is evolving — staying curious is more important than knowing everything</li>
+            <li>Obsidian (obsidian.md) stores your notes privately on your own device</li>
+            <li>OpenStax (openstax.org) has free, high-quality learning materials</li>
+            <li>AI agents that take actions should always ask you to confirm first</li>
+            <li>The skills from this workshop — verify, protect your data, pause before sharing — stay relevant no matter what AI does next</li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+
+    <aside class="lesson-sidebar" aria-label="Lesson resources">
+      <div class="sidebar-card">
+        <h4>Free Tools Mentioned</h4>
+        <ul>
+          <li><span class="check">🔗</span> <strong>Obsidian:</strong> obsidian.md (free notes app)</li>
+          <li><span class="check">🔗</span> <strong>OpenStax:</strong> openstax.org (free textbooks)</li>
+          <li><span class="check">🔗</span> <strong>ChatGPT:</strong> chat.openai.com</li>
+          <li><span class="check">🔗</span> <strong>Claude:</strong> claude.ai</li>
+          <li><span class="check">🔗</span> <strong>Perplexity:</strong> perplexity.ai</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Keep Learning</h4>
+        <ul>
+          <li><span class="check">📺</span> Search YouTube for "AI for seniors" — many free tutorials</li>
+          <li><span class="check">📚</span> Your local library may offer free tech help sessions</li>
+          <li><span class="check">👥</span> AARP has a free tech education program</li>
+          <li><span class="check">🎓</span> OpenStax has free college-level courses</li>
+        </ul>
+      </div>
+      <div class="sidebar-card" style="border-color:var(--color-success);background:var(--color-success-light);">
+        <h4 style="color:var(--color-success);">You Did It!</h4>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:100%;">Completing this workshop puts you ahead of most people when it comes to understanding AI safely. Share what you've learned.</p>
+      </div>
+      <div class="sidebar-card">
+        <h4>Printable Handout</h4>
+        <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-3);">Final reference card + all lessons summary.</p>
+        <a href="../handouts.html#lesson5" class="btn btn-outline" style="font-size:var(--text-xs);padding:var(--space-2) var(--space-4);">Get Worksheet &amp; PDF</a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="lesson-nav-footer">
+  <div class="container">
+    <div class="lesson-nav-inner">
+      <a href="lesson-4.html" class="btn btn-outline">← Lesson 4: AI as Research Helper</a>
+      <span style="font-size:var(--text-xs);color:var(--color-text-faint);">Lesson 5 of 5</span>
+      <a href="../handouts.html" class="btn btn-primary">📄 Download Handouts →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col"><h5>AI for Everyday Life</h5><p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:28ch;">A plain-language curriculum for older adults and caregivers.</p></div>
+      <div class="footer-col"><h5>All Lessons</h5><ul><li><a href="lesson-1.html">1. What Is AI?</a></li><li><a href="lesson-2.html">2. Talking to AI</a></li><li><a href="lesson-3.html">3. Staying Safe</a></li><li><a href="lesson-4.html">4. AI as Research Helper</a></li><li><a href="lesson-5.html">5. What's Next</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="../handouts.html">Printable Handouts</a></li><li><a href="../safety.html">Safety Tips</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="__LIFEQUEST_HOME__">← Back to LifeQuest AI</a></p><p>Created for community workshops. Free to use and share.</p></div>
+  </div>
+</footer>
+<script>(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);if(t)t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';});const mb=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');if(mb&&nav)mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);});const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>12);},{passive:true});})();</script>
+</body>
+</html>

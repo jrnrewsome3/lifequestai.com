@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4: AI as Your Research Helper — AI for Everyday Life</title>
+  <meta name="description" content="Use AI to look up health information, plan travel, understand documents, and learn new things — safely and effectively.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .use-case { background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-6); }
+    .use-case h3 { font-size: var(--text-xl); margin-bottom: var(--space-4); display:flex; align-items:center; gap: var(--space-3); }
+    .use-case .example-prompt { background: var(--color-primary-light); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); font-style: italic; font-size: var(--text-sm); margin-bottom: var(--space-4); border-left: 3px solid var(--color-primary); }
+    .use-case p { max-width: 100%; }
+
+    .verify-box { background: var(--color-accent-light); border: 1.5px solid var(--color-accent); border-radius: var(--radius-lg); padding: var(--space-6); margin-top: var(--space-4); }
+    .verify-box strong { color: var(--color-accent); }
+  </style>
+</head>
+<body data-page="lessons">
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="AI for Everyday Life — Home">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true"><rect width="38" height="38" rx="10" fill="#1a4a7a"/><circle cx="19" cy="14" r="6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="19" cy="14" r="2.5" fill="#fff"/><path d="M10 30c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M26 10l3-3M12 10l-3-3M19 7V4" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><div class="logo-text">AI for Everyday Life</div><div class="logo-sub">LifeQuest AI · Older Adults</div></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="lesson-1.html" class="nav-link active">Lessons</a>
+        <a href="../handouts.html" class="nav-link">Handouts</a>
+        <a href="../safety.html" class="nav-link">Safety Tips</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="lesson-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Lesson 4</span></nav>
+    <div class="lesson-number-lg">
+      <span style="background:var(--color-primary);color:#fff;width:32px;height:32px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;">4</span>
+      Lesson 4 of 5 &nbsp;·&nbsp; About 20 minutes
+    </div>
+    <h1>AI as Your Research Helper</h1>
+    <p class="lead">AI can be a genuinely useful tool in your daily life — for health questions, planning, understanding documents, and learning. Here's how to use it wisely.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <main class="lesson-content" id="main-content">
+
+      <h2>AI Is Like a Head Start, Not the Final Answer</h2>
+      <p>
+        Think of AI as a very smart starting point. It can explain a medical term in plain language,
+        give you questions to ask your doctor, or summarize a long insurance document.
+        But it should not be the last word on anything important.
+      </p>
+      <p>
+        The right approach: use AI to understand and prepare, then verify the important stuff with
+        a professional — your doctor, your bank, or a trusted family member.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <h4>The Two-Step Approach</h4>
+          <p><strong>Step 1:</strong> Use AI to understand and prepare — get a plain-language explanation, generate questions to ask, or get a summary.<br><br><strong>Step 2:</strong> Verify anything important with a doctor, pharmacist, licensed professional, or trusted source like the Mayo Clinic or your bank's official website.</p>
+        </div>
+      </div>
+
+      <h2>Real Ways AI Can Help You</h2>
+
+      <div class="use-case">
+        <h3><span>🏥</span> Understanding Health Information</h3>
+        <p>Your doctor uses medical language that can be confusing. AI can translate it into plain English.</p>
+        <div class="example-prompt">"My doctor said I have 'atrial fibrillation.' Can you explain what that means in simple terms, and give me a list of questions I should ask at my next appointment?"</div>
+        <p>AI can give you a clear explanation and help you feel more prepared — not scared — going into your visit. Always bring any AI-provided information to your doctor and ask: "Is this accurate for my situation?"</p>
+        <div class="verify-box"><strong>Always verify:</strong> AI can be wrong about drug interactions, dosages, and individual health conditions. Use it to understand, then confirm with your doctor or pharmacist.</div>
+      </div>
+
+      <div class="use-case">
+        <h3><span>📄</span> Understanding Documents</h3>
+        <p>Insurance policies, legal forms, Medicare notices — these documents are often written in confusing language. AI can help decode them.</p>
+        <div class="example-prompt">"I just received a letter from Medicare that says 'Your claim for [service] has been denied under Coverage Determination.' Can you explain what this means and what my options are?"</div>
+        <p>You can even copy a section of a confusing document (but never include your personal ID numbers) and ask the AI to explain it in plain language.</p>
+        <div class="verify-box"><strong>Safety note:</strong> Never paste your Medicare number, Social Security number, or account numbers into AI. You can replace them with "XXXX" before pasting.</div>
+      </div>
+
+      <div class="use-case">
+        <h3><span>✈️</span> Planning Travel</h3>
+        <p>AI is excellent at helping you plan a trip — suggesting destinations, creating packing lists, or finding accessible travel options.</p>
+        <div class="example-prompt">"I'd like to take a 5-day trip to Asheville, North Carolina with my sister. We're both in our 70s and prefer relaxed sightseeing — no long hikes. What would you recommend, and what's the best time of year to visit?"</div>
+        <p>AI can suggest itineraries, local restaurants, accessible hotels, and things to consider. Always double-check reservations directly with hotels and airlines.</p>
+      </div>
+
+      <div class="use-case">
+        <h3><span>✍️</span> Writing Help</h3>
+        <p>AI is very good at helping you write letters, emails, complaints, and even thank-you notes.</p>
+        <div class="example-prompt">"Can you help me write a letter to my insurance company appealing a claim denial? The claim was for a specialist visit I needed, and the denial reason was 'not medically necessary.'"</div>
+        <div class="example-prompt">"Help me write a firm but polite email to my landlord about a heating problem that hasn't been fixed after three requests."</div>
+        <p>You give AI the facts, and it helps you put them into clear, effective language. Always read the result carefully and make sure it says what you actually mean.</p>
+      </div>
+
+      <div class="use-case">
+        <h3><span>🌱</span> Learning Something New</h3>
+        <p>AI is an incredibly patient teacher — it never makes you feel silly for asking a "basic" question.</p>
+        <div class="example-prompt">"Can you teach me how to use Zoom for video calls with my grandchildren? Explain it step by step as if I've never done a video call before."</div>
+        <div class="example-prompt">"What's the easiest way to start growing tomatoes if I've never gardened before? I have a sunny balcony and some pots."</div>
+        <p>AI will walk you through anything, step by step, at whatever pace you need. You can ask it to slow down, repeat a step, or explain something differently — as many times as you like.</p>
+      </div>
+
+      <h2>Using Obsidian to Keep Your Notes</h2>
+      <p>
+        <strong>Obsidian</strong> is a free note-taking app that works offline (your notes stay on your own computer, not a company's server).
+        It's great for keeping track of AI conversations, research, or anything you want to remember.
+      </p>
+      <p>
+        You can copy an AI response — like a summary of your health condition or a doctor's visit plan — and paste it
+        into Obsidian to keep for later. Think of it like a personal notebook that lives on your computer.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-icon">📓</div>
+        <div class="callout-body">
+          <h4>Why Obsidian is Good for Privacy</h4>
+          <p>Unlike cloud-based notes apps, Obsidian stores your notes locally on your device. Your notes are not uploaded to any company's servers by default. This makes it a good choice for health notes or personal research.</p>
+        </div>
+      </div>
+
+      <h2>When to Verify — Every Time</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">🏥</div>
+          <div class="step-body"><h4>Health &amp; medication</h4><p>Always verify with your doctor or pharmacist before changing anything about your health or medications.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">💰</div>
+          <div class="step-body"><h4>Financial &amp; legal</h4><p>Tax advice, investment decisions, and legal questions — always consult a licensed professional. AI can help you understand, not decide.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">📰</div>
+          <div class="step-body"><h4>Current events</h4><p>AI knowledge has a cutoff date — it may not know about recent news. For anything time-sensitive, check a news source you trust.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">📋</div>
+          <div class="step-body"><h4>Any "official" information</h4><p>For Social Security, Medicare, or government benefits questions — always verify at the official government website (.gov addresses only).</p></div>
+        </div>
+      </div>
+
+      <div class="callout callout-safety">
+        <div class="callout-icon">✅</div>
+        <div class="callout-body">
+          <h4>Safety Takeaway for This Lesson</h4>
+          <ul>
+            <li>AI is a great first step for research — not the final answer</li>
+            <li>Never paste personal ID numbers into AI — replace them with "XXXX"</li>
+            <li>Use AI to prepare questions for your doctor, not to replace your doctor</li>
+            <li>Always verify health, financial, and legal information with a professional</li>
+            <li>Obsidian is a private, local note-taking app — good for keeping your AI research organized</li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+
+    <aside class="lesson-sidebar" aria-label="Lesson resources">
+      <div class="sidebar-card">
+        <h4>Great AI Prompts to Try</h4>
+        <ul>
+          <li><span class="check">💬</span> "Explain [medical term] in simple terms"</li>
+          <li><span class="check">💬</span> "Give me questions to ask my doctor about [condition]"</li>
+          <li><span class="check">💬</span> "Help me write a letter to [company] about [issue]"</li>
+          <li><span class="check">💬</span> "Summarize this paragraph in plain English"</li>
+          <li><span class="check">💬</span> "Plan a 3-day trip to [city] for two people"</li>
+          <li><span class="check">💬</span> "Teach me [skill] step by step, for a beginner"</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Trusted Verify Sources</h4>
+        <ul>
+          <li><span class="check">🔗</span> Health: mayoclinic.org</li>
+          <li><span class="check">🔗</span> Health: nih.gov</li>
+          <li><span class="check">🔗</span> Medicare: medicare.gov</li>
+          <li><span class="check">🔗</span> Social Security: ssa.gov</li>
+          <li><span class="check">🔗</span> Tax info: irs.gov</li>
+        </ul>
+      </div>
+      <div class="sidebar-card" style="border-color:var(--color-danger);background:var(--color-danger-light);">
+        <h4 style="color:var(--color-danger);">Never Paste Into AI</h4>
+        <ul>
+          <li><span class="x">❌</span> Medicare / insurance ID numbers</li>
+          <li><span class="x">❌</span> Social Security numbers</li>
+          <li><span class="x">❌</span> Bank or credit card numbers</li>
+          <li><span class="x">❌</span> Full date of birth + address together</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Printable Handout</h4>
+        <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-3);">Reference card for Lesson 4.</p>
+        <a href="../handouts.html#lesson4" class="btn btn-outline" style="font-size:var(--text-xs);padding:var(--space-2) var(--space-4);">Get Worksheet &amp; PDF</a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="lesson-nav-footer">
+  <div class="container">
+    <div class="lesson-nav-inner">
+      <a href="lesson-3.html" class="btn btn-outline">← Lesson 3: Staying Safe</a>
+      <span style="font-size:var(--text-xs);color:var(--color-text-faint);">Lesson 4 of 5</span>
+      <a href="lesson-5.html" class="btn btn-primary">Next: What's Next →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col"><h5>AI for Everyday Life</h5><p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:28ch;">A plain-language curriculum for older adults and caregivers.</p></div>
+      <div class="footer-col"><h5>All Lessons</h5><ul><li><a href="lesson-1.html">1. What Is AI?</a></li><li><a href="lesson-2.html">2. Talking to AI</a></li><li><a href="lesson-3.html">3. Staying Safe</a></li><li><a href="lesson-4.html">4. AI as Research Helper</a></li><li><a href="lesson-5.html">5. What's Next</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="../handouts.html">Printable Handouts</a></li><li><a href="../safety.html">Safety Tips</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="__LIFEQUEST_HOME__">← Back to LifeQuest AI</a></p><p>Created for community workshops. Free to use and share.</p></div>
+  </div>
+</footer>
+<script>(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);if(t)t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';});const mb=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');if(mb&&nav)mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);});const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>12);},{passive:true});})();</script>
+</body>
+</html>

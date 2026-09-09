@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3: Staying Safe Online with AI — AI for Everyday Life</title>
+  <meta name="description" content="Learn the three biggest risks with AI — scams, misinformation, and privacy — with easy rules to protect yourself.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .scam-card {
+      background: var(--color-danger-light);
+      border: 2px solid var(--color-danger);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+    }
+    .scam-card h3 { color: var(--color-danger); font-size: var(--text-xl); margin-bottom: var(--space-4); }
+    .scam-card p { margin-bottom: var(--space-3); max-width: 100%; }
+    .scam-signal { background: color-mix(in oklab, var(--color-danger) 8%, white); border-radius: var(--radius-md); padding: var(--space-4); margin-top: var(--space-3); }
+    .scam-signal strong { color: var(--color-danger); }
+
+    .rule-list { display: flex; flex-direction: column; gap: var(--space-4); margin-block: var(--space-6); }
+    .rule-item { display: flex; gap: var(--space-4); align-items: flex-start; background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); }
+    .rule-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .rule-body h4 { font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-1); }
+    .rule-body p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 100%; }
+
+    .stop-box {
+      background: var(--color-danger);
+      color: #fff;
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-10);
+      text-align: center;
+      margin-block: var(--space-8);
+    }
+    .stop-box h2 { color: #fff; font-size: var(--text-2xl); margin-bottom: var(--space-4); }
+    .stop-box p { color: rgba(255,255,255,0.9); font-size: var(--text-lg); max-width: 52ch; margin-inline: auto; }
+  </style>
+  <link rel="canonical" href="https://lifequestai.com/workshop/lessons/lesson-3.html">
+</head>
+<body data-page="lessons">
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="AI for Everyday Life — Home">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true"><rect width="38" height="38" rx="10" fill="#1a4a7a"/><circle cx="19" cy="14" r="6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="19" cy="14" r="2.5" fill="#fff"/><path d="M10 30c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M26 10l3-3M12 10l-3-3M19 7V4" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><div class="logo-text">AI for Everyday Life</div><div class="logo-sub">LifeQuest AI · Older Adults</div></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="lesson-1.html" class="nav-link active">Lessons</a>
+        <a href="../handouts.html" class="nav-link">Handouts</a>
+        <a href="../safety.html" class="nav-link">Safety Tips</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="lesson-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Lesson 3</span>
+    </nav>
+    <div class="lesson-number-lg">
+      <span style="background:var(--color-primary);color:#fff;width:32px;height:32px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;">3</span>
+      Lesson 3 of 5 &nbsp;·&nbsp; About 25 minutes
+    </div>
+    <h1>Staying Safe Online with AI</h1>
+    <p class="lead">This is the most important lesson. Three risks everyone needs to understand — and simple, memorable rules to protect yourself every time.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <main class="lesson-content" id="main-content">
+
+      <h2>Why Safety Matters More Than Ever</h2>
+      <p>
+        AI makes scammers more dangerous. In the past, you could spot a scam email because of bad grammar or obvious mistakes.
+        Now, scammers use AI to write perfectly polished, convincing messages — often using your name and personal details
+        they've found online.
+      </p>
+      <p>
+        The good news: the warning signs haven't changed. What scammers want from you is still the same.
+        If you know what to look for, you can protect yourself.
+      </p>
+
+      <h2>The Three Big Risks</h2>
+
+      <!-- RISK 1 -->
+      <div class="scam-card" role="region" aria-label="Risk 1: AI-powered scams">
+        <h3>🚨 Risk 1: AI-Powered Scams</h3>
+        <p>
+          Scammers are now using AI to make their schemes more convincing than ever. They can:
+        </p>
+        <ul>
+          <li>Write flawless emails pretending to be your bank, Medicare, or the IRS</li>
+          <li>Clone voices — using a short audio clip from social media to fake a call from your grandchild saying they're in trouble</li>
+          <li>Create fake websites that look exactly like real ones</li>
+          <li>Generate fake "government documents" or invoices</li>
+        </ul>
+
+        <div class="scam-signal">
+          <p><strong>The "Grandparent Scam" — Now Powered by AI:</strong> You get a call. It sounds exactly like your grandchild's voice, saying "Grandma, I'm in jail — please send bail money right away and don't tell Mom." This call may be AI-generated from just a few seconds of real audio. Always hang up and call your grandchild's real number to verify.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-danger">
+        <div class="callout-icon">🛑</div>
+        <div class="callout-body">
+          <h4>The ONE Rule to Remember</h4>
+          <p><strong>Stop when an unexpected caller pressures you to send money urgently.</strong> Demands for gift cards, cryptocurrency, or an immediate transfer are warning signs. End the call and independently verify the request through a trusted number before paying.</p>
+        </div>
+      </div>
+
+      <section class="family-safety" aria-labelledby="family-safety-heading">
+  <p class="section-label">Make a plan with your family</p>
+  <h2 id="family-safety-heading">A family safe word: Pause. Ask. Call back.</h2>
+  <p>AI can imitate a familiar voice. If a distressed caller sounds like your child, grandchild, or another loved one, check who is calling before acting on a request for money or private information.</p>
+  <ol>
+    <li><strong>Pause.</strong> Take a breath. Urgency, secrecy, and a familiar voice are not proof of identity.</li>
+    <li><strong>Ask.</strong> Ask the caller to tell you your family's private code word or phrase. Do not say it first or offer hints.</li>
+    <li><strong>Call back.</strong> End the call and dial a saved, trusted number. Do not use a new number supplied by the caller. Even a correct phrase is only one check.</li>
+  </ol>
+  <h3>Choose your phrase before an emergency</h3>
+  <p>Agree privately on something memorable that is not a birthday, pet name, or public fact. Share it only with trusted family members and replace it if it becomes known to others. Never enter the actual phrase into an AI tool or this website, and do not write it on your fridge card.</p>
+  <p><strong>Cannot verify the caller?</strong> Contact another trusted person. Not knowing the phrase does not establish whether someone is safe or in danger. If you believe there is immediate danger, call your local emergency number; in the U.S., call 911.</p>
+  <h3>Practice together</h3>
+  <p>Use a pretend phrase for a short role-play. Practice pausing, asking, and finding the trusted number you would call. Do not make real emergency calls during practice.</p>
+  <p><a class="btn btn-primary" href="../downloads/family-safety-fridge-card.pdf">Download the family safety fridge card (PDF)</a></p>
+  <p class="source-note">Sources: <a href="https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money">FTC family emergency scam guidance</a> and <a href="https://www.fbi.gov/investigate/cyber/alerts/2025/senior-us-officials-continue-to-be-impersonated-in-malicious-messaging-campaign">FBI family code word guidance</a>. Checked September 2026.</p>
+</section>
+
+
+      <!-- RISK 2 -->
+      <div class="scam-card" role="region" aria-label="Risk 2: Misinformation">
+        <h3>📰 Risk 2: AI Misinformation</h3>
+        <p>
+          AI can generate convincing-sounding articles, social media posts, photos, and videos that contain false information.
+          This is sometimes called "deepfakes" (for videos) or "AI hallucinations" (for text that AI made up).
+        </p>
+        <ul>
+          <li>AI-generated photos can show events that never happened</li>
+          <li>Fake "news articles" can appear on real-looking websites</li>
+          <li>Health misinformation spreads fast on social media — AI makes it worse</li>
+          <li>Even AI chatbots can make up facts and present them confidently</li>
+        </ul>
+        <div class="scam-signal">
+          <strong>How to tell if something is real:</strong> Before sharing anything online, ask yourself: Can I find this story on a major news network I trust? Does the photo look slightly "off" around faces and hands? Is the website one I've heard of before? If you're not sure — don't share it.
+        </div>
+      </div>
+
+      <!-- RISK 3 -->
+      <div class="scam-card" role="region" aria-label="Risk 3: Privacy">
+        <h3>🔐 Risk 3: Your Privacy</h3>
+        <p>
+          When you type something into an AI tool, that information may be stored by the company.
+          This isn't always a problem, but it means you should be thoughtful about what you share.
+        </p>
+        <ul>
+          <li>AI companies may use your conversations to improve their models</li>
+          <li>Information you share is stored on their servers — treat it like a postcard, not a sealed letter</li>
+          <li>Third-party AI tools (not the major ones) may have unknown privacy practices</li>
+        </ul>
+        <div class="scam-signal">
+          <strong>Simple privacy rule:</strong> Don't type anything into an AI that you wouldn't want a stranger to read. Your Social Security number, full Medicare ID, banking passwords, and medical details should never go into any AI tool.
+        </div>
+      </div>
+
+      <h2>Your Personal Safety Rules</h2>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <div class="rule-icon">📵</div>
+          <div class="rule-body">
+            <h4>Hang up and call back yourself</h4>
+            <p>If you get an unexpected call from your bank, Medicare, the IRS, or a family member asking for money — hang up. Find the real phone number yourself and call back. Scammers rely on the pressure of the moment.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-icon">🛍️</div>
+          <div class="rule-body">
+            <h4>Never pay with gift cards</h4>
+            <p>Gift cards (like Google Play, Amazon, or iTunes cards) are untraceable cash. No real government agency, utility company, or family member will ask you to pay this way.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-icon">⏸️</div>
+          <div class="rule-body">
+            <h4>Pause before you share</h4>
+            <p>Before sharing a news story, a photo, or a health claim on social media — pause for 30 seconds. Ask: "Do I know for sure this is true?" If not, don't share it.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-icon">🔒</div>
+          <div class="rule-body">
+            <h4>Keep personal information personal</h4>
+            <p>Never type your Social Security number, full Medicare ID, bank account numbers, or passwords into any AI tool — or any website you didn't navigate to yourself.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-icon">👨‍👩‍👧</div>
+          <div class="rule-body">
+            <h4>Talk to someone you trust first</h4>
+            <p>If you receive an alarming message, an unusual request, or an offer that seems too good to be true — call a family member, close friend, or trusted neighbor before doing anything. Scammers want you to act alone and fast.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-icon">🔍</div>
+          <div class="rule-body">
+            <h4>Verify health information</h4>
+            <p>AI can provide general health information, but it can also be wrong. Always verify with your doctor, pharmacist, or trusted sites like mayoclinic.org or nih.gov before changing your medications or treatments.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stop-box" role="region" aria-label="If you think you've been scammed">
+        <h2>🛑 If You Think You've Been Scammed</h2>
+        <p>Don't be embarrassed — it happens to very smart people. Act quickly:<br><br>
+        <strong>1.</strong> Call your bank immediately to freeze your accounts.<br>
+        <strong>2.</strong> Report to the FTC at <strong>reportfraud.ftc.gov</strong><br>
+        <strong>3.</strong> Tell a trusted family member or friend right away.<br>
+        <strong>4.</strong> If you gave gift cards, call the card company — sometimes they can freeze funds.</p>
+      </div>
+
+      <div class="callout callout-safety">
+        <div class="callout-icon">✅</div>
+        <div class="callout-body">
+          <h4>Safety Takeaway for This Lesson</h4>
+          <ul>
+            <li>No government agency ever asks for gift card payments — ever</li>
+            <li>AI can clone voices — always call back on a number you look up yourself</li>
+            <li>Don't share personal information in any AI tool</li>
+            <li>Pause before sharing anything online — misinformation spreads fast</li>
+            <li>If something feels wrong, trust that feeling and talk to someone before acting</li>
+          </ul>
+        </div>
+      </div>
+
+    <section class="lesson-activity" aria-labelledby="activity-heading"><p class="section-label">Make it yours</p><h2 id="activity-heading">My Family Safety Plan</h2><p>Practice responding to an urgent family call using a pretend code word. Later, agree on your real family phrase privately and complete your trusted callback contacts.</p><p><a class="btn btn-primary" href="../downloads/my-family-safety-plan.pdf">Download your activity (PDF)</a></p><p><a href="../handouts.html#lesson3">Read the worksheet online</a></p></section></main>
+
+    <aside class="lesson-sidebar" aria-label="Lesson resources">
+      <div class="sidebar-card" style="border-color:var(--color-danger);background:var(--color-danger-light);">
+        <h4 style="color:var(--color-danger);">Scam Red Flags</h4>
+        <ul>
+          <li><span class="x">🚩</span> Urgent pressure to act NOW</li>
+          <li><span class="x">🚩</span> Any request for gift cards</li>
+          <li><span class="x">🚩</span> Unexpected call from "government"</li>
+          <li><span class="x">🚩</span> "You've won a prize" — unsolicited</li>
+          <li><span class="x">🚩</span> AI voice that sounds like family</li>
+          <li><span class="x">🚩</span> Request to stay secret</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Trusted Resources</h4>
+        <ul>
+          <li><span class="check">🔗</span> <strong>FTC Fraud Reports:</strong> reportfraud.ftc.gov</li>
+          <li><span class="check">🔗</span> <strong>AARP Fraud Helpline:</strong> 1-877-908-3360</li>
+          <li><span class="check">🔗</span> <strong>Medicare Questions:</strong> 1-800-MEDICARE</li>
+          <li><span class="check">🔗</span> <strong>Health Facts:</strong> mayoclinic.org</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Printable Handout</h4>
+        <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-3);">Safety reference card for Lesson 3 — great to keep on the fridge.</p>
+        <a href="../handouts.html#lesson3" class="btn btn-outline" style="font-size:var(--text-xs);padding:var(--space-2) var(--space-4);">Get Worksheet &amp; PDF</a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="lesson-nav-footer">
+  <div class="container">
+    <div class="lesson-nav-inner">
+      <a href="lesson-2.html" class="btn btn-outline">← Lesson 2: Talking to AI</a>
+      <span style="font-size:var(--text-xs);color:var(--color-text-faint);">Lesson 3 of 5</span>
+      <a href="lesson-4.html" class="btn btn-primary">Next: AI as Research Helper →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col"><h5>AI for Everyday Life</h5><p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:28ch;">A plain-language curriculum for older adults and caregivers.</p></div>
+      <div class="footer-col"><h5>All Lessons</h5><ul><li><a href="lesson-1.html">1. What Is AI?</a></li><li><a href="lesson-2.html">2. Talking to AI</a></li><li><a href="lesson-3.html">3. Staying Safe</a></li><li><a href="lesson-4.html">4. AI as Research Helper</a></li><li><a href="lesson-5.html">5. What's Next</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="../handouts.html">Printable Handouts</a></li><li><a href="../safety.html">Safety Tips</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="/">← Back to LifeQuest AI</a></p><p>Created for community workshops. Free to use and share.</p></div>
+  </div>
+</footer>
+<script>(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);if(t)t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';});const mb=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');if(mb&&nav)mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);});const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>12);},{passive:true});})();</script>
+</body>
+</html>

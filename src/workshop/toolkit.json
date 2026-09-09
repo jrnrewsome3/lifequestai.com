@@ -1,0 +1,113 @@
+{
+  "title": "My Everyday AI Toolkit",
+  "edition": "September 2026",
+  "pages": [
+    {
+      "id": "lesson1", "file": "my-ai-starting-plan.pdf", "label": "LESSON 1 / START HERE",
+      "title": "My AI Starting Plan",
+      "intro": "Choose a small, useful task. You do not need to understand every AI feature to begin. Keep this toolkit and write on the printed pages; nothing is submitted online.",
+      "activity": "Choose three everyday tasks AI might help with. Circle one to try and identify the personal details you can leave out.",
+      "blocks": [
+        {"heading": "TRY SOMETHING USEFUL", "text": "Ideas: plan a simple meal, draft a thank-you note, explain a hobby, or make a packing list."},
+        {"field": "Three everyday tasks I would like help with", "lines": 3},
+        {"field": "The first task I will try", "lines": 2},
+        {"heading": "BUILD A SAFETY HABIT", "text": "Use made-up names or general descriptions. Leave out passwords, identity numbers, banking details, and private family information. AI can be mistaken even when it sounds confident."},
+        {"field": "Details I can leave out or replace", "lines": 2},
+        {"check": "I can explain one useful thing AI can do and one reason to check its answer."}
+      ]
+    },
+    {
+      "id": "lesson2", "file": "my-prompt-cards.pdf", "label": "LESSON 2 / ASK CLEARLY",
+      "title": "My Everyday Prompt Cards",
+      "intro": "A prompt is the request you give an AI. Start with one example below, then change the words to fit your life. Do not add sensitive personal information.",
+      "activity": "Try one prompt, ask for an improvement, and save the version that helps you. Use fictional details during the group demonstration.",
+      "blocks": [
+        {"heading": "1 / HELP ME WRITE", "text": "Help me draft a short thank-you note to a neighbor who watered my plants. Make it warm and natural. Leave out names and addresses."},
+        {"field": "My version", "lines": 2},
+        {"heading": "2 / HELP ME UNDERSTAND", "text": "Explain how a home Wi-Fi router works in plain language. Use one everyday example. Ask me if I would like a simpler explanation."},
+        {"field": "My version", "lines": 2},
+        {"heading": "3 / HELP ME PLAN", "text": "Make a packing checklist for a two-day trip in rainy weather. Group it into clothing, essentials, and optional items."},
+        {"field": "My version", "lines": 2},
+        {"text": "Improve any answer: Make it shorter. Give me another example. What should I double-check?"},
+        {"check": "I removed private details and read the result before using or sharing it."}
+      ]
+    },
+    {
+      "id": "lesson3", "file": "my-family-safety-plan.pdf", "label": "LESSON 3 / PROTECT YOUR FAMILY",
+      "title": "My Family Safety Plan",
+      "intro": "A familiar voice can be imitated. Agree privately on a family safe word or phrase before an emergency. Do not write the actual word on this worksheet or enter it into an AI tool.",
+      "activity": "Practice responding to an urgent family call using a pretend code word. Later, agree on your real family phrase privately and complete your trusted callback contacts.",
+      "blocks": [
+        {"heading": "PAUSE. ASK. CALL BACK.", "items": ["Pause before acting on an urgent request.", "Ask the caller for the family phrase. Do not say it first or offer hints.", "Hang up and dial a number you already trust. Do not use a new number supplied by the caller."]},
+        {"text": "Even a correct phrase is only one check. Verify independently before sending money or private information. If the person cannot give it, do not assume they are safe or in danger; use your callback plan."},
+        {"heading": "AGREE PRIVATELY", "text": "Choose something memorable that is not a birthday, pet name, or public fact. Share it only with trusted family members. Replace it if it becomes known to others."},
+        {"field": "Trusted contact 1 / name and known phone number", "lines": 1},
+        {"field": "Trusted contact 2 / name and known phone number", "lines": 1},
+        {"check": "We chose our family phrase privately and practiced calling back."},
+        {"text": "Cannot reach the person? Contact another trusted person. If you believe there is immediate danger, call your local emergency number. In the U.S., call 911."},
+        {"note": "Based on FTC family emergency scam guidance and FBI identity-verification guidance. Source links are on page 7 of the complete toolkit."}
+      ]
+    },
+    {
+      "id": "lesson4", "file": "my-answer-checking-worksheet.pdf", "label": "LESSON 4 / CHECK THE ANSWER",
+      "title": "My Answer-Checking Worksheet",
+      "intro": "Use AI to get started, then check the part that matters. Practice with something low stakes, such as a museum's opening hours or a gardening question.",
+      "activity": "Ask an everyday question, pick one claim from the answer, and verify it on an appropriate original source. Record anything you could not confirm.",
+      "blocks": [
+        {"field": "My question", "lines": 1},
+        {"field": "One claim AI made that I need to check", "lines": 2},
+        {"heading": "CHECK THE ORIGINAL SOURCE", "text": "Open the actual page, not just the AI's summary. Check who published it, when it was updated, and whether it supports the claim. A link by itself does not prove the answer is right."},
+        {"field": "Source title or website / date checked", "lines": 2},
+        {"field": "What I confirmed, corrected, or still do not know", "lines": 2},
+        {"check": "I will not act on an important claim that I could not verify."},
+        {"text": "For decisions about your health, money, or legal situation, involve a qualified professional. AI can help prepare questions; it should not make those decisions for you."}
+      ]
+    },
+    {
+      "id": "lesson5", "file": "my-seven-day-practice-plan.pdf", "label": "LESSON 5 / KEEP PRACTICING",
+      "title": "My Seven-Day Practice Plan",
+      "intro": "Spend about 10 minutes at a time. You can repeat a day or go more slowly. Each activity pairs a useful skill with a safety habit.",
+      "activity": "Choose a realistic practice schedule. Finish with one useful result, explain how you checked it, and identify the precaution you used.",
+      "blocks": [
+        {"check": "Day 1: Pick an everyday task. Remove details the AI does not need."},
+        {"check": "Day 2: Try a prompt card. Read the answer before using it."},
+        {"check": "Day 3: Ask for a clearer answer. Check one factual claim."},
+        {"check": "Day 4: Make your family callback plan. Agree on the code word privately."},
+        {"check": "Day 5: Practice an urgent-call scenario. Use a pretend phrase."},
+        {"check": "Day 6: Create a useful note, checklist, or plan. Correct any mistakes."},
+        {"check": "Day 7: Show a trusted person your result and explain one safety precaution."},
+        {"field": "The useful result I created", "lines": 2},
+        {"field": "What I checked and the precaution I took", "lines": 2},
+        {"field": "Someone I can ask for help", "lines": 1}
+      ]
+    },
+    {
+      "id": "fridge", "file": "family-safety-fridge-card.pdf", "label": "KEEP NEAR YOUR PHONE",
+      "title": "Pause. Ask. Call back.",
+      "intro": "An urgent call sounds like someone you love. Take a breath. You can care about them and still check who is calling.",
+      "blocks": [
+        {"heading": "1 / PAUSE", "text": "Do not rush to send money or reveal private information. A familiar voice or caller ID is not proof of identity."},
+        {"heading": "2 / ASK", "text": "Ask for your family's private code word or phrase. Let the caller provide it. Do not reveal it or offer clues."},
+        {"heading": "3 / CALL BACK", "text": "End the call. Dial your loved one's saved, trusted number. Even a correct code word does not replace this check."},
+        {"field": "My first trusted contact / phone", "lines": 1},
+        {"field": "My second trusted contact / phone", "lines": 1},
+        {"heading": "IF YOU STILL CANNOT CONFIRM", "text": "Contact another trusted person. Do not send money while you are unsure. If you believe there is immediate danger, call your local emergency number; in the U.S., call 911."},
+        {"text": "Keep the actual code word OFF this card. Never enter it into an AI tool or a public form."},
+        {"note": "Family safety guidance: FTC and FBI. See source links on page 7 of the complete toolkit, available at lifequestai.com/workshop/handouts.html."}
+      ]
+    },
+    {
+      "id": "facilitator", "file": "workshop-facilitator-notes.pdf", "label": "FOR FAMILIES AND FACILITATORS",
+      "title": "Practice Together",
+      "intro": "The goal is a useful result and a habit of checking. Read instructions aloud, allow extra time, and offer help without taking over.",
+      "blocks": [
+        {"heading": "A FIVE-MINUTE FAMILY CALL PRACTICE", "items": ["Agree that this is a pretend scenario. Never use a real emergency or your real family phrase in a group.", "One person plays a caller asking for urgent money. The other practices pausing, asking for the phrase, and ending the call.", "Practice finding a saved contact and explaining how you would call back. Do not place calls to emergency services during practice.", "Discuss what felt difficult and how a trusted person could help."]},
+        {"heading": "FINISH WITH SOMETHING USEFUL", "text": "Each participant shows a note, checklist, explanation, or plan they made with AI. Ask: What did you change? What did you check? What private information did you leave out?"},
+        {"heading": "PRINTING AND PRIVACY", "text": "Print on U.S. Letter paper at Actual Size, or use Fit for A4. Single-sided printing leaves room for notes. Keep completed contact sheets private. The website does not collect worksheet answers or family code words."},
+        {"heading": "SOURCES FOR FAMILY SAFETY", "text": "FTC: Scammers Use Fake Emergencies To Steal Your Money. Explains voice impersonation and independently contacting family.", "link": "https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money", "linkLabel": "Read the FTC guide"},
+        {"text": "FBI: Identity-verification recommendations, including a private family word or phrase (December 19, 2025).", "link": "https://www.fbi.gov/investigate/cyber/alerts/2025/senior-us-officials-continue-to-be-impersonated-in-malicious-messaging-campaign", "linkLabel": "Read the FBI guidance"},
+        {"note": "Sources checked September 2026. Find clickable sources and all downloads at lifequestai.com/workshop/handouts.html."}
+      ]
+    }
+  ]
+}

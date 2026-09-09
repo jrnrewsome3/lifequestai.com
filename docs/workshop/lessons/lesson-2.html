@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2: Talking to an AI Assistant — AI for Everyday Life</title>
+  <meta name="description" content="Learn how to talk to ChatGPT, Claude, and Copilot. Plain-language guidance on asking good questions and getting helpful answers.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .example-box {
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      margin-block: var(--space-5);
+      font-family: var(--font-body);
+    }
+    .example-label { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-3); }
+    .example-you { background: var(--color-primary-light); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); margin-bottom: var(--space-4); }
+    .example-you .speaker { font-size: var(--text-xs); font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2); }
+    .example-ai { background: var(--color-surface-2); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); border: 1px solid var(--color-border); }
+    .example-ai .speaker { font-size: var(--text-xs); font-weight: 700; color: var(--color-text-muted); margin-bottom: var(--space-2); }
+    .example-box p { font-size: var(--text-sm); max-width: 100%; margin: 0; }
+
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-block: var(--space-6); }
+    @media (max-width: 560px) { .compare-grid { grid-template-columns: 1fr; } }
+    .compare-bad { background: var(--color-danger-light); border: 1.5px solid var(--color-danger); border-radius: var(--radius-lg); padding: var(--space-5); }
+    .compare-good { background: var(--color-success-light); border: 1.5px solid var(--color-success); border-radius: var(--radius-lg); padding: var(--space-5); }
+    .compare-label { font-size: var(--text-xs); font-weight: 700; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 0.06em; }
+    .compare-bad .compare-label { color: var(--color-danger); }
+    .compare-good .compare-label { color: var(--color-success); }
+    .compare-bad p, .compare-good p { font-size: var(--text-sm); max-width: 100%; }
+  </style>
+  <link rel="canonical" href="https://lifequestai.com/workshop/lessons/lesson-2.html">
+</head>
+<body data-page="lessons">
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="AI for Everyday Life — Home">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true"><rect width="38" height="38" rx="10" fill="#1a4a7a"/><circle cx="19" cy="14" r="6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="19" cy="14" r="2.5" fill="#fff"/><path d="M10 30c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M26 10l3-3M12 10l-3-3M19 7V4" stroke="#f5a623" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <div><div class="logo-text">AI for Everyday Life</div><div class="logo-sub">LifeQuest AI · Older Adults</div></div>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="lesson-1.html" class="nav-link active">Lessons</a>
+        <a href="../handouts.html" class="nav-link">Handouts</a>
+        <a href="../safety.html" class="nav-link">Safety Tips</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:var(--space-2);">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="lesson-header">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span aria-current="page">Lesson 2</span>
+    </nav>
+    <div class="lesson-number-lg">
+      <span style="background:var(--color-primary);color:#fff;width:32px;height:32px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;">2</span>
+      Lesson 2 of 5 &nbsp;·&nbsp; About 25 minutes
+    </div>
+    <h1>Talking to an AI Assistant</h1>
+    <p class="lead">ChatGPT, Claude, Copilot — these tools are available right now, often for free. Here's how to use them comfortably, in plain English.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-body">
+    <main class="lesson-content" id="main-content">
+
+      <h2>It's Just a Conversation</h2>
+      <p>
+        The most important thing to understand about AI chat tools: you talk to them the same way you'd talk to a helpful person.
+        Type your question or request in plain English, and they'll respond. You don't need any special commands or codes.
+      </p>
+      <p>
+        If their answer isn't quite right, you can simply say, "That's not quite what I meant — can you try again?"
+        Or ask a follow-up question. The AI remembers what you've said in the same conversation.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-icon">💬</div>
+        <div class="callout-body">
+          <h4>The Golden Rule</h4>
+          <p>Talk to AI the way you'd talk to a helpful but new assistant who doesn't know you yet. Be specific about what you need, and don't be afraid to ask them to redo or simplify their answer.</p>
+        </div>
+      </div>
+
+      <h2>The Three Main Tools</h2>
+
+      <div class="tool-grid" style="grid-template-columns: 1fr; gap: var(--space-5);">
+        <div class="tool-card" style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-5);align-items:start;">
+          <div style="font-size:2.5rem;">🤖</div>
+          <div>
+            <h4 style="font-size:var(--text-lg);">ChatGPT — chat.openai.com</h4>
+            <p><strong>Best for:</strong> General questions, writing help, creative tasks. The most widely known AI. Has a free version. Best if you want to try AI for the first time.</p>
+            <p><strong>Think of it as:</strong> A very knowledgeable friend who's happy to help with almost anything.</p>
+          </div>
+        </div>
+        <div class="tool-card" style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-5);align-items:start;">
+          <div style="font-size:2.5rem;">💡</div>
+          <div>
+            <h4 style="font-size:var(--text-lg);">Claude — claude.ai</h4>
+            <p><strong>Best for:</strong> Reading and explaining long documents, thoughtful conversations, careful responses. Made by Anthropic, a company focused on AI safety.</p>
+            <p><strong>Think of it as:</strong> A patient, careful reader who explains things clearly and admits when it's unsure.</p>
+          </div>
+        </div>
+        <div class="tool-card" style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-5);align-items:start;">
+          <div style="font-size:2.5rem;">🔷</div>
+          <div>
+            <h4 style="font-size:var(--text-lg);">Microsoft Copilot — Built into Windows &amp; Office</h4>
+            <p><strong>Best for:</strong> People who already use Microsoft products. It's built right into Word, Outlook, and the Edge browser. No separate account needed if you have a Microsoft account.</p>
+            <p><strong>Think of it as:</strong> An assistant already inside the programs you use every day.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>How to Ask a Good Question</h2>
+      <p>
+        The quality of your answer depends a lot on how you phrase your question. Here's the key principle:
+        the more specific you are, the better the response.
+      </p>
+
+      <h3>Compare these approaches:</h3>
+
+      <div class="compare-grid">
+        <div class="compare-bad">
+          <div class="compare-label">❌ Too vague</div>
+          <p>"Tell me about my health."</p>
+        </div>
+        <div class="compare-good">
+          <div class="compare-label">✅ Specific and clear</div>
+          <p>"Can you explain what high blood pressure means and what lifestyle changes are generally recommended?"</p>
+        </div>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-bad">
+          <div class="compare-label">❌ Too vague</div>
+          <p>"Write me a letter."</p>
+        </div>
+        <div class="compare-good">
+          <div class="compare-label">✅ Specific and clear</div>
+          <p>"Write a polite letter to my landlord asking to repair the broken heater in my apartment. Keep it short and friendly."</p>
+        </div>
+      </div>
+
+      <h2>A Real Example Conversation</h2>
+      <p>Here's what it actually looks like to have a helpful exchange with an AI assistant:</p>
+
+      <div class="example-box">
+        <div class="example-label">Example conversation</div>
+        <div class="example-you">
+          <div class="speaker">You</div>
+          <p>My doctor mentioned I should try "mindfulness" for stress. Can you explain what that means in simple terms?</p>
+        </div>
+        <div class="example-ai">
+          <div class="speaker">AI (Claude)</div>
+          <p>Mindfulness means paying gentle attention to what's happening right now — your breath, the sounds around you, how your body feels — without worrying about the past or future. It's like taking a quiet moment to simply notice where you are.<br><br>A simple way to start: sit comfortably, close your eyes, and take 5 slow breaths. Each time your mind wanders (and it will!), gently bring your attention back to your breathing. That's it. Even 5 minutes a day can help reduce stress over time.</p>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">Following up when you need more</div>
+        <div class="example-you">
+          <div class="speaker">You</div>
+          <p>That's helpful. Can you suggest a simple daily routine I could try as a beginner?</p>
+        </div>
+        <div class="example-ai">
+          <div class="speaker">AI (Claude)</div>
+          <p>Absolutely. Here's a beginner-friendly 5-minute routine:<br><br>
+          1. <strong>Morning</strong> (2 min): Right after waking up, sit up and take 10 slow, deep breaths before reaching for your phone.<br>
+          2. <strong>Midday</strong> (2 min): Before eating lunch, pause and notice 5 things you can see around you. This slows your mind down.<br>
+          3. <strong>Evening</strong> (1 min): Before bed, think of one thing that went well today.<br><br>
+          Start with just one of these, not all three. Adding a new habit is easier when you keep it small at first.</p>
+        </div>
+      </div>
+
+      <h2>What to Do When AI Gets It Wrong</h2>
+      <p>
+        It will happen — AI sometimes gives incorrect or outdated information. Here's what to do:
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Push back politely</h4>
+            <p>You can say "I don't think that's right" or "Can you double-check that?" — the AI will try to correct itself.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Ask for sources</h4>
+            <p>Type "Where did you get that information?" Some AI tools (like Perplexity) will show you links to their sources.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Verify with a trusted source</h4>
+            <p>For health info, check WebMD, Mayo Clinic, or ask your doctor. For news, check a newspaper you trust.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-danger">
+        <div class="callout-icon">🚨</div>
+        <div class="callout-body">
+          <h4>Scam Warning: Fake "AI Assistants"</h4>
+          <p>Scammers sometimes create fake websites or pop-up ads that look like AI tools but are designed to steal information or charge your credit card. Safe rules to follow:</p>
+          <ul>
+            <li>Only use AI tools you've looked up yourself — don't click links in emails or pop-ups claiming to be AI assistants</li>
+            <li>The real ChatGPT is at <strong>chat.openai.com</strong>, Claude at <strong>claude.ai</strong>, Copilot at <strong>copilot.microsoft.com</strong></li>
+            <li>Legitimate AI tools never call you on the phone</li>
+            <li>If any AI tool asks for your bank or credit card info to answer a question, leave immediately</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-safety">
+        <div class="callout-icon">✅</div>
+        <div class="callout-body">
+          <h4>Safety Takeaway for This Lesson</h4>
+          <ul>
+            <li>AI is most helpful when you're specific about what you need</li>
+            <li>Always double-check health, legal, or financial information with a professional</li>
+            <li>Only use AI from official websites — not links in emails or ads</li>
+            <li>It's fine to say "I don't understand, can you explain that differently?" — good AI tools will gladly try again</li>
+          </ul>
+        </div>
+      </div>
+
+    <section class="lesson-activity" aria-labelledby="activity-heading"><p class="section-label">Make it yours</p><h2 id="activity-heading">My Everyday Prompt Cards</h2><p>Try one prompt, ask for an improvement, and save the version that helps you. Use fictional details during the group demonstration.</p><p><a class="btn btn-primary" href="../downloads/my-prompt-cards.pdf">Download your activity (PDF)</a></p><p><a href="../handouts.html#lesson2">Read the worksheet online</a></p></section></main>
+
+    <aside class="lesson-sidebar" aria-label="Lesson resources">
+      <div class="sidebar-card">
+        <h4>Useful Phrases</h4>
+        <ul>
+          <li><span class="check">💬</span> "Explain that in simpler terms."</li>
+          <li><span class="check">💬</span> "Give me a short summary."</li>
+          <li><span class="check">💬</span> "Can you give me a numbered list?"</li>
+          <li><span class="check">💬</span> "What are the pros and cons?"</li>
+          <li><span class="check">💬</span> "I'm not sure that's right — can you check?"</li>
+          <li><span class="check">💬</span> "Pretend I've never heard of this before."</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Official Tool Websites</h4>
+        <ul>
+          <li><span class="check">🔗</span> <strong>ChatGPT:</strong> chat.openai.com</li>
+          <li><span class="check">🔗</span> <strong>Claude:</strong> claude.ai</li>
+          <li><span class="check">🔗</span> <strong>Copilot:</strong> copilot.microsoft.com</li>
+          <li><span class="check">🔗</span> <strong>Perplexity:</strong> perplexity.ai</li>
+        </ul>
+      </div>
+      <div class="sidebar-card" style="border-color: var(--color-danger); background: var(--color-danger-light);">
+        <h4 style="color:var(--color-danger);">Red Flags</h4>
+        <ul>
+          <li><span class="x">❌</span> AI that calls you on the phone</li>
+          <li><span class="x">❌</span> Links in emails claiming to be AI tools</li>
+          <li><span class="x">❌</span> Any tool asking for bank info upfront</li>
+          <li><span class="x">❌</span> Pop-up ads for "AI assistants"</li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Printable Handout</h4>
+        <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-3);">Reference card for Lesson 2.</p>
+        <a href="../handouts.html#lesson2" class="btn btn-outline" style="font-size:var(--text-xs);padding:var(--space-2) var(--space-4);">Get Worksheet &amp; PDF</a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="lesson-nav-footer">
+  <div class="container">
+    <div class="lesson-nav-inner">
+      <a href="lesson-1.html" class="btn btn-outline">← Lesson 1: What Is AI?</a>
+      <span style="font-size:var(--text-xs);color:var(--color-text-faint);">Lesson 2 of 5</span>
+      <a href="lesson-3.html" class="btn btn-primary">Next: Staying Safe →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col"><h5>AI for Everyday Life</h5><p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:28ch;">A plain-language curriculum for older adults and caregivers.</p></div>
+      <div class="footer-col"><h5>All Lessons</h5><ul><li><a href="lesson-1.html">1. What Is AI?</a></li><li><a href="lesson-2.html">2. Talking to AI</a></li><li><a href="lesson-3.html">3. Staying Safe</a></li><li><a href="lesson-4.html">4. AI as Research Helper</a></li><li><a href="lesson-5.html">5. What's Next</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="../handouts.html">Printable Handouts</a></li><li><a href="../safety.html">Safety Tips</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="/">← Back to LifeQuest AI</a></p><p>Created for community workshops. Free to use and share.</p></div>
+  </div>
+</footer>
+
+<script>(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);if(t)t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';});const mb=document.getElementById('menu-toggle'),nav=document.getElementById('main-nav');if(mb&&nav)mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);});const header=document.getElementById('site-header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>12);},{passive:true});})();</script>
+</body>
+</html>
