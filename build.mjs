@@ -24,6 +24,8 @@ import {QUIZ} from './src/data/quiz.mjs';
 import {photoUrl} from './src/data/photos.mjs';
 import {postsSorted, readingTime, longDate} from './src/lib/components.mjs';
 
+import {trainingHome, audiencePage, joinPage, starterPage} from './src/pages/training.mjs';
+import {GROUPS, PROMPTS} from './src/data/training.mjs';
 import {viewHome} from './src/pages/home.mjs';
 import {viewClasses, viewClass} from './src/pages/catalog.mjs';
 import {viewPaths, viewPath} from './src/pages/paths.mjs';
@@ -59,7 +61,7 @@ const ogHome = photoUrl('hero', 1200, 630);
 write('index.html', page({
   title: '', active: 'home', path: '/', ogImage: ogHome,
   description: SITE.description,
-  body: viewHome()
+  training: true, body: viewHome()
 }));
 
 write('classes/index.html', page({
@@ -159,6 +161,18 @@ write('404.html', page({
   description: 'That page could not be found.',
   body: viewNotFound()
 }));
+
+/* ---------- Cohort training and free starter kit ---------- */
+const trainingRoutes = [
+  ['/ai-training/', 'Practical AI classes for your kind of work', 'Join a group of 10 people with similar work needs. Targeting October 2026; dates and pricing confirmed before enrollment.', trainingHome()],
+  ...GROUPS.map(g => ['/ai-training/'+g.slug+'/', 'AI training for '+g.name, g.intro, audiencePage(g)]),
+  ['/ai-training/join/', 'Join a class interest list', 'Tell us your field and goals. We organize a class when 10 people with similar needs are interested.', joinPage()],
+  ['/resources/ai-starter-kit/', '25 practical AI prompts and a worksheet', 'Free practice prompts for small businesses, insurance and accounting professionals, educators, and nonprofits. No signup required.', starterPage()]
+];
+for (const [route,title,description,body] of trainingRoutes) write(route.slice(1)+'index.html',page({title,description,body,path:route,active:'training',training:true,ogImage:ogHome}));
+write('resources/ai-starter-kit/25-practice-prompts.txt', 'LIFEQUEST AI — 25 PRACTICE PROMPTS\n\nUse fictional, public, or approved non-sensitive material. Replace bracketed placeholders. Review facts, tone, privacy, and unsupported claims before use. These prompts do not provide professional advice.\n\n'+PROMPTS.map((p,i)=>`${i+1}. ${p[1]} (${p[0]})\n${p[2]}`).join('\n\n')+'\n\nExplore classes: https://lifequestai.com/ai-training/\n');
+write('resources/ai-starter-kit/practice-worksheet.txt', fs.readFileSync(path.join(ROOT,'src/practice-worksheet.txt'),'utf8'));
+for(const asset of ['training.css','training.js','training-form.mjs'])write(asset.replace('.mjs','.js'),fs.readFileSync(path.join(ROOT,'src',asset),'utf8'));
 
 /* ---------- assets ---------- */
 fs.copyFileSync(path.join(ROOT, 'src/styles.css'), path.join(OUT, 'styles.css'));

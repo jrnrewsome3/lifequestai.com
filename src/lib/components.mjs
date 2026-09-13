@@ -60,7 +60,7 @@ function CourseCard(c){
     <div class="skills">${c.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}</div>
     <div class="card-foot btn-row">
       <a class="btn btn-ghost btn-sm" href="${url('/classes/'+c.slug+'/')}">View Class</a>
-      <a class="btn btn-primary btn-sm" href="${url('/classes/'+c.slug+'/')}#enroll">Enroll</a>
+      <a class="btn btn-primary btn-sm" href="${url('/classes/'+c.slug+'/')}#enroll">Class interest</a>
     </div>
     </div>
   </article>`;
@@ -98,11 +98,11 @@ function PathCard(t){
 
 function CtaBand(){
   return `<section class="sec"><div class="wrap"><div class="cta-band">
-    <h2>Your Next Level Starts Here.</h2>
-    <p>You don’t need to become an AI expert overnight. You need a starting point, a practical roadmap, and opportunities to put what you learn into action.</p>
+    <h2>Find Your AI Learning Group.</h2>
+    <p>Bring one task you want to make easier. We organize a class when 10 people with similar work needs are interested. See the class details before you decide to enroll.</p>
     <div class="btn-row">
-      <a class="btn btn-primary btn-lg" href="${url('/assessment/')}">Start Learning</a>
-      <a class="btn btn-ghost btn-lg" href="${url('/classes/')}">Explore Classes</a>
+      <a class="btn btn-primary btn-lg" href="${url('/ai-training/')}">Find Your AI Class</a>
+      <a class="btn btn-ghost btn-lg" href="${url('/resources/ai-starter-kit/')}">Try the Free Starter Kit</a>
     </div>
   </div></div></section>`;
 }
@@ -163,7 +163,10 @@ function PostToClass(p){
   return `<aside class="convert">
     <div class="convert-in">
       <p class="eyebrow amber" style="margin-bottom:12px">Take it further</p>
-      <h2 style="font-size:clamp(1.4rem,2.4vw,1.85rem);margin-bottom:14px">This post explained the idea. The class builds the skill.</h2>
+      <h2 style="font-size:clamp(1.4rem,2.4vw,1.85rem);margin-bottom:14px">Put this idea to work with a learning group.</h2>
+      <p>Join people with similar work needs. A class forms when 10 people are interested; the date, format, and price are confirmed before enrollment.</p>
+      <p><a class="btn btn-primary" href="${url('/ai-training/')}?ref=blog-${p.slug}">Find Your AI Class</a></p>
+      <p class="small muted">Related curriculum preview:</p>
       <p class="lede" style="margin-bottom:26px">${c.blurb}</p>
       <div class="convert-card">
         <div style="flex:1">

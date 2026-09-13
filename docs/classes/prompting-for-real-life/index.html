@@ -23,23 +23,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="header" id="header"><div class="wrap header-in">
     <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-  <rect width="40" height="40" rx="11" fill="url(#lqg)"/>
+  <rect width="40" height="40" rx="11" fill="url(#lq-header)"/>
   <path d="M11 27.5V12.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
   <path d="M11 27.5h8.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
   <circle cx="26" cy="15.5" r="4.6" stroke="#fff" stroke-width="2.4"/>
   <path d="M29.4 19.2L32 22" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
-  <defs><linearGradient id="lqg" x1="0" y1="0" x2="40" y2="40">
+  <defs><linearGradient id="lq-header" x1="0" y1="0" x2="40" y2="40">
     <stop stop-color="#1F6FB2"/><stop offset="1" stop-color="#2C8F86"/></linearGradient></defs>
 </svg><span>LifeQuest<em> AI</em></span></a>
-    <nav class="nav" aria-label="Primary"><a href="/">Home</a><a href="/classes/" class="active" aria-current="page">Classes</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/blog/">Blog</a><a href="/resources/">Resources</a><a href="/about/">About</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="/">Home</a><a href="/ai-training/">AI Training</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/blog/">Blog</a><a href="/resources/">Resources</a><a href="/about/">About</a></nav>
     <div class="header-cta">
-      <a class="btn btn-ghost btn-sm" href="/classes/">Explore Classes</a>
-      <a class="btn btn-primary btn-sm" href="/assessment/">Start Learning</a>
+      <a class="btn btn-ghost btn-sm" href="/ai-training/">Explore Classes</a>
+      <a class="btn btn-primary btn-sm" href="/ai-training/">Find Your AI Class</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div></header>
@@ -47,17 +48,17 @@
 <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
     <div class="drawer-top">
       <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-  <rect width="40" height="40" rx="11" fill="url(#lqg)"/>
+  <rect width="40" height="40" rx="11" fill="url(#lq-drawer)"/>
   <path d="M11 27.5V12.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
   <path d="M11 27.5h8.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
   <circle cx="26" cy="15.5" r="4.6" stroke="#fff" stroke-width="2.4"/>
   <path d="M29.4 19.2L32 22" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
-  <defs><linearGradient id="lqg" x1="0" y1="0" x2="40" y2="40">
+  <defs><linearGradient id="lq-drawer" x1="0" y1="0" x2="40" y2="40">
     <stop stop-color="#1F6FB2"/><stop offset="1" stop-color="#2C8F86"/></linearGradient></defs>
 </svg><span>LifeQuest<em> AI</em></span></a>
       <button class="icon-btn" id="drawer-close" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
-    <nav aria-label="Mobile"><a href="/">Home</a><a href="/classes/" class="active">Classes</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/blog/">Blog</a><a href="/resources/">Resources</a><a href="/about/">About</a>
+    <nav aria-label="Mobile"><a href="/">Home</a><a href="/ai-training/">AI Training</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/blog/">Blog</a><a href="/resources/">Resources</a><a href="/about/">About</a>
       <a href="/assessment/">Find My Starting Point</a>
       <a href="/newsletter/">Newsletter</a>
       <a href="/member/">Member Preview</a>
@@ -65,8 +66,8 @@
     </nav>
     <div class="divider"></div>
     <div class="stack" style="gap:10px">
-      <a class="btn btn-primary" href="/assessment/">Start Learning</a>
-      <a class="btn btn-ghost" href="/classes/">Explore Classes</a>
+      <a class="btn btn-primary" href="/ai-training/">Find Your AI Class</a>
+      <a class="btn btn-ghost" href="/ai-training/">Explore Classes</a>
     </div>
   </aside>
 <main id="main">
@@ -76,7 +77,7 @@
     <div class="detail-grid">
       <div>
         <div class="badges" style="margin-bottom:18px"><span class="badge b-beginner"><span class="badge-dot"></span>Beginner</span></div>
-        <p class="eyebrow">Class 02</p>
+        <p class="eyebrow">Curriculum preview · Class 02</p>
         <h1 style="font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:20px">Prompting for Real Life</h1>
         <p class="lede">Learn how to communicate effectively with AI — context, roles, examples, refinement, and reusable templates.</p>
         <div class="meta" style="margin-top:22px;gap:10px 22px">
@@ -94,10 +95,10 @@
             <div class="spec"><dt>Format</dt><dd style="max-width:16ch">Self-paced + prompt workshop</dd></div>
             <div class="spec"><dt>Tracks</dt><dd style="max-width:16ch">Personal, Families, Work, Business, Nonprofit</dd></div>
           </dl>
-          <a class="btn btn-primary" style="width:100%" href="/newsletter/">Enroll in this class</a>
+          <a class="btn btn-primary" style="width:100%" href="/ai-training/join/?topic=Prompting%20for%20Real%20Life">Ask about this topic</a>
           <a class="btn btn-quiet btn-sm" style="width:100%;margin-top:8px;justify-content:center" href="/assessment/">Not sure? Take the assessment</a>
           <div class="divider"></div>
-          <p class="tiny muted" style="margin:0">Enrollment opens with each new cohort. Join the list and you’ll hear first.</p>
+          <p class="tiny muted" style="margin:0">This is a curriculum preview. Duration, format, and instructor details are illustrative. We confirm the actual class details before you enroll.</p>
         </div>
       </div>
     </div>
@@ -267,7 +268,7 @@
     <div class="skills"><span class="skill-tag">AI fundamentals</span><span class="skill-tag">Tool selection</span><span class="skill-tag">Verification habits</span><span class="skill-tag">AI safety basics</span></div>
     <div class="card-foot btn-row">
       <a class="btn btn-ghost btn-sm" href="/classes/ai-made-simple/">View Class</a>
-      <a class="btn btn-primary btn-sm" href="/classes/ai-made-simple/#enroll">Enroll</a>
+      <a class="btn btn-primary btn-sm" href="/classes/ai-made-simple/#enroll">Class interest</a>
     </div>
     </div>
   </article><article class="course-card" data-levels="Beginner|Intermediate" data-tracks="me|families|work" data-search="your ai personal assistant turn ai into a genuine assistant for planning, writing, research, organization, learning, and decisions. assistant configuration context management planning workflows decision support beginner → intermediate chatgpt (projects / custom gpts) claude (projects) your calendar and notes app giving an assistant persistent context about you designing an assistant for a specific set of responsibilities planning, writing, and research workflows using ai for decision support without outsourcing the decision weekly and daily rhythms that keep it useful knowing when not to use your assistant">
@@ -289,7 +290,7 @@
     <div class="skills"><span class="skill-tag">Assistant configuration</span><span class="skill-tag">Context management</span><span class="skill-tag">Planning workflows</span><span class="skill-tag">Decision support</span></div>
     <div class="card-foot btn-row">
       <a class="btn btn-ghost btn-sm" href="/classes/your-ai-personal-assistant/">View Class</a>
-      <a class="btn btn-primary btn-sm" href="/classes/your-ai-personal-assistant/#enroll">Enroll</a>
+      <a class="btn btn-primary btn-sm" href="/classes/your-ai-personal-assistant/#enroll">Class interest</a>
     </div>
     </div>
   </article><article class="course-card" data-levels="Beginner|Intermediate" data-tracks="me|work" data-search="ai for everyday productivity use ai to handle everyday work faster: email, meetings, research, documents, summaries, planning, and presentations. workflow design summarization business writing meeting management beginner → intermediate chatgpt claude microsoft 365 copilot google workspace an email workflow that saves real time daily meeting preparation, notes, and follow-up research and summarization you can trust document drafting and rewriting presentation outlines and speaker notes brainstorming that produces usable ideas task and project management support">
@@ -311,17 +312,17 @@
     <div class="skills"><span class="skill-tag">Workflow design</span><span class="skill-tag">Summarization</span><span class="skill-tag">Business writing</span><span class="skill-tag">Meeting management</span></div>
     <div class="card-foot btn-row">
       <a class="btn btn-ghost btn-sm" href="/classes/ai-for-everyday-productivity/">View Class</a>
-      <a class="btn btn-primary btn-sm" href="/classes/ai-for-everyday-productivity/#enroll">Enroll</a>
+      <a class="btn btn-primary btn-sm" href="/classes/ai-for-everyday-productivity/#enroll">Class interest</a>
     </div>
     </div>
   </article></div>
   </div></section>
   <section class="sec"><div class="wrap"><div class="cta-band">
-    <h2>Your Next Level Starts Here.</h2>
-    <p>You don’t need to become an AI expert overnight. You need a starting point, a practical roadmap, and opportunities to put what you learn into action.</p>
+    <h2>Find Your AI Learning Group.</h2>
+    <p>Bring one task you want to make easier. We organize a class when 10 people with similar work needs are interested. See the class details before you decide to enroll.</p>
     <div class="btn-row">
-      <a class="btn btn-primary btn-lg" href="/assessment/">Start Learning</a>
-      <a class="btn btn-ghost btn-lg" href="/classes/">Explore Classes</a>
+      <a class="btn btn-primary btn-lg" href="/ai-training/">Find Your AI Class</a>
+      <a class="btn btn-ghost btn-lg" href="/resources/ai-starter-kit/">Try the Free Starter Kit</a>
     </div>
   </div></div></section>
 </main>
@@ -329,12 +330,12 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="/" style="margin-bottom:16px"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-  <rect width="40" height="40" rx="11" fill="url(#lqg)"/>
+  <rect width="40" height="40" rx="11" fill="url(#lq-footer)"/>
   <path d="M11 27.5V12.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
   <path d="M11 27.5h8.4" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
   <circle cx="26" cy="15.5" r="4.6" stroke="#fff" stroke-width="2.4"/>
   <path d="M29.4 19.2L32 22" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
-  <defs><linearGradient id="lqg" x1="0" y1="0" x2="40" y2="40">
+  <defs><linearGradient id="lq-footer" x1="0" y1="0" x2="40" y2="40">
     <stop stop-color="#1F6FB2"/><stop offset="1" stop-color="#2C8F86"/></linearGradient></defs>
 </svg><span>LifeQuest<em> AI</em></span></a>
         <p style="max-width:34ch;font-size:.94rem;color:#B9C6D4">Practical AI education for life, work, business, and community.</p>
@@ -344,7 +345,7 @@
           <a href="/resources/" aria-label="Sessions"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
         </div>
       </div>
-      <div><h4>Learn</h4><div class="foot-links"><a href="/classes/">Classes</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/resources/">Resources</a><a href="/workshop/">Older Adult Workshop</a><a href="/assessment/">AI Assessment</a></div></div>
+      <div><h4>Learn</h4><div class="foot-links"><a href="/ai-training/">October Class Interest</a><a href="/classes/">Course Outlines</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/resources/">Resources</a><a href="/workshop/">Older Adult Workshop</a><a href="/assessment/">AI Assessment</a></div></div>
       <div><h4>LifeQuest</h4><div class="foot-links"><a href="/about/">About</a><a href="/about/">Our Mission</a><a href="/blog/">Blog</a><a href="/newsletter/">Newsletter</a><a href="/contact/">Contact</a></div></div>
       <div><h4>More</h4><div class="foot-links"><a href="/resources/">AI Tools</a><a href="/resources/">Guides</a><a href="/blog/">Articles</a><a href="/resources/">FAQs</a><a href="/member/">Member Preview</a></div></div>
     </div>
@@ -354,8 +355,9 @@
         <a href="/contact/">Privacy Policy</a><a href="/contact/">Terms</a><a href="/contact/">Accessibility</a><a href="/contact/">Contact</a>
       </nav>
     </div>
-    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© 2026 LifeQuest AI. Course content, instructor profiles, testimonials, events, and member dashboard data shown on this site are illustrative samples. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
+    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© 2026 LifeQuest AI. Course outlines, instructor profiles, testimonials, and member dashboard data in the broader catalog include illustrative samples. See AI Training for current class interest lists. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
   </div></footer>
 <script src="/app.js" defer></script>
+
 </body>
 </html>

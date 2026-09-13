@@ -3,9 +3,11 @@
 import {I, MARK} from './icons.mjs';
 import {SITE, url, absUrl} from '../config.mjs';
 
+const mark = id => MARK.replaceAll('lqg', id);
+
 const NAV = [
   {label:'Home',           href:'/',           key:'home'},
-  {label:'Classes',        href:'/classes/',   key:'classes'},
+  {label:'AI Training',    href:'/ai-training/', key:'training'},
   {label:'Learning Paths', href:'/paths/',     key:'paths'},
   {label:'AI Labs',        href:'/labs/',      key:'labs'},
   {label:'Blog',           href:'/blog/',      key:'blog'},
@@ -18,11 +20,11 @@ function Header(active){
     `<a href="${url(n.href)}"${n.key===active ? ' class="active" aria-current="page"' : ''}>${n.label}</a>`
   ).join('');
   return `<header class="header" id="header"><div class="wrap header-in">
-    <a class="brand" href="${url('/')}">${MARK}<span>LifeQuest<em> AI</em></span></a>
+    <a class="brand" href="${url('/')}">${mark('lq-header')}<span>LifeQuest<em> AI</em></span></a>
     <nav class="nav" aria-label="Primary">${links}</nav>
     <div class="header-cta">
-      <a class="btn btn-ghost btn-sm" href="${url('/classes/')}">Explore Classes</a>
-      <a class="btn btn-primary btn-sm" href="${url('/assessment/')}">Start Learning</a>
+      <a class="btn btn-ghost btn-sm" href="${url('/ai-training/')}">Explore Classes</a>
+      <a class="btn btn-primary btn-sm" href="${url('/ai-training/')}">Find Your AI Class</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">${I('menu',22)}</button>
     </div>
   </div></header>`;
@@ -34,7 +36,7 @@ function Drawer(active){
   ).join('');
   return `<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
     <div class="drawer-top">
-      <a class="brand" href="${url('/')}">${MARK}<span>LifeQuest<em> AI</em></span></a>
+      <a class="brand" href="${url('/')}">${mark('lq-drawer')}<span>LifeQuest<em> AI</em></span></a>
       <button class="icon-btn" id="drawer-close" aria-label="Close menu">${I('x',20)}</button>
     </div>
     <nav aria-label="Mobile">${links}
@@ -45,13 +47,13 @@ function Drawer(active){
     </nav>
     <div class="divider"></div>
     <div class="stack" style="gap:10px">
-      <a class="btn btn-primary" href="${url('/assessment/')}">Start Learning</a>
-      <a class="btn btn-ghost" href="${url('/classes/')}">Explore Classes</a>
+      <a class="btn btn-primary" href="${url('/ai-training/')}">Find Your AI Class</a>
+      <a class="btn btn-ghost" href="${url('/ai-training/')}">Explore Classes</a>
     </div>
   </aside>`;
 }
 
-function Footer(){
+function Footer(training=false){
   const col = (h, items) =>
     `<div><h4>${h}</h4><div class="foot-links">${
       items.map(i=>`<a href="${url(i[1])}">${i[0]}</a>`).join('')
@@ -59,7 +61,7 @@ function Footer(){
   return `<footer class="footer"><div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="${url('/')}" style="margin-bottom:16px">${MARK}<span>LifeQuest<em> AI</em></span></a>
+        <a class="brand" href="${url('/')}" style="margin-bottom:16px">${mark('lq-footer')}<span>LifeQuest<em> AI</em></span></a>
         <p style="max-width:34ch;font-size:.94rem;color:#B9C6D4">Practical AI education for life, work, business, and community.</p>
         <div class="socials" style="margin-top:20px">
           <a href="${url('/newsletter/')}" aria-label="Newsletter">${I('mail',18)}</a>
@@ -67,7 +69,7 @@ function Footer(){
           <a href="${url('/resources/')}" aria-label="Sessions">${I('calendar',18)}</a>
         </div>
       </div>
-      ${col('Learn',[['Classes','/classes/'],['Learning Paths','/paths/'],['AI Labs','/labs/'],['Resources','/resources/'],['Older Adult Workshop','/workshop/'],['AI Assessment','/assessment/']])}
+      ${col('Learn',[['October Class Interest','/ai-training/'],['Course Outlines','/classes/'],['Learning Paths','/paths/'],['AI Labs','/labs/'],['Resources','/resources/'],['Older Adult Workshop','/workshop/'],['AI Assessment','/assessment/']])}
       ${col('LifeQuest',[['About','/about/'],['Our Mission','/about/'],['Blog','/blog/'],['Newsletter','/newsletter/'],['Contact','/contact/']])}
       ${col('More',[['AI Tools','/resources/'],['Guides','/resources/'],['Articles','/blog/'],['FAQs','/resources/'],['Member Preview','/member/']])}
     </div>
@@ -77,7 +79,7 @@ function Footer(){
         <a href="${url('/contact/')}">Privacy Policy</a><a href="${url('/contact/')}">Terms</a><a href="${url('/contact/')}">Accessibility</a><a href="${url('/contact/')}">Contact</a>
       </nav>
     </div>
-    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© ${SITE.year} ${SITE.name}. Course content, instructor profiles, testimonials, events, and member dashboard data shown on this site are illustrative samples. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
+    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© ${SITE.year} ${SITE.name}. ${training ? 'October 2026 classes form around groups of 10 interested people with similar work needs. Dates and prices are confirmed before enrollment. Other course catalog and member pages include illustrative content.' : 'Course outlines, instructor profiles, testimonials, and member dashboard data in the broader catalog include illustrative samples. See AI Training for current class interest lists.'} Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
   </div></footer>`;
 }
 
@@ -117,6 +119,7 @@ ${o.articleMeta ? `<meta property="article:published_time" content="${o.articleM
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${url('/styles.css')}">
+${o.training ? `<link rel="stylesheet" href="${url('/training.css')}">` : ''}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -126,8 +129,9 @@ ${Drawer(o.active)}
 <main id="main">
 ${o.body}
 </main>
-${Footer()}
+${Footer(o.training)}
 <script src="${url('/app.js')}" defer></script>
+${o.training ? `<script type="module" src="${url('/training.js')}"></script>` : ''}
 </body>
 </html>
 `;

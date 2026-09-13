@@ -1,3 +1,4 @@
+import {homeLaunch} from './training.mjs';
 import {I} from '../lib/icons.mjs';
 import {url, SITE} from '../config.mjs';
 import {esc, byId, bySlug, labBySlug, trackBySlug, levelClass, levelBadges,
@@ -14,36 +15,7 @@ import {NewsletterSection, DashboardPreview} from './shared.mjs';
 
 function viewHome(){
   return `
-  <section class="hero"><div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Practical AI for Real Life</p>
-      <h1>Learn AI. Apply It.<br><span class="grad">Change What’s Possible.</span></h1>
-      <p class="lede">LifeQuest AI helps people move from AI curiosity to real-world capability through practical classes, guided learning paths, hands-on labs, and tools they can immediately use at home, at work, and in their communities.</p>
-      <div class="btn-row" style="margin-top:28px">
-        <a class="btn btn-primary btn-lg" href="${url('/classes/')}">Explore Classes</a>
-        <a class="btn btn-ghost btn-lg" href="${url('/assessment/')}">Find Your AI Starting Point</a>
-      </div>
-      <div class="trust">
-        <span>No coding required</span><span>Practical lessons</span><span>Hands-on labs</span><span>Learn at your pace</span>
-      </div>
-    </div>
-    <div class="prog reveal">
-      <div class="prog-head">
-        <div><p class="tiny" style="margin:0">The LifeQuest Model</p></div>
-        <span class="tiny muted">4 stages</span>
-      </div>
-      ${JOURNEY.map((j,i)=>`<div class="step">
-        <div class="step-dot">${i+1}</div>
-        <div class="step-body"><h4>${j.k}</h4><p>${j.d}</p></div>
-      </div>`).join('')}
-      <div class="prog-foot">${I('sparkle',17)} Every class and lab moves you one stage forward.</div>
-    </div>
-  </div></section>
-
-  <section class="sec-tight" style="padding-top:0"><div class="wrap">
-    ${Figure('hero','Learning together, in plain language.','LifeQuest AI classes and labs are built around real people doing real work — not demos.')}
-    <p class="credit">Photography via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-  </div></section>
+  ${homeLaunch()}
 
   <section class="sec tint"><div class="wrap">
     <div class="sec-head">
@@ -81,18 +53,7 @@ function viewHome(){
     </div>
   </div></section>
 
-  <section class="sec tint"><div class="wrap">
-    <div class="row-between sec-head" style="margin-bottom:40px;max-width:none;align-items:flex-end">
-      <div style="max-width:62ch">
-        <p class="eyebrow">Launch Catalog</p>
-        <h2>Ten Classes. One Clear Path.</h2>
-        <p class="lede">Start wherever you are. Each class hands off to the next, so nothing ever feels like a leap.</p>
-      </div>
-      <a class="btn btn-ghost" href="${url('/classes/')}">All classes & filters <span class="arrow">${I('arrow',17)}</span></a>
-    </div>
-    <div class="grid g3">${CLASSES.slice(0,6).map(CourseCard).join('')}</div>
-    <div class="center" style="margin-top:36px"><a class="btn btn-primary" href="${url('/classes/')}">See All 10 Classes</a></div>
-  </div></section>
+  <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">October 2026 · Groups forming</p><h2>Learn with people who understand your work.</h2><p class="lede">Small businesses and solopreneurs. Insurance and accounting professionals. Educators. Nonprofits. Tell us where you fit and what you want to accomplish.</p></div><a class="btn btn-primary" href="${url('/ai-training/#groups')}">Find my learning group</a></div></section>
 
   <section class="sec"><div class="wrap">
     <div class="sec-head">
@@ -142,16 +103,7 @@ function viewHome(){
     </div>
   </div></section>
 
-  <section class="sec tint"><div class="wrap">
-    <div class="sec-head center">
-      <p class="eyebrow">Member Experience</p>
-      <h2>A Home For Your Progress</h2>
-      <p class="lede">A preview of the LifeQuest AI member experience — your journey stage, current class, recommended next step, and the toolkit you build as you go.</p>
-      <div style="margin-top:14px"><span class="sample-note">Visual prototype — sample data</span></div>
-    </div>
-    ${DashboardPreview()}
-    <div class="center" style="margin-top:28px"><a class="btn btn-ghost" href="${url('/member/')}">Open the full member preview <span class="arrow">${I('arrow',17)}</span></a></div>
-  </div></section>
+
 
   <section class="sec"><div class="wrap">
     <div class="sec-head">
@@ -165,21 +117,7 @@ function viewHome(){
     </div>
   </div></section>
 
-  <section class="sec tint"><div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Learner Voices</p>
-      <h2>What Progress Sounds Like</h2>
-      <p class="lede">These are illustrative personas, not real customer endorsements.</p>
-    </div>
-    <div class="grid g3">
-      ${TESTIMONIALS.map(t=>`<div class="quote">
-        <span class="sample-note" style="align-self:flex-start;margin-bottom:18px">Sample persona</span>
-        <blockquote>“${t.quote}”</blockquote>
-        <div class="who"><div class="avatar">${t.initials}</div>
-          <div><div class="n">${t.name}</div><div class="r">${t.role}</div></div></div>
-      </div>`).join('')}
-    </div>
-  </div></section>
+
 
 
   <section class="sec"><div class="wrap">

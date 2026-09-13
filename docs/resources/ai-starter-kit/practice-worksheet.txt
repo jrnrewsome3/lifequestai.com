@@ -1,0 +1,41 @@
+LIFEQUEST AI — ONE USEFUL TASK
+A learner worksheet | October 2026 class preparation
+
+1. MY WORK
+My role or field:
+One recurring task I want to improve:
+Who will use the result:
+What a useful result looks like:
+
+2. MY INPUT
+Fictional, public, or approved non-sensitive information I can use:
+Facts I must preserve:
+Information I should leave out:
+
+3. MY PROMPT
+Help me [task] for [audience].
+Use only these facts: [facts].
+Return [format and length].
+Do not invent [dates, prices, names, promises, or other missing details].
+Mark missing information in brackets. Ask a question if you cannot proceed.
+
+4. MY REVIEW
+[ ] Every factual claim matches the information I supplied or a checked source.
+[ ] Names, dates, numbers, and commitments are correct.
+[ ] The tone and next step fit the audience.
+[ ] I removed confidential information and unsupported claims.
+[ ] I made the final decision before sharing or using the result.
+
+5. MY REVISION
+One thing I asked AI to improve:
+One thing I changed myself:
+
+6. MY REUSABLE ROUTINE
+When I will use this again:
+Where I will save my prompt and checklist:
+Who checks the result:
+How I will judge whether it helped:
+
+Join a group of 10 people with similar work needs:
+https://lifequestai.com/ai-training/
+Interest only. Class date, format, and price are confirmed before enrollment.

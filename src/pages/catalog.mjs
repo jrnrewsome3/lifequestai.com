@@ -12,8 +12,8 @@ import {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, M
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 
 function viewClasses(){
-  return PageHero('Launch Catalog','Classes',
-    'Ten classes that move in a deliberate order — from your first useful AI conversation to a working agent. Search, or filter by level and learning track.',
+  return PageHero('Curriculum previews','Course Outlines',
+    'Explore sample curricula from beginner skills to more advanced projects. These outlines are not a confirmed class schedule. See AI Training for the October interest lists.',
     `<div style="margin-top:28px">${LadderStrip()}</div>`)
   + `<section class="sec-tight"><div class="wrap">
       <div class="toolbar">
@@ -53,7 +53,7 @@ function viewClass(slug){
     <div class="detail-grid">
       <div>
         <div class="badges" style="margin-bottom:18px">${levelBadges(c)}</div>
-        <p class="eyebrow">Class ${c.num}</p>
+        <p class="eyebrow">Curriculum preview · Class ${c.num}</p>
         <h1 style="font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:20px">${c.title}</h1>
         <p class="lede">${c.blurb}</p>
         <div class="meta" style="margin-top:22px;gap:10px 22px">
@@ -71,10 +71,10 @@ function viewClass(slug){
             <div class="spec"><dt>Format</dt><dd style="max-width:16ch">${c.format}</dd></div>
             <div class="spec"><dt>Tracks</dt><dd style="max-width:16ch">${tracks.map(t=>t.short).join(', ')}</dd></div>
           </dl>
-          <a class="btn btn-primary" style="width:100%" href="${url('/newsletter/')}">Enroll in this class</a>
+          <a class="btn btn-primary" style="width:100%" href="${url('/ai-training/join/')}?topic=${encodeURIComponent(c.title)}">Ask about this topic</a>
           <a class="btn btn-quiet btn-sm" style="width:100%;margin-top:8px;justify-content:center" href="${url('/assessment/')}">Not sure? Take the assessment</a>
           <div class="divider"></div>
-          <p class="tiny muted" style="margin:0">Enrollment opens with each new cohort. Join the list and you’ll hear first.</p>
+          <p class="tiny muted" style="margin:0">This is a curriculum preview. Duration, format, and instructor details are illustrative. We confirm the actual class details before you enroll.</p>
         </div>
       </div>
     </div>

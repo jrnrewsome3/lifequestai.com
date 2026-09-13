@@ -33,6 +33,7 @@ function viewResources(){
   return PageHero('Resources','Guides, Templates & Straight Answers',
     'Free material you can use before, during, or instead of a class. Updated as the tools change — because they change constantly.')
   + `<section class="sec-tight"><div class="wrap">
+      <article class="card" style="margin-bottom:32px"><p class="eyebrow">Free AI starter kit</p><h2>25 prompts. One useful first step.</h2><p>Practice with prompts for your work and a downloadable worksheet. No signup required.</p><div><a class="btn btn-primary" href="${url('/resources/ai-starter-kit/')}">Open the starter kit</a></div></article>
       <article class="card" style="margin-bottom:32px">
         <p class="eyebrow">Free workshop · Older adults & caregivers</p>
         <h2>AI for Everyday Life</h2>
@@ -49,25 +50,7 @@ function viewResources(){
         </article>`).join('')}
       </div>
     </div></section>
-    <section class="sec tint"><div class="wrap">
-      <div class="sec-head"><p class="eyebrow">Live & Community</p><h2 style="font-size:1.9rem">Upcoming Sessions</h2>
-      <p class="lede">Workshops, office hours, and community sessions. Dates below are a sample schedule — the live calendar is published to the newsletter first.</p></div>
-      <div class="stack" style="gap:12px">
-        ${EVENTS.map(e=>`<div class="card" style="flex-direction:row;gap:24px;align-items:center;padding:20px 24px">
-          <div style="flex:none;text-align:center;min-width:64px">
-            <div class="tiny muted" style="font-family:var(--sans);font-weight:700;letter-spacing:.1em">${e.day.toUpperCase()}</div>
-            <div style="font-family:var(--sans);font-weight:800;font-size:1.05rem">${e.date}</div>
-          </div>
-          <div style="width:1px;align-self:stretch;background:var(--line-soft)"></div>
-          <div style="flex:1">
-            <div class="badges" style="margin-bottom:8px"><span class="skill-tag">${e.kind}</span><span class="skill-tag">${e.time}</span></div>
-            <h3 style="font-size:1.08rem;margin-bottom:5px">${e.title}</h3>
-            <p class="small muted" style="margin:0">${e.desc}</p>
-          </div>
-          <a class="btn btn-ghost btn-sm" href="${url('/newsletter/')}" style="flex:none">Save my seat</a>
-        </div>`).join('')}
-      </div>
-    </div></section>`
+    <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">October 2026 · Groups forming</p><h2>Practical AI classes for your kind of work</h2><p class="lede">We organize a class when 10 interested people with similar work needs come together. Join the list to help us form your group; dates and prices are confirmed before enrollment.</p></div><a class="btn btn-primary" href="${url('/ai-training/')}">Explore the learning groups</a></div></section>`
   + CtaBand();
 }
 
