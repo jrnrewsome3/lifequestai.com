@@ -65,7 +65,9 @@ function viewPost(post){
     </div></header>
 
     <div class="wrap">
-      ${Figure(c.slug, '', '', 'banner')}
+      ${post.image
+        ? `<figure class="figure banner"><img src="${url(post.image)}" alt="${esc(post.imageAlt || '')}" loading="lazy" decoding="async"></figure>`
+        : Figure(c.slug, '', '', 'banner')}
     </div>
 
     <div class="wrap-narrow article-body">

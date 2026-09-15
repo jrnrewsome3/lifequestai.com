@@ -112,7 +112,7 @@ for (const p of POSTS) {
   const c = CLASSES.find(x => x.id === p.classId);
   write(`blog/${p.slug}/index.html`, page({
     title: p.title, active: 'blog', path: `/blog/${p.slug}/`,
-    ogImage: photoUrl(c.slug, 1200, 630),
+    ogImage: p.image ? absUrl(p.image) : photoUrl(c.slug, 1200, 630),
     description: p.dek,
     articleMeta: p.date,
     body: viewPost(p)
@@ -177,6 +177,11 @@ for(const asset of ['training.css','training.js','training-form.mjs'])write(asse
 /* ---------- assets ---------- */
 fs.copyFileSync(path.join(ROOT, 'src/styles.css'), path.join(OUT, 'styles.css'));
 built.push('styles.css');
+
+const blogOgSource = path.join(ROOT, 'src/blog-og');
+if (fs.existsSync(blogOgSource)) {
+  fs.cpSync(blogOgSource, path.join(OUT, 'blog-og'), {recursive: true});
+}
 
 /* app.js gets the data the browser needs injected at build time */
 const clientData = {

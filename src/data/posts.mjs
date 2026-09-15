@@ -15,6 +15,86 @@
 
 const POSTS = [
   {
+    slug: 'ai-panic-is-not-a-plan',
+    title: 'AI Panic Is Not a Plan. Test One Real Task Instead.',
+    dek: 'Jensen Huang pushed back on unsupported AI doom forecasts. The practical lesson is not to dismiss risk — it is to separate evidence from prediction, test carefully, and keep people accountable.',
+    category: 'Everyday AI',
+    date: '2026-09-15',
+    classId: 1,
+    image: '/blog-og/ai-panic-is-not-a-plan.png',
+    imageAlt: 'A person reviews chaotic warning signals as they pass through a verification checkpoint and become orderly task cards.',
+    body: `
+<p>AI debates often force a false choice: panic or denial. Neither helps a small business owner, educator, nonprofit leader, or team decide what to do on Monday morning.</p>
+
+<p>At the All-In Summit on September 14, Nvidia CEO Jensen Huang pushed back on recent warnings about advanced AI. His remarks followed Anthropic CEO Dario Amodei’s essay calling for the industry to slow the pace of frontier-model capability development and a former Anthropic researcher’s public resignation over safety concerns.</p>
+
+<p>The disagreement is real. So is the need to avoid turning either executive’s position into settled science. Huang’s comments do not prove that advanced AI is harmless, and Amodei’s scenarios do not make a specific probability or timeline certain.</p>
+
+<p>For the rest of us, the useful question is simpler: how do we take genuine risks seriously without letting dramatic forecasts become our operating plan?</p>
+
+<h2>Separate an incident from a prediction</h2>
+
+<p>A reported security failure, unsafe model behavior, or breakdown in a lab’s controls is an event that can be investigated. It has logs, decisions, technical causes, and consequences. It calls for evidence, root-cause analysis, and corrective action.</p>
+
+<p>A forecast about what AI may do years — or months — from now is different. It can be informed by expertise, but it still depends on assumptions. A percentage attached to an uncertain future is not the same thing as a measured failure rate.</p>
+
+<p>Huang argued that whistleblowers who report concrete problems should be taken seriously while highly specific extinction forecasts should not be presented as established fact. That distinction is worth keeping even if you disagree with his broader position.</p>
+
+<p>Ask two questions whenever a frightening AI claim appears: What happened? What evidence supports the projected outcome and timeline? If the answers blur together, slow down before repeating the headline.</p>
+
+<h2>Treat forecasts as claims, not instructions</h2>
+
+<p>Huang pointed to earlier predictions about radiology, software development, and entry-level work as examples of timelines that were too confident. The details and effects remain debated, but the larger lesson holds: forecasts should be checked against what actually happens.</p>
+
+<p>That applies to optimistic claims too. A vendor’s promise that AI will eliminate most of a workflow is also a forecast. So is a claim that a tool will save a fixed number of hours or replace a role.</p>
+
+<p>Write the prediction down. Record its source, date, assumptions, and time horizon. Then return to it. Good decisions improve when both alarming and promotional claims have to face a scorecard.</p>
+
+<h2>Safety and practical use can coexist</h2>
+
+<p>Amodei’s essay argues that frontier labs should create more time for safeguards and independent evaluation as capabilities advance. Huang emphasized engineering controls, testing, monitoring, and evaluation before products are released. Their preferred strategies differ, but both frames point toward work that ordinary organizations can recognize: test systems before trusting them, control where they operate, and review what reaches people.</p>
+
+<p>You do not need to resolve the frontier-policy debate before improving one internal process. You do need to choose a task whose failure would be easy to catch and inexpensive to correct.</p>
+
+<p>Start with summarizing a non-sensitive meeting, drafting a routine email, extracting fields from a sample document, or comparing two versions of a policy. Do not begin with an unsupervised medical decision, financial recommendation, hiring decision, or message that goes directly to a client.</p>
+
+<h2>Use a one-task test</h2>
+
+<p><strong>First, name the exact task.</strong> Avoid statements such as “use AI in marketing.” Try “draft three subject lines from this approved event description.”</p>
+
+<p><strong>Second, define a good result.</strong> State what it must contain and what it must not invent. Keep the source beside the output so a person can compare them.</p>
+
+<p><strong>Third, use a small sample.</strong> Run the task with non-sensitive information. Note errors, omissions, and the time required for review — not just the time required for generation.</p>
+
+<p><strong>Fourth, assign a human owner.</strong> That person decides whether the output is accurate, appropriate, and ready to leave the organization.</p>
+
+<p><strong>Finally, decide whether to repeat, revise, or stop.</strong> A failed pilot is useful evidence. A successful pilot is still not permission to remove review from higher-risk work.</p>
+
+<h2>Three prompts to try</h2>
+
+<blockquote>Review this AI claim. Separate documented events, attributed opinions, forecasts, and unsupported conclusions. For every forecast, identify the assumptions and evidence I would need before acting on it.</blockquote>
+
+<blockquote>Break this workflow into individual tasks. Recommend one low-risk task for a small AI pilot, define success criteria, list information that should not be shared, and create a human review checklist.</blockquote>
+
+<blockquote>Compare this AI output with the source. List accurate statements, omissions, unsupported additions, and items that require expert review. Do not rewrite the output until the assessment is complete.</blockquote>
+
+<h2>Keep the argument in proportion</h2>
+
+<p>AI can create real benefits and real harms. The loudest prediction in your feed does not tell you which tool fits your work, what information is safe to share, or who should approve the result.</p>
+
+<p>The practical response is neither “AI is a hoax” nor “AI will inevitably take over.” It is evidence, testing, boundaries, and accountability.</p>
+
+<p>Take credible reports seriously. Label forecasts as forecasts. Then test one real task and learn from what happens.</p>
+
+<h2>Sources</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=S7CrlFLAmEA">All-In Podcast interview with Jensen Huang, September 14, 2026</a></li>
+<li><a href="https://darioamodei.com/post/we-must-pace-the-frontier">Dario Amodei, “We Must Pace the Frontier,” September 12, 2026</a></li>
+</ul>
+`
+  },
+  {
   "slug": "macos-27-practical-ai-tasks",
   "title": "macOS 27 Golden Gate: Practical AI Tasks to Try on Your MacBook",
   "dek": "Start with a small AI task, compare the result with its source, and decide which Mac features are useful in your everyday work.",

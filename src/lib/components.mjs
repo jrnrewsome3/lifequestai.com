@@ -138,9 +138,12 @@ function longDate(iso){
 
 function PostCard(p, featured){
   const c = byId(p.classId);
+  const postImage = p.image
+    ? `<span class="media media-16-9"><img src="${url(p.image)}" alt="${esc(p.imageAlt || '')}" loading="lazy" decoding="async" width="${featured?1000:800}" height="${featured?560:500}"></span>`
+    : Photo(c.slug, featured?1000:800, featured?560:500, 'media-16-9');
   return `<article class="post-card${featured?' featured':''}" data-cat="${p.category}" data-search="${esc((p.title+' '+p.dek+' '+p.category).toLowerCase())}">
     <a class="post-card-link" href="${url('/blog/'+p.slug+'/')}">
-      ${Photo(c.slug, featured?1000:800, featured?560:500, 'media-16-9')}
+      ${postImage}
     </a>
     <div class="post-body">
       <div class="post-meta">
