@@ -41,7 +41,8 @@ export function viewPrivacy(){
       <li><strong>Cloudflare</strong> runs the form handler and stores submissions in a database in our Cloudflare account.</li>
       <li><strong>Resend</strong> sends us an email notification when a form is submitted, and sends email on our behalf.</li>
       <li><strong>Stripe</strong> processes payment when you enroll in a confirmed class. You pay on Stripe’s checkout page; we never see or store your card number. Stripe’s own privacy policy applies to that page.</li>
-      <li><strong>GitHub Pages</strong> hosts the website itself.</li>
+      <li><strong>GitHub Pages</strong> hosts the website itself, delivered through Cloudflare’s network.</li>
+      ${SITE.TURNSTILE_SITEKEY ? '<li><strong>Cloudflare Turnstile</strong> checks that form submissions come from a person, not a bot. It looks at technical signals from your browser for that one purpose and does not set advertising cookies.</li>' : ''}
       <li><strong>Google Fonts and Unsplash</strong> currently serve the site’s typefaces and some photographs. Loading a page asks their servers for those files, which shares your IP address and browser type with them. We plan to host these files ourselves.</li>
     </ul>`],
 

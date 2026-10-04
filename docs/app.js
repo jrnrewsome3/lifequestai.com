@@ -198,6 +198,11 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       clearError();
+      var ts = form.querySelector('[name="cf-turnstile-response"]');
+      if (form.querySelector('.cf-turnstile') && (!ts || !ts.value)) {
+        showError('Please wait a moment while we check this browser, then try again.');
+        return;
+      }
 
       // client-side validation first
       var firstBad = null;
@@ -220,7 +225,7 @@
       fetch(form.getAttribute('action'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(opts.payload())
+        body: JSON.stringify(withTurnstile(form, opts.payload()))
       })
         .then(function (res) {
           return res.json().catch(function () { return {}; }).then(function (data) {
@@ -233,6 +238,7 @@
             if (successBox) successBox.classList.remove('hide');
             return;
           }
+          resetTurnstile(form);
           if (r.status === 422 && r.data && r.data.errors) {
             // server disagreed with a field — mark it
             opts.fields.forEach(function (f) {
@@ -246,10 +252,22 @@
           if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
         })
         .catch(function () {
+          resetTurnstile(form);
           showError('We could not reach the server. Check your connection and try again.');
           if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
         });
     });
+  }
+
+  /* Cloudflare Turnstile: send the one-time token with the form, and get a fresh one after each attempt. */
+  function withTurnstile(form, payload) {
+    var t = form.querySelector('[name="cf-turnstile-response"]');
+    if (t && t.value) payload.turnstile = t.value;
+    return payload;
+  }
+  function resetTurnstile(form) {
+    var w = form.querySelector('.cf-turnstile');
+    if (w && window.turnstile) { try { window.turnstile.reset(w); } catch (e) {} }
   }
 
   var val = function (id) {

@@ -179,6 +179,21 @@ The Enroll button only appears when `status` is `'confirmed'` **and** `paymentLi
 - **Structured data** (JSON-LD for the organization, each class, and each blog post) is
   generated in `build.mjs`.
 
+## Security headers, HTTPS, and spam protection
+
+The domain runs through Cloudflare's proxy (orange cloud) in front of GitHub Pages, with
+SSL mode **Full (strict)** and **Always Use HTTPS** on. A Cloudflare **Response Header
+Transform Rule** ("LifeQuest security headers") adds HSTS, Content-Security-Policy,
+X-Content-Type-Options, X-Frame-Options, Referrer-Policy, and Permissions-Policy.
+
+**If you add a new outside service** (an embedded video, a new script, images from another
+host), add its domain to the Content-Security-Policy in that rule or the browser will block it.
+The policy allows inline scripts because the workshop pages use small inline theme scripts.
+
+**Turnstile** (Cloudflare's invisible bot check) protects all three forms. The public site key
+is `SITE.TURNSTILE_SITEKEY` in `src/config.mjs`; the secret is the Worker secret
+`TURNSTILE_SECRET`. To switch it off, delete that Worker secret first, then clear the site key.
+
 ## Forms and submissions
 
 The newsletter and contact forms post to a small **Cloudflare Worker in your own Cloudflare

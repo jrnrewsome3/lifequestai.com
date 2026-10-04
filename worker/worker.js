@@ -12,6 +12,8 @@
      GET  /health                                            -> ok
 
    Bindings: DB (D1), EXPORT_KEY (secret)
+   Optional:  TURNSTILE_SECRET (secret) — when set, every POST must carry a valid
+              Cloudflare Turnstile token in the `turnstile` field.
    Optional:  RESEND_API_KEY (secret) — when set, every new submission is
               emailed to NOTIFY_TO (default roger@lifequestai.com) from
               NOTIFY_FROM (default forms@lifequestai.com). Saving to D1 never
@@ -150,6 +152,24 @@ export default {
 
     // honeypot: real people never fill this hidden field
     if (clean(body.company, 100)) return json({ ok: true }, 200, origin);
+
+    if (env.TURNSTILE_SECRET) {
+      const token = clean(body.turnstile, 2048);
+      let passed = false;
+      if (token) {
+        try {
+          const fd = new FormData();
+          fd.append('secret', env.TURNSTILE_SECRET);
+          fd.append('response', token);
+          const ip = request.headers.get('CF-Connecting-IP');
+          if (ip) fd.append('remoteip', ip);
+          const v = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: fd });
+          const vr = await v.json();
+          passed = !!vr.success;
+        } catch (e) { passed = false; }
+      }
+      if (!passed) return json({ ok: false, error: 'We could not verify this browser. Please reload the page and try again.' }, 403, origin);
+    }
 
     const name = clean(body.name, 120);
     const email = clean(body.email, 200).toLowerCase();

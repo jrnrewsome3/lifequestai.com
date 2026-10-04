@@ -50,6 +50,7 @@ function NewsletterSection(){
               <option>AI for Nonprofits</option><option>AI Automation &amp; Agents</option>
             </select>
           </div>
+          ${SITE.TURNSTILE_SITEKEY ? `<div class="cf-turnstile" data-sitekey="${SITE.TURNSTILE_SITEKEY}" data-appearance="interaction-only" data-size="flexible"></div>` : ''}
           <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px" type="submit" id="nl-submit">Join the LifeQuest AI Newsletter</button>
           <p class="err" id="nl-error" style="text-align:center;margin-top:12px"></p>
           <p class="hint" style="text-align:center;margin-top:14px">Useful AI. No hype. Unsubscribe anytime.</p>

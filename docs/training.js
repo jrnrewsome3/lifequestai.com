@@ -36,6 +36,8 @@ if(form){
       const payload=makePayload(Object.fromEntries(new FormData(form)),location.search,location.pathname);
       if(!live){status.textContent=`Preview complete. You chose ${GROUP_LABELS[form.elements.group.value]}. Nothing was sent or saved. On the live site, this request will go to LifeQuest AI for group matching.`;status.dataset.state='preview';status.focus();return;}
       sending=true;button.disabled=true;button.textContent='Sending…';
+      const ts=form.querySelector('[name="cf-turnstile-response"]');
+      if(form.querySelector('.cf-turnstile')){if(!ts||!ts.value)throw new Error('Please wait a moment while we check this browser, then try again.');payload.turnstile=ts.value;}
       const result=await sendInterest(form.action,payload);
       if(result.duplicate){
         status.textContent='A recent request from this email is already on file. This new request was not saved. If you were changing your details, wait at least two minutes and try again.';
@@ -45,6 +47,6 @@ if(form){
       }
       status.dataset.state='success';
     }catch(error){status.textContent=error.name==='TimeoutError'?'We could not confirm receipt in time. Please try again, or use the contact page.':error.message||'We could not confirm receipt. Please try again.';status.dataset.state='error';}
-    finally{sending=false;button.disabled=submitted;if(!submitted)button.textContent=live?'Join the interest list':'Try the interest form';status.focus();}
+    finally{const w=form.querySelector('.cf-turnstile');if(!submitted&&w&&window.turnstile){try{window.turnstile.reset(w);}catch{}}sending=false;button.disabled=submitted;if(!submitted)button.textContent=live?'Join the interest list':'Try the interest form';status.focus();}
   });
 }

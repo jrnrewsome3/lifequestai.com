@@ -170,6 +170,7 @@ function viewContact(){
           <div class="field" id="c-msg"><label for="ct-msg">Message</label>
             <textarea id="ct-msg" rows="5" placeholder="Tell us a little about what you’re trying to accomplish."></textarea>
             <p class="err">Please add a short message.</p></div>
+          ${SITE.TURNSTILE_SITEKEY ? `<div class="cf-turnstile" data-sitekey="${SITE.TURNSTILE_SITEKEY}" data-appearance="interaction-only" data-size="flexible"></div>` : ''}
           <button class="btn btn-primary btn-lg" style="width:100%" type="submit" id="ct-submit">Send message</button>
           <p class="tiny muted" style="text-align:center;margin-top:12px">We use your details only to reply. See our <a href="${url('/privacy/')}">Privacy Policy</a>.</p>
           <p class="err" id="ct-error" style="text-align:center;margin-top:12px"></p>
