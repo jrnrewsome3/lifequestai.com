@@ -20,20 +20,7 @@ const EVENTS = [
   {date:'Oct 8', day:'Thu', time:'12:00 PM ET', title:'Agent Build Session', desc:'Guided build session for the Class 10 capstone.', kind:'Lab'}
 ];
 
-const NEWSLETTER_ISSUES = [
-  {no:'Issue 24', title:'The five-minute meeting prep', teaser:'One prompt, your calendar, and a habit that makes you the most prepared person in the room.'},
-  {no:'Issue 23', title:'Stop starting over', teaser:'Why your second prompt should almost never be a rewrite of your first — plus the five follow-ups that fix most answers.'},
-  {no:'Issue 22', title:'A spreadsheet, a statement, and an afternoon', teaser:'How one learner found $214 a month in forgotten subscriptions.'}
-];
 
-const TESTIMONIALS = [
-  {quote:'I came in able to use ChatGPT for maybe one thing. By the end of the automation class I had a workflow that handles my weekly reporting on its own. The progression is what made it stick — nothing ever felt like a leap.',
-   name:'Sample Persona — Working Professional', role:'Illustrative testimonial for prototype', initials:'WP'},
-  {quote:'We are a team of four doing the work of ten. The opportunity map alone changed how we spend our week. We stopped experimenting randomly and started fixing the three processes that were actually costing us money.',
-   name:'Sample Persona — Small Business Owner', role:'Illustrative testimonial for prototype', initials:'SB'},
-  {quote:'My mother and my fifteen-year-old took the family class with me. That has never happened with any technology before. We came out with actual household rules instead of everybody guessing.',
-   name:'Sample Persona — Family & Community Learner', role:'Illustrative testimonial for prototype', initials:'FC'}
-];
 
 const OUTCOMES = [
   {icon:'clock', title:'Save Time', desc:'Use AI to eliminate repetitive work and simplify everyday tasks.', tone:''},
@@ -58,7 +45,7 @@ const METRICS = [
   {num:'Built', label:'SOLUTIONS BUILT', desc:'Assistants, automations, and agents you created and still use.'}
 ];
 
-export {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, METRICS};
+export {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS};
 
 const LADDER = ['AI Literacy','AI Assistance','AI Productivity','AI Workflows','AI Automation','AI Agents'];
 export {LADDER};

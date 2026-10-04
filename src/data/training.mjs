@@ -1,29 +1,43 @@
+/* How classes get scheduled. There is no fixed launch month: a class is
+   scheduled once `minimum` people ask for the same class. */
 export const LAUNCH = {
-  month: 'October 2026', minimum: 10,
+  minimum: 10,
+  typicalPrice: '$99',            // per seat; the final price is confirmed with each group
   title: 'Make AI useful in your work',
   status: 'Interest list open',
 };
+/* Each group's `session` drives the Enroll button on its page.
+   While status is 'forming', the page shows the interest list.
+   When 10 people have asked and you've picked a date:
+     status:'confirmed', date:'Tuesday, November 10, 2026 · 6:00–8:00 PM ET',
+     format:'Live online (Zoom)', price:'$99', paymentLink:'https://buy.stripe.com/...'
+   The Enroll button appears only when status is 'confirmed' AND paymentLink is set.
+   Set status:'full' to show "This class is full — join the list for the next one". */
 export const GROUPS = [
   {slug:'small-business',name:'Small businesses & solopreneurs',short:'Business owners',photo:'ai-for-small-business-and-nonprofits',
    headline:'Less busywork. More time for your business.',
    intro:'Bring the work that follows you home: customer follow-ups, marketing drafts, meeting notes, and repeat questions. Practice with other owners who wear more than one hat.',
    examples:[['Customer follow-up','Turn fictional meeting notes into a clear follow-up draft with a next step.'],['Content you can actually use','Build a week of posts around one real offer, then edit them into your voice.'],['A repeatable routine','Create a checklist and reusable prompt for a task you handle every week.']],
-   task:'Draft a customer follow-up from a fictional sales conversation.',takeaway:'A follow-up template you can adapt and review before sending.'},
+   task:'Draft a customer follow-up from a fictional sales conversation.',takeaway:'A follow-up template you can adapt and review before sending.',
+   session:{status:'forming', date:'', format:'', price:'', paymentLink:''}},
   {slug:'insurance-accounting',name:'Insurance & accounting professionals',short:'Insurance & accounting',photo:'work',
    headline:'Practical AI for the work around your clients.',
    intro:'Practice with professionals who manage client communication, document-heavy routines, deadlines, and careful review. Tell us your specialty so we can match the examples to your work.',
    examples:[['Client communication','Draft a plain-language appointment reminder from fictional details.'],['Meeting preparation','Turn a sample agenda into questions and a preparation checklist.'],['Office routines','Map an administrative task into steps, with a person responsible for checking the output.']],
-   task:'Draft a document-request reminder using fictional client and appointment details.',takeaway:'An administrative communication template with a human review checklist.'},
+   task:'Draft a document-request reminder using fictional client and appointment details.',takeaway:'An administrative communication template with a human review checklist.',
+   session:{status:'forming', date:'', format:'', price:'', paymentLink:''}},
   {slug:'educators',name:'Educators & learning teams',short:'Educators',photo:'hero',
    headline:'Bring your teaching ideas. Build something useful.',
    intro:'Work alongside educators to draft learning activities, explain ideas clearly, and adapt materials for different starting points. Use your institution’s approved tools and sample learner data.',
    examples:[['Lesson preparation','Turn a learning objective into a short activity and an exit question.'],['Clearer explanations','Create two ways to explain the same concept, then check both for accuracy.'],['Useful feedback','Draft feedback on a fictional response using a rubric you supply.']],
-   task:'Build a short learning activity for a topic you teach.',takeaway:'An activity, an exit question, and a revision checklist.'},
+   task:'Build a short learning activity for a topic you teach.',takeaway:'An activity, an exit question, and a revision checklist.',
+   session:{status:'forming', date:'', format:'', price:'', paymentLink:''}},
   {slug:'nonprofits',name:'Nonprofits & community organizations',short:'Nonprofits',photo:'nonprofits',
    headline:'Make room for more of your mission.',
    intro:'Practice with teams that balance outreach, volunteers, programs, and limited staff time. Bring a routine you want to simplify, using public information or fictional examples.',
    examples:[['Volunteer communication','Create a welcome email and a first-day checklist from sample event details.'],['Program storytelling','Draft an update using verified facts, without inventing impact numbers.'],['Team coordination','Turn sample meeting notes into an action list with clear owners.']],
-   task:'Create a volunteer welcome message for a fictional community event.',takeaway:'A welcome template and a checklist your team can adapt.'}
+   task:'Create a volunteer welcome message for a fictional community event.',takeaway:'A welcome template and a checklist your team can adapt.',
+   session:{status:'forming', date:'', format:'', price:'', paymentLink:''}}
 ];
 export const MODULES = [
   ['Choose one useful task','Identify a recurring task, describe what a good result looks like, and decide what information is appropriate to use.'],

@@ -32,6 +32,7 @@ import {viewPaths, viewPath} from './src/pages/paths.mjs';
 import {viewBlog, viewPost} from './src/pages/blog.mjs';
 import {viewLabs, viewResources, viewAbout, viewNewsletter,
         viewAssessment, viewMember, viewContact, viewNotFound} from './src/pages/misc.mjs';
+import {viewPrivacy, viewTerms, viewAccessibility} from './src/pages/legal.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(ROOT, 'docs');
@@ -58,8 +59,18 @@ fs.mkdirSync(OUT, {recursive: true});
 
 const ogHome = photoUrl('hero', 1200, 630);
 
+/* Structured data (JSON-LD) so search engines understand who we are. */
+const ORG = {
+  '@type': 'EducationalOrganization', '@id': absUrl('/') + '#org',
+  name: SITE.name, url: absUrl('/'), description: SITE.description,
+  logo: absUrl('/favicon.svg'), email: SITE.LEGAL.contactEmail,
+  address: {'@type': 'PostalAddress', addressLocality: 'Tallahassee', addressRegion: 'FL', addressCountry: 'US'}
+};
+const ld = obj => ({'@context': 'https://schema.org', ...obj});
+
 write('index.html', page({
   title: '', active: 'home', path: '/', ogImage: ogHome,
+  jsonLd: ld({'@graph': [ORG, {'@type': 'WebSite', name: SITE.name, url: absUrl('/'), publisher: {'@id': ORG['@id']}}]}),
   description: SITE.description,
   training: true, body: viewHome()
 }));
@@ -75,6 +86,9 @@ for (const c of CLASSES) {
     title: c.title, active: 'classes', path: `/classes/${c.slug}/`,
     ogImage: photoUrl(c.slug, 1200, 630),
     description: c.blurb,
+    jsonLd: ld({'@type': 'Course', name: c.title, description: c.blurb, url: absUrl(`/classes/${c.slug}/`),
+      provider: {'@type': 'Organization', name: SITE.name, url: absUrl('/')},
+      educationalLevel: c.level, teaches: c.skills, inLanguage: 'en'}),
     body: viewClass(c.slug)
   }));
 }
@@ -115,6 +129,10 @@ for (const p of POSTS) {
     ogImage: p.image ? absUrl(p.image) : photoUrl(c.slug, 1200, 630),
     description: p.dek,
     articleMeta: p.date,
+    jsonLd: ld({'@type': 'BlogPosting', headline: p.title, description: p.dek, datePublished: p.date,
+      url: absUrl(`/blog/${p.slug}/`), image: p.image ? absUrl(p.image) : photoUrl(c.slug, 1200, 630),
+      author: {'@type': 'Organization', name: SITE.name, url: absUrl('/')},
+      publisher: {'@type': 'Organization', name: SITE.name, logo: {'@type': 'ImageObject', url: absUrl('/favicon.svg')}}}),
     body: viewPost(p)
   }));
 }
@@ -144,16 +162,38 @@ write('assessment/index.html', page({
   body: viewAssessment()
 }));
 
-write('member/index.html', page({
+if (SITE.FLAGS.memberArea) write('member/index.html', page({
   title: 'Member Preview', active: '', path: '/member/', ogImage: ogHome,
   description: 'A preview of the LifeQuest AI member experience: your journey stage, current class, recommended next step, and your growing toolkit.',
   body: viewMember()
 }));
+/* While the member area is off, /member/ redirects to AI Training (kept out of the sitemap). */
+if (!SITE.FLAGS.memberArea) {
+  fs.mkdirSync(path.join(OUT, 'member'), {recursive: true});
+  fs.writeFileSync(path.join(OUT, 'member/index.html'), `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=${url('/ai-training/')}"><link rel="canonical" href="${absUrl('/ai-training/')}"><title>Redirecting…</title></head><body><p><a href="${url('/ai-training/')}">Continue to AI Training</a></p></body></html>\n`);
+}
 
 write('contact/index.html', page({
   title: 'Contact', active: '', path: '/contact/', ogImage: ogHome,
   description: 'Questions about classes, group enrollment, workshops for your organization, or partnerships.',
   body: viewContact()
+}));
+
+/* ---------- legal ---------- */
+write('privacy/index.html', page({
+  title: 'Privacy Policy', active: '', path: '/privacy/', ogImage: ogHome,
+  description: 'What LifeQuest AI collects through its forms, how it is used and stored, and how to have it corrected or deleted.',
+  body: viewPrivacy()
+}));
+write('terms/index.html', page({
+  title: 'Terms of Use', active: '', path: '/terms/', ogImage: ogHome,
+  description: 'Terms for using the LifeQuest AI website and enrolling in classes, including pricing, payment, cancellations, and refunds.',
+  body: viewTerms()
+}));
+write('accessibility/index.html', page({
+  title: 'Accessibility', active: '', path: '/accessibility/', ogImage: ogHome,
+  description: 'LifeQuest AI accessibility statement: our WCAG 2.2 AA goal, what we have done, known limitations, and how to reach us.',
+  body: viewAccessibility()
 }));
 
 write('404.html', page({
@@ -164,9 +204,9 @@ write('404.html', page({
 
 /* ---------- Cohort training and free starter kit ---------- */
 const trainingRoutes = [
-  ['/ai-training/', 'Practical AI classes for your kind of work', 'Join a group of 10 people with similar work needs. Targeting October 2026; dates and pricing confirmed before enrollment.', trainingHome()],
+  ['/ai-training/', 'Practical AI classes for your kind of work', 'Join a group of 10 people with similar work needs. A class is scheduled when 10 people ask for it; typically $99 per seat, confirmed before you pay.', trainingHome()],
   ...GROUPS.map(g => ['/ai-training/'+g.slug+'/', 'AI training for '+g.name, g.intro, audiencePage(g)]),
-  ['/ai-training/join/', 'Join a class interest list', 'Tell us your field and goals. We organize a class when 10 people with similar needs are interested.', joinPage()],
+  ['/ai-training/join/', 'Join a class interest list', 'Tell us your field and goals. A class is scheduled when 10 people with similar needs ask for it.', joinPage()],
   ['/resources/ai-starter-kit/', '25 practical AI prompts and a worksheet', 'Free practice prompts for small businesses, insurance and accounting professionals, educators, and nonprofits. No signup required.', starterPage()]
 ];
 for (const [route,title,description,body] of trainingRoutes) write(route.slice(1)+'index.html',page({title,description,body,path:route,active:'training',training:true,ogImage:ogHome}));

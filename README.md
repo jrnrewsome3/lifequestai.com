@@ -132,15 +132,52 @@ If you ever move the site somewhere else, change `BASE_PATH`, update `docs/CNAME
 
 ## Known limitations
 
-**Some content is sample content.** Instructor profiles, testimonials, the events calendar,
-and the member dashboard are illustrative placeholders, and they're labeled as such on the
-site. Replace them with real details before running paid traffic to the site.
+**The course catalog is a roadmap.** `/classes/` describes the classes we plan to teach and
+says so; none has a date until 10 people ask for it. Sample testimonials, instructor
+placeholders, and fictional newsletter issues were removed in October 2026. The member
+dashboard and resource library are hidden behind feature flags until they're real.
+
+**Fonts and photos load from Google Fonts and Unsplash.** Self-hosting them (download into
+the repo, point `layout.mjs` and `photos.mjs` at local files) is the next cleanup.
 
 **The photos are stock.** They're free-license images from [Unsplash](https://unsplash.com)
 and fine to use commercially, but they're generic. Swapping in photos of your actual classes
 and learners is the single biggest credibility upgrade available here.
 
 ---
+
+## Running classes: interest lists, confirmed dates, and Stripe
+
+There is no fixed launch month. A class is scheduled when **10 people ask for the same
+class** (`LAUNCH.minimum` in `src/data/training.mjs`). Classes are typically **$99 per seat**
+(`LAUNCH.typicalPrice`), with the final price confirmed with each group.
+
+When a group reaches 10 and you've picked a date:
+
+1. In Stripe, create a **Payment Link** for that class and price (Products → Payment Links).
+2. In `src/data/training.mjs`, find the group and fill in its `session`:
+   ```js
+   session:{status:'confirmed', date:'Tuesday, November 10, 2026 · 6:00–8:00 PM ET',
+            format:'Live online (Zoom)', price:'$99', paymentLink:'https://buy.stripe.com/...'}
+   ```
+3. `npm run build`, commit, push. That group's page now shows an **Enroll** button.
+4. When it fills, set `status:'full'`. After the class, set it back to `'forming'` and clear the fields.
+
+The Enroll button only appears when `status` is `'confirmed'` **and** `paymentLink` is set.
+
+## Legal pages and site settings
+
+- **Privacy Policy, Terms, Accessibility** live at `/privacy/`, `/terms/`, `/accessibility/`
+  (source: `src/pages/legal.mjs`). Business name, location, contact email, and effective date
+  come from `SITE.LEGAL` in `src/config.mjs`. **Update these pages whenever you add a form,
+  a new tool that receives visitor data, or change the refund policy** — and bump the date.
+- **Feature flags** (`SITE.FLAGS` in `src/config.mjs`) keep unfinished sections hidden:
+  `memberArea` (the `/member/` dashboard preview) and `resourceLibrary` (the guides grid on
+  `/resources/`). Turn one on only when the thing behind it is real.
+- **Analytics**: paste a Cloudflare Web Analytics site token into `SITE.ANALYTICS_TOKEN` and
+  rebuild. It's cookieless, so no consent banner is needed. The privacy page updates itself.
+- **Structured data** (JSON-LD for the organization, each class, and each blog post) is
+  generated in `build.mjs`.
 
 ## Forms and submissions
 
@@ -175,11 +212,18 @@ download your subscriber list. To rotate it, change the secret in the dashboard.
 - **Double submissions** — the same email to the same form inside two minutes is ignored.
 - **Other sites posting to it** — CORS only allows `lifequestai.com` and `www.lifequestai.com`.
 
-### One thing it does not do yet
+### Email notifications
 
-It **stores** submissions but doesn't **email** you when one arrives — you have to check.
-Your DNS shows a Resend setup (`resend._domainkey`), so if you add a Resend API key as a
-Worker secret, the Worker can email you on each submission. Ask and it's a small addition.
+Every new submission is emailed to **roger@lifequestai.com**, with Reply-To set to the
+person who submitted, so you can answer straight from your inbox. This uses Resend
+(the `lifequestai.com` domain is verified there).
+
+- Turned on by the Worker secret **`RESEND_API_KEY`** (Cloudflare → Workers & Pages →
+  `lifequest-forms` → Settings → Variables and Secrets). Without it, submissions are still
+  saved; they just aren't emailed.
+- Optional plain-text variables: `NOTIFY_TO` (change the inbox) and `NOTIFY_FROM`
+  (default `LifeQuest AI Forms <forms@lifequestai.com>`).
+- Saving never depends on the email. If Resend is down, the row is still in D1.
 
 ---
 

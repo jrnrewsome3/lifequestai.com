@@ -12,6 +12,10 @@
      GET  /health                                            -> ok
 
    Bindings: DB (D1), EXPORT_KEY (secret)
+   Optional:  RESEND_API_KEY (secret) — when set, every new submission is
+              emailed to NOTIFY_TO (default roger@lifequestai.com) from
+              NOTIFY_FROM (default forms@lifequestai.com). Saving to D1 never
+              depends on the email: if Resend fails, the row is still stored.
    ===================================================================== */
 
 const ALLOWED_ORIGINS = [
@@ -38,6 +42,43 @@ function json(data, status, origin) {
   });
 }
 
+const NOTIFY_TO_DEFAULT = 'roger@lifequestai.com';
+const NOTIFY_FROM_DEFAULT = 'LifeQuest AI Forms <forms@lifequestai.com>';
+const escHtml = (v) => String(v == null ? '' : v)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+/* Email the submission to the site owner. Runs after the response is sent. */
+async function notify(env, row) {
+  if (!env.RESEND_API_KEY) return;
+  const isInterest = row.kind === 'contact' && /class interest/i.test(row.topic || '');
+  const label = isInterest ? 'Class interest' : row.kind === 'newsletter' ? 'Newsletter signup' : 'Contact message';
+  const subject = `[LifeQuest AI] ${label}: ${row.name}${row.topic && !isInterest ? ' — ' + row.topic : isInterest ? ' — ' + row.topic.replace(/^.*?:\s*/, '') : ''}`.slice(0, 180);
+  const fields = [
+    ['Name', row.name], ['Email', row.email], ['Topic', row.topic], ['Interest', row.interest],
+    ['Message', row.message], ['Page', row.page]
+  ].filter(([, v]) => v);
+  const text = fields.map(([k, v]) => `${k}: ${String(v).replace(/; /g, '\n  ')}`).join('\n') +
+    '\n\nReply to this email to answer them directly.';
+  const html = '<table cellpadding="6" style="font-family:Arial,sans-serif;font-size:15px;border-collapse:collapse">' +
+    fields.map(([k, v]) => `<tr><td style="color:#5B6B7C;vertical-align:top"><strong>${k}</strong></td><td style="white-space:pre-wrap">${escHtml(v)}</td></tr>`).join('') +
+    '</table><p style="font-family:Arial,sans-serif;color:#5B6B7C;font-size:13px">Reply to this email to answer them directly.</p>';
+  try {
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: env.NOTIFY_FROM || NOTIFY_FROM_DEFAULT,
+        to: [env.NOTIFY_TO || NOTIFY_TO_DEFAULT],
+        reply_to: row.email,
+        subject, text, html
+      })
+    });
+    if (!r.ok) console.log('notify failed', r.status, await r.text());
+  } catch (e) {
+    console.log('notify error', String(e));
+  }
+}
+
 const validEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(v || '').trim());
 const clean = (v, max) => String(v == null ? '' : v).trim().slice(0, max || 500);
 
@@ -51,7 +92,7 @@ async function readBody(request) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin') || '';
     const path = url.pathname.replace(/\/+$/, '') || '/';
@@ -141,6 +182,10 @@ export default {
     } catch (e) {
       return json({ ok: false, error: 'Could not save that. Please try again.' }, 500, origin);
     }
+
+    const row = { kind, name, email, interest, topic, message, page: clean(body.page, 300) || null };
+    if (ctx && ctx.waitUntil) ctx.waitUntil(notify(env, row));
+    else await notify(env, row);
 
     return json({ ok: true }, 200, origin);
   }

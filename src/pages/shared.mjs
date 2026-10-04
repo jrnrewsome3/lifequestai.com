@@ -8,7 +8,7 @@ import {CLASSES} from '../data/classes.mjs';
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {POSTS} from '../data/posts.mjs';
-import {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
+import {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 
 function NewsletterSection(){
@@ -19,19 +19,18 @@ function NewsletterSection(){
         <h2>Stay Ahead Without Chasing AI News</h2>
         <p class="lede">Get practical AI ideas, new tools, class announcements, tutorials, and one useful AI challenge delivered to your inbox.</p>
         <div class="stack" style="gap:12px;margin-top:26px">
-          ${NEWSLETTER_ISSUES.map(n=>`<div class="mini">
-            <div class="mini-ic">${I('mail',17)}</div>
-            <div><div class="t">${n.title}</div><div class="s">${n.no} — ${n.teaser}</div></div>
-          </div>`).join('')}
+          ${[['sparkle','One practical idea','Something you can try the same day, in plain English.'],
+             ['flask','What I tried and what happened','A real experiment with an honest result — including when it didn’t work.'],
+             ['calendar','Class announcements','First word when a group reaches 10 and a date is set.']]
+            .map(([ic,t,d])=>`<div class="mini"><div class="mini-ic">${I(ic,17)}</div><div><div class="t">${t}</div><div class="s">${d}</div></div></div>`).join('')}
         </div>
-        <p class="tiny muted" style="margin-top:16px">Illustrative examples of the kind of thing you’ll get.</p>
       </div>
       <div class="form-card">
         <form id="nl-form" novalidate action="${SITE.FORMS_ENDPOINT}/newsletter" method="post">
           <input type="text" name="company" id="nl-company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <input type="hidden" name="page" value="/newsletter/">
           <h3 style="margin-bottom:8px">Join the newsletter</h3>
-          <p class="small muted" style="margin-bottom:24px">One email a week. Useful AI, no hype.</p>
+          <p class="small muted" style="margin-bottom:24px">Useful AI, no hype. Unsubscribe anytime.</p>
           <div class="field" id="f-name">
             <label for="nl-name">First name</label>
             <input id="nl-name" type="text" autocomplete="given-name" placeholder="Your first name">
@@ -54,7 +53,7 @@ function NewsletterSection(){
           <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px" type="submit" id="nl-submit">Join the LifeQuest AI Newsletter</button>
           <p class="err" id="nl-error" style="text-align:center;margin-top:12px"></p>
           <p class="hint" style="text-align:center;margin-top:14px">Useful AI. No hype. Unsubscribe anytime.</p>
-          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it, and you can unsubscribe from any issue.</p>
+          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it, and you can unsubscribe from any issue. See our <a href="${url('/privacy/')}">Privacy Policy</a>.</p>
         </form>
         <div class="success hide" id="nl-success" role="status">
           <div class="card-icon teal" style="margin:0;width:38px;height:38px;border-radius:11px;flex:none">${I('check',20)}</div>

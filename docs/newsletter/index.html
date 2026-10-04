@@ -19,6 +19,7 @@
 
 <meta name="theme-color" content="#FCFBF8">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -61,7 +62,7 @@
     <nav aria-label="Mobile"><a href="/">Home</a><a href="/ai-training/">AI Training</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/blog/">Blog</a><a href="/resources/">Resources</a><a href="/about/">About</a>
       <a href="/assessment/">Find My Starting Point</a>
       <a href="/newsletter/" class="active">Newsletter</a>
-      <a href="/member/">Member Preview</a>
+      
       <a href="/contact/">Contact</a>
     </nav>
     <div class="divider"></div>
@@ -83,25 +84,15 @@
         <h2>Stay Ahead Without Chasing AI News</h2>
         <p class="lede">Get practical AI ideas, new tools, class announcements, tutorials, and one useful AI challenge delivered to your inbox.</p>
         <div class="stack" style="gap:12px;margin-top:26px">
-          <div class="mini">
-            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-            <div><div class="t">The five-minute meeting prep</div><div class="s">Issue 24 — One prompt, your calendar, and a habit that makes you the most prepared person in the room.</div></div>
-          </div><div class="mini">
-            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-            <div><div class="t">Stop starting over</div><div class="s">Issue 23 — Why your second prompt should almost never be a rewrite of your first — plus the five follow-ups that fix most answers.</div></div>
-          </div><div class="mini">
-            <div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-            <div><div class="t">A spreadsheet, a statement, and an afternoon</div><div class="s">Issue 22 — How one learner found $214 a month in forgotten subscriptions.</div></div>
-          </div>
+          <div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></div><div><div class="t">One practical idea</div><div class="s">Something you can try the same day, in plain English.</div></div></div><div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L5 19a1.5 1.5 0 001.3 2h11.4A1.5 1.5 0 0019 19l-5-10V3"/><path d="M7.5 14h9"/></svg></div><div><div class="t">What I tried and what happened</div><div class="s">A real experiment with an honest result — including when it didn’t work.</div></div></div><div class="mini"><div class="mini-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><div><div class="t">Class announcements</div><div class="s">First word when a group reaches 10 and a date is set.</div></div></div>
         </div>
-        <p class="tiny muted" style="margin-top:16px">Illustrative examples of the kind of thing you’ll get.</p>
       </div>
       <div class="form-card">
         <form id="nl-form" novalidate action="https://lifequest-forms.jrnewsome.workers.dev/newsletter" method="post">
           <input type="text" name="company" id="nl-company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <input type="hidden" name="page" value="/newsletter/">
           <h3 style="margin-bottom:8px">Join the newsletter</h3>
-          <p class="small muted" style="margin-bottom:24px">One email a week. Useful AI, no hype.</p>
+          <p class="small muted" style="margin-bottom:24px">Useful AI, no hype. Unsubscribe anytime.</p>
           <div class="field" id="f-name">
             <label for="nl-name">First name</label>
             <input id="nl-name" type="text" autocomplete="given-name" placeholder="Your first name">
@@ -124,7 +115,7 @@
           <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px" type="submit" id="nl-submit">Join the LifeQuest AI Newsletter</button>
           <p class="err" id="nl-error" style="text-align:center;margin-top:12px"></p>
           <p class="hint" style="text-align:center;margin-top:14px">Useful AI. No hype. Unsubscribe anytime.</p>
-          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it, and you can unsubscribe from any issue.</p>
+          <p class="tiny muted" style="text-align:center;margin-top:10px">We use your email only to send the newsletter and class announcements. We never sell or share it, and you can unsubscribe from any issue. See our <a href="/privacy/">Privacy Policy</a>.</p>
         </form>
         <div class="success hide" id="nl-success" role="status">
           <div class="card-icon teal" style="margin:0;width:38px;height:38px;border-radius:11px;flex:none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
@@ -159,19 +150,20 @@
           <a href="/resources/" aria-label="Sessions"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></a>
         </div>
       </div>
-      <div><h4>Learn</h4><div class="foot-links"><a href="/ai-training/">October Class Interest</a><a href="/classes/">Course Outlines</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/resources/">Resources</a><a href="/workshop/">Older Adult Workshop</a><a href="/assessment/">AI Assessment</a></div></div>
+      <div><h4>Learn</h4><div class="foot-links"><a href="/ai-training/">Class Interest Lists</a><a href="/classes/">Course Outlines</a><a href="/paths/">Learning Paths</a><a href="/labs/">AI Labs</a><a href="/resources/">Resources</a><a href="/workshop/">Older Adult Workshop</a><a href="/assessment/">AI Assessment</a></div></div>
       <div><h4>LifeQuest</h4><div class="foot-links"><a href="/about/">About</a><a href="/about/">Our Mission</a><a href="/blog/">Blog</a><a href="/newsletter/">Newsletter</a><a href="/contact/">Contact</a></div></div>
-      <div><h4>More</h4><div class="foot-links"><a href="/resources/">AI Tools</a><a href="/resources/">Guides</a><a href="/blog/">Articles</a><a href="/resources/">FAQs</a><a href="/member/">Member Preview</a></div></div>
+      <div><h4>More</h4><div class="foot-links"><a href="/resources/ai-starter-kit/">Free Starter Kit</a><a href="/blog/">Articles</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/accessibility/">Accessibility</a></div></div>
     </div>
     <div class="foot-bottom">
       <span class="tagline">Connect. Learn. Apply. Elevate.</span>
       <nav aria-label="Legal">
-        <a href="/contact/">Privacy Policy</a><a href="/contact/">Terms</a><a href="/contact/">Accessibility</a><a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/accessibility/">Accessibility</a><a href="/contact/">Contact</a>
       </nav>
     </div>
-    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© 2026 LifeQuest AI. Course outlines, instructor profiles, testimonials, and member dashboard data in the broader catalog include illustrative samples. See AI Training for current class interest lists. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
+    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© 2026 LifeQuest AI. Classes are scheduled when 10 people ask for the same class — typically $99 per seat, with the date and final price confirmed before anyone pays. Course outlines describe our planned curriculum and are refined with each group. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
   </div></footer>
 <script src="/app.js" defer></script>
+
 
 </body>
 </html>

@@ -9,7 +9,7 @@ import {CLASSES} from '../data/classes.mjs';
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {POSTS} from '../data/posts.mjs';
-import {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
+import {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 import {NewsletterSection, DashboardPreview} from './shared.mjs';
 
@@ -53,7 +53,7 @@ function viewHome(){
     </div>
   </div></section>
 
-  <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">October 2026 · Groups forming</p><h2>Learn with people who understand your work.</h2><p class="lede">Small businesses and solopreneurs. Insurance and accounting professionals. Educators. Nonprofits. Tell us where you fit and what you want to accomplish.</p></div><a class="btn btn-primary" href="${url('/ai-training/#groups')}">Find my learning group</a></div></section>
+  <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">Groups forming now</p><h2>Learn with people who understand your work.</h2><p class="lede">Small businesses and solopreneurs. Insurance and accounting professionals. Educators. Nonprofits. Tell us where you fit and what you want to accomplish.</p></div><a class="btn btn-primary" href="${url('/ai-training/#groups')}">Find my learning group</a></div></section>
 
   <section class="sec"><div class="wrap">
     <div class="sec-head">

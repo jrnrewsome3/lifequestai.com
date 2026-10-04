@@ -18,7 +18,7 @@ test('group, work goals, permission, and campaign survive the existing worker co
  const db=fakeDB();const payload=makePayload(values,'?utm_source=x&utm_campaign=october-2026&email=private@example.com');
  assert.equal(payload.company,'');assert.ok(payload.message.includes('Organization: Example practice'));assert.ok(payload.message.includes('Potential team size (unconfirmed): 10+'));
  assert.ok(payload.message.includes('utm_source: x'));assert.ok(!payload.message.includes('private@example.com'));
- assert.equal(payload.topic,'October 2026 class interest: Insurance & accounting professionals');
+ assert.equal(payload.topic,'Class interest: Insurance & accounting professionals');
  assert.deepEqual(await sendInterest(endpoint,payload,transport(db)),{duplicate:false});
  assert.equal(db.inserted.length,1);assert.equal(db.inserted[0][0],'contact');assert.equal(db.inserted[0][5],payload.message);
 });

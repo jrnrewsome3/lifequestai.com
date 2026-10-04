@@ -8,7 +8,7 @@ import {CLASSES} from '../data/classes.mjs';
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {POSTS} from '../data/posts.mjs';
-import {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
+import {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 import {QUIZ} from '../data/quiz.mjs';
 import {NewsletterSection, DashboardPreview} from './shared.mjs';
@@ -40,7 +40,7 @@ function viewResources(){
         <p>Five friendly lessons on understanding AI, talking to an assistant, avoiding scams, checking information, and taking your next steps. Includes printable take-home handouts.</p>
         <div><a class="btn btn-primary" href="${url('/workshop/')}">Explore the Workshop ${I('arrow',18)}</a></div>
       </article>
-      <div class="grid g3">
+      ${SITE.FLAGS.resourceLibrary ? `<div class="grid g3">
         ${RESOURCES.map(r=>`<article class="card card-hover">
           <div class="card-icon ${r.type==='Template'?'amber':r.type==='Guide'?'':'teal'}">${I(iconFor(r.type),22)}</div>
           <div class="badges" style="margin-bottom:12px"><span class="skill-tag">${r.type}</span></div>
@@ -48,9 +48,9 @@ function viewResources(){
           <div class="card-foot row-between"><span class="tiny muted">${r.meta}</span>
           <a class="btn btn-quiet btn-sm" href="${url('/newsletter/')}">Get it ${I('arrow',15)}</a></div>
         </article>`).join('')}
-      </div>
+      </div>` : ''}
     </div></section>
-    <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">October 2026 · Groups forming</p><h2>Practical AI classes for your kind of work</h2><p class="lede">We organize a class when 10 interested people with similar work needs come together. Join the list to help us form your group; dates and prices are confirmed before enrollment.</p></div><a class="btn btn-primary" href="${url('/ai-training/')}">Explore the learning groups</a></div></section>`
+    <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">Groups forming now</p><h2>Practical AI classes for your kind of work</h2><p class="lede">A class is scheduled when 10 people ask for the same class. Classes are typically $99 per seat; the date and final price are confirmed before anyone pays.</p></div><a class="btn btn-primary" href="${url('/ai-training/')}">Explore the learning groups</a></div></section>`
   + CtaBand();
 }
 
@@ -171,6 +171,7 @@ function viewContact(){
             <textarea id="ct-msg" rows="5" placeholder="Tell us a little about what you’re trying to accomplish."></textarea>
             <p class="err">Please add a short message.</p></div>
           <button class="btn btn-primary btn-lg" style="width:100%" type="submit" id="ct-submit">Send message</button>
+          <p class="tiny muted" style="text-align:center;margin-top:12px">We use your details only to reply. See our <a href="${url('/privacy/')}">Privacy Policy</a>.</p>
           <p class="err" id="ct-error" style="text-align:center;margin-top:12px"></p>
         </form>
         <div class="success hide" id="ct-success" role="status">
@@ -181,13 +182,13 @@ function viewContact(){
       <div class="stack">
         ${[['user','Individuals & families','Start with the assessment — it takes ninety seconds and gives you a real plan.','Find my starting point',url('/assessment/')],
            ['briefcase','Teams & workplaces','Group enrollment, cohort scheduling, and workplace-specific curriculum.','See the work path',url('/paths/work/')],
-           ['heart','Nonprofits & community groups','Discounted cohorts and community program design for mission-driven organizations.','See the nonprofit path',url('/paths/nonprofits/')]]
+           ['heart','Nonprofits & community groups','Group classes built around the routines of mission-driven organizations — volunteers, outreach, and programs.','See the nonprofit path',url('/paths/nonprofits/')]]
           .map(([ic,t,d,cta,href],i)=>`<div class="card"><div class="card-icon ${i===1?'teal':i===2?'amber':''}">${I(ic,22)}</div>
             <h3 style="font-size:1.08rem">${t}</h3><p style="font-size:.95rem">${d}</p>
             <div class="card-foot"><a class="btn btn-quiet btn-sm" href="${href}">${cta} ${I('arrow',15)}</a></div></div>`).join('')}
         <div class="card" style="background:#F7FAFD">
           <h4 style="font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Policies</h4>
-          <p class="small muted" style="margin:0">Privacy Policy, Terms of Service, and Accessibility Statement placeholders live here. Final legal copy will be added before launch.</p>
+          <p class="small" style="margin:0"><a href="${url('/privacy/')}">Privacy Policy</a> · <a href="${url('/terms/')}">Terms of Use</a> · <a href="${url('/accessibility/')}">Accessibility</a><br>Prefer email? <a href="mailto:${SITE.LEGAL.contactEmail}">${SITE.LEGAL.contactEmail}</a></p>
         </div>
       </div>
     </div></div></section>`;

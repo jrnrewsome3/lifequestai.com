@@ -8,7 +8,7 @@ import {CLASSES} from '../data/classes.mjs';
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {POSTS} from '../data/posts.mjs';
-import {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
+import {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 
 function viewPaths(){

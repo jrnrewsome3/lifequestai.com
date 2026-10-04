@@ -33,5 +33,5 @@ for p in targets:
 assert len(pages[root/'resources/ai-starter-kit/index.html'].ids)>=30
 assert '25. Build an event checklist' in (root/'resources/ai-starter-kit/25-practice-prompts.txt').read_text()
 for p in root.glob('ai-training/**/index.html'):
-    t=p.read_text();assert 'October 2026' in t and '10' in t,p
+    t=p.read_text();assert 'October 2026' not in t and '10' in t and '$99' in t,p
 print(f'PASS: {len(targets)} pages; {checked} internal links/assets; heading/ID integrity; 25-prompt download; cohort wording.')

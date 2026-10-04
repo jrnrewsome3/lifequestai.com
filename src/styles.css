@@ -509,3 +509,12 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
   border-radius:var(--r-md);padding:var(--s5) clamp(20px,3vw,28px);box-shadow:var(--shadow-sm);
   margin:clamp(28px,4vw,40px) 0;
 }
+
+/* ---------- Legal pages (privacy, terms, accessibility) ---------- */
+.legal { max-width: 72ch; }
+.legal h2 { font-size: 1.4rem; margin: 2.2rem 0 .7rem; }
+.legal p, .legal li { font-size: 1.06rem; line-height: 1.7; color: var(--ink-2); }
+.legal ul { padding-left: 1.2rem; margin: 0 0 1rem; }
+.legal li { margin-bottom: .55rem; }
+.legal a { text-decoration: underline; }
+.legal code { font-size: .92em; background: #F1F5F9; padding: 1px 5px; border-radius: 4px; }

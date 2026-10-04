@@ -15,7 +15,7 @@ export function makePayload(values, search='', pathname='/ai-training/join/'){
   const params=new URLSearchParams(search);
   const source=['utm_source','utm_medium','utm_campaign','ref','topic'].filter(k=>params.has(k)).map(k=>`${k}: ${clean(params.get(k),120)}`).join('; ');
   return {name:clean(values.name,120),email:clean(values.email,200),company:clean(values.company,200),
-    topic:`October 2026 class interest: ${GROUP_LABELS[values.group]}`.slice(0,120),
+    topic:`Class interest: ${GROUP_LABELS[values.group]}`.slice(0,120),
     message:[`Learning group: ${GROUP_LABELS[values.group]}`,`Role / specialty: ${clean(values.role,120)}`,`Organization: ${clean(values.organization,160)||'Not provided'}`,`Task / goal: ${clean(values.goal,1200)}`,`Format preference: ${clean(values.format,60)}`,`Potential team size (unconfirmed): ${clean(values.team,20)}`,`Location / time zone / availability: ${clean(values.availability,300)||'Not provided'}`,'Permission: contact me about matching a class and confirming details. Interest only; no registration or newsletter signup.',source?`Source: ${source}`:'Source: direct / not specified'].join('\n'),page:pathname.slice(0,300)};
 }
 export async function sendInterest(endpoint,payload,fetcher=fetch){

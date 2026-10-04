@@ -42,7 +42,7 @@ function Drawer(active){
     <nav aria-label="Mobile">${links}
       <a href="${url('/assessment/')}"${active==='assessment'?' class="active"':''}>Find My Starting Point</a>
       <a href="${url('/newsletter/')}"${active==='newsletter'?' class="active"':''}>Newsletter</a>
-      <a href="${url('/member/')}">Member Preview</a>
+      ${SITE.FLAGS.memberArea ? `<a href="${url('/member/')}">Member Preview</a>` : ''}
       <a href="${url('/contact/')}">Contact</a>
     </nav>
     <div class="divider"></div>
@@ -53,7 +53,7 @@ function Drawer(active){
   </aside>`;
 }
 
-function Footer(training=false){
+function Footer(){
   const col = (h, items) =>
     `<div><h4>${h}</h4><div class="foot-links">${
       items.map(i=>`<a href="${url(i[1])}">${i[0]}</a>`).join('')
@@ -69,17 +69,17 @@ function Footer(training=false){
           <a href="${url('/resources/')}" aria-label="Sessions">${I('calendar',18)}</a>
         </div>
       </div>
-      ${col('Learn',[['October Class Interest','/ai-training/'],['Course Outlines','/classes/'],['Learning Paths','/paths/'],['AI Labs','/labs/'],['Resources','/resources/'],['Older Adult Workshop','/workshop/'],['AI Assessment','/assessment/']])}
+      ${col('Learn',[['Class Interest Lists','/ai-training/'],['Course Outlines','/classes/'],['Learning Paths','/paths/'],['AI Labs','/labs/'],['Resources','/resources/'],['Older Adult Workshop','/workshop/'],['AI Assessment','/assessment/']])}
       ${col('LifeQuest',[['About','/about/'],['Our Mission','/about/'],['Blog','/blog/'],['Newsletter','/newsletter/'],['Contact','/contact/']])}
-      ${col('More',[['AI Tools','/resources/'],['Guides','/resources/'],['Articles','/blog/'],['FAQs','/resources/'],['Member Preview','/member/']])}
+      ${col('More',[['Free Starter Kit','/resources/ai-starter-kit/'],['Articles','/blog/'],['Privacy Policy','/privacy/'],['Terms','/terms/'],['Accessibility','/accessibility/']].concat(SITE.FLAGS.memberArea?[['Member Preview','/member/']]:[]))}
     </div>
     <div class="foot-bottom">
       <span class="tagline">Connect. Learn. Apply. Elevate.</span>
       <nav aria-label="Legal">
-        <a href="${url('/contact/')}">Privacy Policy</a><a href="${url('/contact/')}">Terms</a><a href="${url('/contact/')}">Accessibility</a><a href="${url('/contact/')}">Contact</a>
+        <a href="${url('/privacy/')}">Privacy Policy</a><a href="${url('/terms/')}">Terms</a><a href="${url('/accessibility/')}">Accessibility</a><a href="${url('/contact/')}">Contact</a>
       </nav>
     </div>
-    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© ${SITE.year} ${SITE.name}. ${training ? 'October 2026 classes form around groups of 10 interested people with similar work needs. Dates and prices are confirmed before enrollment. Other course catalog and member pages include illustrative content.' : 'Course outlines, instructor profiles, testimonials, and member dashboard data in the broader catalog include illustrative samples. See AI Training for current class interest lists.'} Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
+    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© ${SITE.year} ${SITE.name}. Classes are scheduled when 10 people ask for the same class — typically $99 per seat, with the date and final price confirmed before anyone pays. Course outlines describe our planned curriculum and are refined with each group. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
   </div></footer>`;
 }
 
@@ -115,6 +115,7 @@ ${og ? `<meta name="twitter:image" content="${og}">` : ''}
 ${o.articleMeta ? `<meta property="article:published_time" content="${o.articleMeta}">` : ''}
 <meta name="theme-color" content="#FCFBF8">
 <link rel="icon" href="${url('/favicon.svg')}" type="image/svg+xml">
+${o.jsonLd ? `<script type="application/ld+json">${JSON.stringify(o.jsonLd).replace(/</g,'\\u003c')}</script>` : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -129,9 +130,10 @@ ${Drawer(o.active)}
 <main id="main">
 ${o.body}
 </main>
-${Footer(o.training)}
+${Footer()}
 <script src="${url('/app.js')}" defer></script>
 ${o.training ? `<script type="module" src="${url('/training.js')}"></script>` : ''}
+${SITE.ANALYTICS_TOKEN ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${SITE.ANALYTICS_TOKEN}"}'></script>` : ''}
 </body>
 </html>
 `;

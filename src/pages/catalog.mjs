@@ -8,12 +8,12 @@ import {CLASSES} from '../data/classes.mjs';
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {POSTS} from '../data/posts.mjs';
-import {RESOURCES, EVENTS, NEWSLETTER_ISSUES, TESTIMONIALS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
+import {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/site.mjs';
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 
 function viewClasses(){
-  return PageHero('Curriculum previews','Course Outlines',
-    'Explore sample curricula from beginner skills to more advanced projects. These outlines are not a confirmed class schedule. See AI Training for the October interest lists.',
+  return PageHero('Curriculum roadmap','The Classes We Plan to Teach',
+    'These are the classes we plan to teach, in order, from first steps to building your own AI agent. None has a fixed date yet: each one is scheduled when 10 people ask for it. Outlines are refined with each group.',
     `<div style="margin-top:28px">${LadderStrip()}</div>`)
   + `<section class="sec-tight"><div class="wrap">
       <div class="toolbar">
@@ -66,15 +66,15 @@ function viewClass(slug){
         <div class="card" id="enroll" style="border-radius:var(--r-xl);box-shadow:var(--shadow-lg);padding:var(--s5)">
           <dl style="margin:0 0 18px">
             <div class="spec"><dt>Level</dt><dd>${c.level}</dd></div>
-            <div class="spec"><dt>Duration</dt><dd>${c.duration}</dd></div>
+            <div class="spec"><dt>Planned length</dt><dd>${c.duration}</dd></div>
             <div class="spec"><dt>Lessons</dt><dd>${c.lessons} lessons</dd></div>
-            <div class="spec"><dt>Format</dt><dd style="max-width:16ch">${c.format}</dd></div>
+            <div class="spec"><dt>Planned format</dt><dd style="max-width:16ch">${c.format}</dd></div>
             <div class="spec"><dt>Tracks</dt><dd style="max-width:16ch">${tracks.map(t=>t.short).join(', ')}</dd></div>
           </dl>
-          <a class="btn btn-primary" style="width:100%" href="${url('/ai-training/join/')}?topic=${encodeURIComponent(c.title)}">Ask about this topic</a>
+          <a class="btn btn-primary" style="width:100%" href="${url('/ai-training/join/')}?topic=${encodeURIComponent(c.title)}">Ask for this class</a>
           <a class="btn btn-quiet btn-sm" style="width:100%;margin-top:8px;justify-content:center" href="${url('/assessment/')}">Not sure? Take the assessment</a>
           <div class="divider"></div>
-          <p class="tiny muted" style="margin:0">This is a curriculum preview. Duration, format, and instructor details are illustrative. We confirm the actual class details before you enroll.</p>
+          <p class="tiny muted" style="margin:0">Planned class — on the roadmap, not yet scheduled. It’s scheduled once 10 people ask for it. Typically $99 per seat; the date, format, and final price are confirmed before anyone pays.</p>
         </div>
       </div>
     </div>
@@ -153,14 +153,6 @@ function viewClass(slug){
       <div class="card">
         <h4 style="font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Skills you build</h4>
         <div class="skills" style="margin:0">${c.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}</div>
-      </div>
-      <div class="card">
-        <h4 style="font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Instructor</h4>
-        <div class="mini" style="border:0;padding:0">
-          <div class="avatar">${I('user',18)}</div>
-          <div><div class="t">${c.instructor.name}</div><div class="s">${c.instructor.role}</div></div>
-        </div>
-        <p class="small muted" style="margin:14px 0 0">${c.instructor.bio}</p>
       </div>
       ${next?`<div class="card" style="background:linear-gradient(160deg,#F4FAFE,#FFFFFF)">
         <h4 style="font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Recommended next</h4>

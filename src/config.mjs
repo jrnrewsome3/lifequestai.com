@@ -30,6 +30,25 @@ export const SITE = {
   // "lifequest-forms" D1 database. See worker/worker.js in this repo.
   FORMS_ENDPOINT: 'https://lifequest-forms.jrnewsome.workers.dev',
 
+  // ---- Legal & contact (shown on the Privacy, Terms and Accessibility pages) ----
+  // Edit these if your business name, location, or contact address changes.
+  LEGAL: {
+    operator: 'LifeQuest AI',            // the name visitors see as "we"
+    location: 'Tallahassee, Florida',
+    governingState: 'Florida',
+    contactEmail: 'roger@lifequestai.com',
+    effectiveDate: 'October 4, 2026'
+  },
+
+  // ---- Feature flags: sections that stay hidden until they are real ----
+  FLAGS: {
+    memberArea: false,        // /member/ dashboard preview (no real accounts yet)
+    resourceLibrary: false    // the guides/templates grid on /resources/ (files not written yet)
+  },
+
+  // ---- Cloudflare Web Analytics (cookieless). Paste the site token to turn it on. ----
+  ANALYTICS_TOKEN: '',
+
   author: 'LifeQuest AI',
   year: new Date().getFullYear()
 };
