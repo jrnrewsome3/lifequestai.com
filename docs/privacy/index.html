@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
-
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 </head>
 <body>
@@ -100,10 +100,10 @@
       <li><strong>Resend</strong> sends us an email notification when a form is submitted, and sends email on our behalf.</li>
       <li><strong>Stripe</strong> processes payment when you enroll in a confirmed class. You pay on Stripe’s checkout page; we never see or store your card number. Stripe’s own privacy policy applies to that page.</li>
       <li><strong>GitHub Pages</strong> hosts the website itself, delivered through Cloudflare’s network.</li>
-      
+      <li><strong>Cloudflare Turnstile</strong> checks that form submissions come from a person, not a bot. It looks at technical signals from your browser for that one purpose and does not set advertising cookies.</li>
       <li><strong>Google Fonts and Unsplash</strong> currently serve the site’s typefaces and some photographs. Loading a page asks their servers for those files, which shares your IP address and browser type with them. We plan to host these files ourselves.</li>
     </ul>
-  <h2>Cookies and analytics</h2><p>This site sets no advertising or tracking cookies. If we add visit counting, we will use a cookieless, privacy-focused tool such as Cloudflare Web Analytics and update this page.</p>
+  <h2>Cookies and analytics</h2><p>This site sets no advertising or tracking cookies. We use Cloudflare Web Analytics to count visits and see which pages are useful. It does not use cookies and does not identify you personally.</p>
   <h2>How long we keep it</h2><p>We keep interest-list and contact details while they’re useful for organizing classes and answering you. Newsletter details are kept until you unsubscribe. You can ask us to delete your information at any time and we will do so promptly.</p>
   <h2>Your choices and rights</h2><p>Email <a href="mailto:roger@lifequestai.com">roger@lifequestai.com</a> to see what we hold about you, correct it, or have it deleted. Every newsletter includes an unsubscribe link. We’ll respond within 30 days, and usually much sooner.</p>
   <h2>Children</h2><p>This site and our classes are intended for adults. We don’t knowingly collect information from children under 13. Family-learning content is meant to be used by a parent or guardian.</p>
@@ -143,6 +143,6 @@
   </div></footer>
 <script src="/app.js" defer></script>
 
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "559393c5e20c4772a05c89600e506796"}'></script>
 </body>
 </html>

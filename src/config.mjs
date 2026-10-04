@@ -47,12 +47,12 @@ export const SITE = {
   },
 
   // ---- Cloudflare Web Analytics (cookieless). Paste the site token to turn it on. ----
-  ANALYTICS_TOKEN: '',
+  ANALYTICS_TOKEN: '559393c5e20c4772a05c89600e506796',
 
   // ---- Cloudflare Turnstile (spam protection on the three forms). ----
   // Public site key; the matching secret lives only on the Worker (TURNSTILE_SECRET).
   // Leave empty to turn the widget off.
-  TURNSTILE_SITEKEY: '',
+  TURNSTILE_SITEKEY: '0x4AAAAAAFNubzbcslWMHUsT',
 
   author: 'LifeQuest AI',
   year: new Date().getFullYear()
