@@ -518,3 +518,16 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .legal li { margin-bottom: .55rem; }
 .legal a { text-decoration: underline; }
 .legal code { font-size: .92em; background: #F1F5F9; padding: 1px 5px; border-radius: 4px; }
+
+/* ---------- Class pages: sessions, try-it-now, FAQ ---------- */
+.session-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.session-list li { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 20px; }
+.session-list h3 { font-size: 1.08rem; margin: 2px 0 6px; }
+.session-list p { margin: 0; color: var(--ink-2); }
+.session-num { flex: none; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--sky-tint); color: var(--blue); font-family: var(--sans); font-weight: 800; }
+.try-now { background: #F4F9FD; border: 2px solid var(--blue); border-radius: var(--r-lg); padding: clamp(20px, 3vw, 30px); }
+.try-now pre { white-space: pre-wrap; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; font-size: .98rem; line-height: 1.6; margin: 14px 0; max-height: 360px; overflow: auto; }
+.try-now .btn-row { align-items: center; gap: 14px; }
+.class-faq details { border-bottom: 1px solid var(--line-soft); padding: 14px 0; }
+.class-faq summary { cursor: pointer; font-weight: 600; font-size: 1.04rem; }
+.class-faq details p { margin: 10px 0 0; color: var(--ink-2); }

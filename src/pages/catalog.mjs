@@ -53,12 +53,12 @@ function viewClass(slug){
     <div class="detail-grid">
       <div>
         <div class="badges" style="margin-bottom:18px">${levelBadges(c)}</div>
-        <p class="eyebrow">Curriculum preview · Class ${c.num}</p>
+        <p class="eyebrow">Planned class · Class ${c.num}</p>
         <h1 style="font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:20px">${c.title}</h1>
         <p class="lede">${c.blurb}</p>
         <div class="meta" style="margin-top:22px;gap:10px 22px">
           <span>${I('clock',16)} ${c.duration}</span>
-          <span>${I('book',16)} ${c.lessons} lessons</span>
+          <span>${I('user',16)} Up to 10 people</span>
           <span>${I('play',16)} ${c.format}</span>
         </div>
       </div>
@@ -66,9 +66,9 @@ function viewClass(slug){
         <div class="card" id="enroll" style="border-radius:var(--r-xl);box-shadow:var(--shadow-lg);padding:var(--s5)">
           <dl style="margin:0 0 18px">
             <div class="spec"><dt>Level</dt><dd>${c.level}</dd></div>
-            <div class="spec"><dt>Planned length</dt><dd>${c.duration}</dd></div>
-            <div class="spec"><dt>Lessons</dt><dd>${c.lessons} lessons</dd></div>
-            <div class="spec"><dt>Planned format</dt><dd style="max-width:16ch">${c.format}</dd></div>
+            <div class="spec"><dt>Sessions</dt><dd>${c.sessions.length} × ${c.sessions[0].minutes} min</dd></div>
+            <div class="spec"><dt>Total</dt><dd>${c.duration.split(' · ')[1]}</dd></div>
+            <div class="spec"><dt>Format</dt><dd style="max-width:16ch">Live, up to 10 people, online or in person</dd></div>
             <div class="spec"><dt>Tracks</dt><dd style="max-width:16ch">${tracks.map(t=>t.short).join(', ')}</dd></div>
           </dl>
           <a class="btn btn-primary" style="width:100%" href="${url('/ai-training/join/')}?topic=${encodeURIComponent(c.title)}">Ask for this class</a>
@@ -90,6 +90,13 @@ function viewClass(slug){
         <h2 style="font-size:1.6rem;margin-bottom:16px">Course overview</h2>
         <p class="lede">${c.overview}</p>
         ${c.notice?`<div class="notice" style="margin-top:22px"><strong>Important:</strong> ${c.notice}</div>`:''}
+        <p class="small" style="margin-top:18px"><strong>Before you start:</strong> ${esc(c.prerequisites)}</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:1.6rem;margin-bottom:16px">How the sessions run</h2>
+        <p class="small muted" style="margin-bottom:16px">Live, with up to 10 people, online or in person. Sessions are usually a week apart, with a short practice task in between.</p>
+        <ol class="session-list">${c.sessions.map((s,i)=>`<li><span class="session-num">${i+1}</span><div><h3>${esc(s.title)} <span class="muted small">· ${s.minutes} min</span></h3><p>${esc(s.focus)}</p></div></li>`).join('')}</ol>
       </div>
 
       <div>
@@ -108,7 +115,7 @@ function viewClass(slug){
       <div>
         <div class="row-between" style="margin-bottom:18px">
           <h2 style="font-size:1.6rem">Curriculum</h2>
-          <span class="small muted">${c.modules.length} modules · ${c.lessons} lessons</span>
+          <span class="small muted">${c.modules.length} modules · ${c.lessons} topics</span>
         </div>
         <div class="acc" id="acc">
           ${c.modules.map((m,i)=>`<div class="acc-item">
@@ -134,6 +141,21 @@ function viewClass(slug){
         </div>
       </div>
 
+      <div class="try-now">
+        <p class="eyebrow">Try it now · free</p>
+        <h2 style="font-size:1.5rem;margin-bottom:10px">${esc(c.tryNow.title)}</h2>
+        <p>${esc(c.tryNow.intro)}</p>
+        <pre id="try-${c.slug}">${esc(c.tryNow.prompt)}</pre>
+        <div class="btn-row"><button class="btn btn-primary btn-sm" type="button" data-copy="try-${c.slug}">Copy the prompt</button><span class="tiny muted" data-copy-status role="status"></span></div>
+        <p class="small" style="margin:16px 0 6px"><strong>Before you trust the answer, check:</strong></p>
+        <ul class="check-list">${c.tryNow.checks.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+      </div>
+
+      <div class="grid g2" style="gap:24px">
+        <div class="card"><h2 style="font-size:1.25rem;margin-bottom:12px">What to bring</h2><ul class="check-list">${c.bring.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div class="card"><h2 style="font-size:1.25rem;margin-bottom:12px">What you leave with</h2><ul class="check-list">${c.leaveWith.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+      </div>
+
       ${labs.length?`<div>
         <h2 style="font-size:1.6rem;margin-bottom:16px">Paired labs</h2>
         <div class="grid g2">${labs.map(LabCard).join('')}</div>
@@ -142,6 +164,11 @@ function viewClass(slug){
       <div>
         <h2 style="font-size:1.6rem;margin-bottom:16px">Expected outcomes</h2>
         <ul class="check-list">${c.outcomes.map(o=>`<li>${o}</li>`).join('')}</ul>
+      </div>
+
+      <div>
+        <h2 style="font-size:1.6rem;margin-bottom:16px">Questions about this class</h2>
+        <div class="class-faq">${c.faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>
       </div>
     </div>
 

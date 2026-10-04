@@ -54,7 +54,7 @@ function CourseCard(c){
     <p>${c.blurb}</p>
     <div class="meta">
       <span>${I('clock',15)} ${c.duration}</span>
-      <span>${I('book',15)} ${c.lessons} lessons</span>
+      <span>${I('user',15)} Up to 10 people</span>
     </div>
     <div class="meta" style="margin-top:8px"><span>${I('play',15)} ${c.format}</span></div>
     <div class="skills">${c.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}</div>
@@ -175,7 +175,7 @@ function PostToClass(p){
         <div style="flex:1">
           <div class="badges" style="margin-bottom:10px">${levelBadges(c)}</div>
           <h3 style="font-size:1.16rem;margin-bottom:8px">${c.num} — ${c.title}</h3>
-          <div class="meta"><span>${I('clock',15)} ${c.duration}</span><span>${I('book',15)} ${c.lessons} lessons</span></div>
+          <div class="meta"><span>${I('clock',15)} ${c.duration}</span><span>${I('user',15)} Live, up to 10 people</span></div>
         </div>
         <div class="btn-row" style="flex:none">
           <a class="btn btn-primary" href="${url('/classes/'+c.slug+'/')}">View the class</a>

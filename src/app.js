@@ -270,6 +270,22 @@
     if (w && window.turnstile) { try { window.turnstile.reset(w); } catch (e) {} }
   }
 
+  /* Copy buttons on class pages: <button data-copy="id-of-pre"> */
+  if (!document.querySelector('.training')) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (b) {
+      b.addEventListener('click', function () {
+        var src = document.getElementById(b.getAttribute('data-copy'));
+        var st = b.parentElement.querySelector('[data-copy-status]');
+        if (!src) return;
+        var done = function (msg) { if (st) st.textContent = msg; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(src.textContent).then(function () { done('Copied. Paste it into ChatGPT, Claude, Gemini, or Copilot.'); },
+            function () { done('Select the text above and copy it.'); });
+        } else done('Select the text above and copy it.');
+      });
+    });
+  }
+
   var val = function (id) {
     var el = document.getElementById(id);
     return el ? el.value : '';

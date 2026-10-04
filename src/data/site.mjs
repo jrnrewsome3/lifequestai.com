@@ -33,7 +33,7 @@ const OUTCOMES = [
 
 const JOURNEY = [
   {k:'CONNECT', d:'Discover what AI can do and identify opportunities in your life or organization.', pts:['Take the starting-point assessment','Map where your time actually goes','Choose your learning path']},
-  {k:'LEARN', d:'Develop practical skills through short, understandable lessons.', pts:['Plain-language classes','No coding required','Learn at your own pace']},
+  {k:'LEARN', d:'Develop practical skills through short, understandable lessons.', pts:['Plain-language classes','No coding required','Live, in groups of up to 10']},
   {k:'APPLY', d:'Use those skills on real projects, workflows, problems, and decisions.', pts:['Hands-on labs','Your own real work as the assignment','Something finished every week']},
   {k:'ELEVATE', d:'Build automation, assistants, and increasingly advanced AI systems.', pts:['Workflows that run without you','A Chief of Staff system','Your first working agent']}
 ];

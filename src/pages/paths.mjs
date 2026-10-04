@@ -68,7 +68,7 @@ function viewPath(slug){
           <div class="badges" style="margin-bottom:10px">${levelBadges(c)}</div>
           <h3 style="margin-bottom:8px">${c.num} — ${c.title}</h3>
           <p style="color:var(--ink-2);font-size:.95rem;margin-bottom:14px">${c.blurb}</p>
-          <div class="meta"><span>${I('clock',15)} ${c.duration}</span><span>${I('book',15)} ${c.lessons} lessons</span></div>
+          <div class="meta"><span>${I('clock',15)} ${c.duration}</span><span>${I('user',15)} Live, up to 10 people</span></div>
         </div>
         <div style="flex:none;align-self:center"><a class="btn btn-ghost btn-sm" href="${url('/classes/'+c.slug+'/')}">View class</a></div>
       </div>`).join('')}
