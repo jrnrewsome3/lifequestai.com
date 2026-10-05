@@ -79,7 +79,7 @@ function Footer(){
         <a href="${url('/privacy/')}">Privacy Policy</a><a href="${url('/terms/')}">Terms</a><a href="${url('/accessibility/')}">Accessibility</a><a href="${url('/contact/')}">Contact</a>
       </nav>
     </div>
-    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© ${SITE.year} ${SITE.name}. Classes are scheduled when 10 people ask for the same class — typically $99 per seat, with the date and final price confirmed before anyone pays. Course outlines describe our planned curriculum and are refined with each group. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
+    <p class="tiny" style="margin:22px 0 0;color:#7E8E9F;max-width:82ch">© ${SITE.year} ${SITE.name}. Every class and lab is one live 2-hour session for up to 10 people, $99. A class is scheduled when 10 people ask for it; the date and format are confirmed before anyone pays. Photography is free-license imagery from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:#9FB0C0;text-decoration:underline">Unsplash</a>.</p>
   </div></footer>`;
 }
 

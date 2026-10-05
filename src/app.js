@@ -85,6 +85,9 @@
         var t = LQ.tracks.filter(function (x) { return x.slug === tr; })[0];
         if (t) bits.push(t.title);
       }
+      Array.prototype.forEach.call(wrap.querySelectorAll('.tier'), function (t) {
+        t.classList.toggle('hide', !t.querySelector('.course-card:not(.hide)'));
+      });
       count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' classes' +
         (bits.length ? ' · ' + bits.join(' · ') : '');
     }

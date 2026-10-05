@@ -16,7 +16,7 @@ import {fileURLToPath} from 'node:url';
 
 import {SITE, url, absUrl} from './src/config.mjs';
 import {page} from './src/lib/layout.mjs';
-import {CLASSES} from './src/data/classes.mjs';
+import {CLASSES, visibleClasses} from './src/data/classes.mjs';
 import {TRACKS} from './src/data/tracks.mjs';
 import {LABS} from './src/data/labs.mjs';
 import {POSTS} from './src/data/posts.mjs';
@@ -75,20 +75,48 @@ write('index.html', page({
   training: true, body: viewHome()
 }));
 
+/* ---------- content checks: fail loudly if something points at a class that isn't shown ---------- */
+const shown = new Set(visibleClasses().map(c => c.id));
+const byIdAll = id => CLASSES.find(c => c.id === id);
+const problems = [];
+for (const t of TRACKS) for (const id of t.classIds) if (!shown.has(id)) problems.push(`track "${t.slug}" lists class ${id} (${byIdAll(id)?.status || 'missing'})`);
+for (const c of visibleClasses()) {
+  for (const id of (c.nextIds || [])) if (!byIdAll(id)) problems.push(`class ${c.num} nextIds points at missing class ${id}`);
+  for (const id of (c.relatedIds || [])) if (!byIdAll(id)) problems.push(`class ${c.num} relatedIds points at missing class ${id}`);
+  const sum = c.agenda.reduce((a, x) => a + x.minutes, 0); if (sum !== 120) problems.push(`class ${c.num} agenda adds up to ${sum}, not 120`);
+}
+for (const l of LABS) if (!byIdAll(l.classId)) problems.push(`lab "${l.slug}" points at missing class ${l.classId}`);
+if (problems.length) { console.error('\n  Content problems:\n  - ' + problems.join('\n  - ') + '\n'); process.exit(1); }
+
 write('classes/index.html', page({
   title: 'Classes', active: 'classes', path: '/classes/', ogImage: ogHome,
-  description: 'Ten practical AI classes that move in a deliberate order — from your first useful AI conversation to building a working AI agent. No coding required.',
+  description: 'Practical AI classes, each one live 2-hour session for up to 10 people, $99. Start with the basics and build toward automation and your first AI agent. No coding required.',
   body: viewClasses()
 }));
 
 for (const c of CLASSES) {
+  if (c.status === 'hidden') {   // not offered: send the old address to the catalog
+    fs.mkdirSync(path.join(OUT, 'classes', c.slug), {recursive: true});
+    fs.writeFileSync(path.join(OUT, 'classes', c.slug, 'index.html'), `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=${url('/classes/')}"><link rel="canonical" href="${absUrl('/classes/')}"><title>Redirecting…</title></head><body><p><a href="${url('/classes/')}">See all classes</a></p></body></html>\n`);
+    continue;
+  }
+  if (c.status === 'retired') {   // page stays, says so, stays out of the sitemap
+    const html = page({
+      title: c.title, active: 'classes', path: `/classes/${c.slug}/`, ogImage: photoUrl(c.slug, 1200, 630), description: c.blurb,
+      body: `<section class="sec"><div class="wrap-narrow center" style="padding-top:60px"><p class="eyebrow">No longer offered</p><h1 style="margin-bottom:18px">${c.title}</h1><p class="lede" style="margin-bottom:30px">We’re not running this class any more. ${(c.nextIds||[]).map(byIdAll).filter(n=>n&&shown.has(n.id)).length ? 'Here’s where that material lives now:' : 'Have a look at the current classes.'}</p><div class="btn-row" style="justify-content:center">${(c.nextIds||[]).map(byIdAll).filter(n=>n&&shown.has(n.id)).map(n=>`<a class="btn btn-ghost" href="${url('/classes/'+n.slug+'/')}">${n.title}</a>`).join('')}<a class="btn btn-primary" href="${url('/classes/')}">All classes</a></div></div></section>`
+    }).replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n<meta name="viewport"');
+    fs.mkdirSync(path.join(OUT, 'classes', c.slug), {recursive: true});
+    fs.writeFileSync(path.join(OUT, 'classes', c.slug, 'index.html'), html);
+    continue;
+  }
   write(`classes/${c.slug}/index.html`, page({
     title: c.title, active: 'classes', path: `/classes/${c.slug}/`,
     ogImage: photoUrl(c.slug, 1200, 630),
     description: c.blurb,
     jsonLd: ld({'@type': 'Course', name: c.title, description: c.blurb, url: absUrl(`/classes/${c.slug}/`),
       provider: {'@type': 'Organization', name: SITE.name, url: absUrl('/')},
-      educationalLevel: c.level, teaches: c.skills, inLanguage: 'en'}),
+      educationalLevel: c.level, teaches: c.skills, inLanguage: 'en',
+      offers: {'@type': 'Offer', price: '99', priceCurrency: 'USD', category: 'Live class, one 2-hour session'}}),
     body: viewClass(c.slug)
   }));
 }
@@ -123,7 +151,7 @@ write('blog/index.html', page({
 }));
 
 for (const p of POSTS) {
-  const c = CLASSES.find(x => x.id === p.classId);
+  const c = CLASSES.find(x => x.id === p.classId && (x.status === 'active' || x.status === 'coming')) || visibleClasses()[0];
   write(`blog/${p.slug}/index.html`, page({
     title: p.title, active: 'blog', path: `/blog/${p.slug}/`,
     ogImage: p.image ? absUrl(p.image) : photoUrl(c.slug, 1200, 630),

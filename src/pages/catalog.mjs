@@ -4,7 +4,7 @@ import {esc, byId, bySlug, labBySlug, trackBySlug, levelClass, levelBadges,
         Photo, Figure, CourseCard, LabCard, PathCard, CtaBand, LadderStrip, PageHero,
         postsSorted, postBySlug, readingTime, longDate, PostCard, PostToClass,
         RelatedPosts, NewsletterInline} from '../lib/components.mjs';
-import {CLASSES} from '../data/classes.mjs';
+import {CLASSES, TIERS, visibleClasses} from '../data/classes.mjs';
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {POSTS} from '../data/posts.mjs';
@@ -12,8 +12,8 @@ import {RESOURCES, EVENTS, OUTCOMES, JOURNEY, METRICS, LADDER} from '../data/sit
 import {photoUrl, photoAlt} from '../data/photos.mjs';
 
 function viewClasses(){
-  return PageHero('Curriculum roadmap','The Classes We Plan to Teach',
-    'These are the classes we plan to teach, in order, from first steps to building your own AI agent. None has a fixed date yet: each one is scheduled when 10 people ask for it. Outlines are refined with each group.',
+  return PageHero('Classes','Every class is one live 2-hour session.',
+    'Up to 10 people, online or in person, $99. Start with the basics, then take the next class when you’re ready. Each class is scheduled when 10 people ask for it.',
     `<div style="margin-top:28px">${LadderStrip()}</div>`)
   + `<section class="sec-tight"><div class="wrap">
       <div class="toolbar">
@@ -31,10 +31,10 @@ function viewClasses(){
         </div>
       </div>
       <p class="result-count" id="count" role="status" style="margin-bottom:20px"></p>
-      <div class="grid g3" id="results">${CLASSES.map(CourseCard).join('')}</div>
+      <div id="results">${TIERS.map(t=>{const cs=visibleClasses().filter(c=>c.tier===t.key);return cs.length?`<section class="tier" data-tier="${t.key}"><div class="tier-head"><h2>${t.title}</h2><p>${t.desc}</p></div><div class="grid g3">${cs.map(CourseCard).join('')}</div></section>`:'';}).join('')}</div>
       <div id="catalog-empty" class="empty hide">
         <h3>No classes match those filters.</h3>
-        <p class="muted" style="max-width:44ch;margin:0 auto 20px">Try a broader search term, or clear the level and track filters to see all ten classes.</p>
+        <p class="muted" style="max-width:44ch;margin:0 auto 20px">Try a broader search term, or clear the level and track filters to see every class.</p>
         <button class="btn btn-ghost" id="clear-filters">Clear all filters</button>
       </div>
     </div></section>`
@@ -44,7 +44,7 @@ function viewClasses(){
 function viewClass(slug){
   const c = bySlug(slug);
   if(!c) throw new Error('Unknown class slug: '+slug);
-  const next = c.nextId ? byId(c.nextId) : null;
+  const next = null;
   const labs = LABS.filter(l=>l.classId===c.id);
   const tracks = c.tracks.map(trackBySlug);
   return `
@@ -53,28 +53,29 @@ function viewClass(slug){
     <div class="detail-grid">
       <div>
         <div class="badges" style="margin-bottom:18px">${levelBadges(c)}</div>
-        <p class="eyebrow">Planned class · Class ${c.num}</p>
+        <p class="eyebrow">${TIERS.find(t=>t.key===c.tier).title} · Class ${c.num}${c.status==='coming'?' · In development':''}</p>
         <h1 style="font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:20px">${c.title}</h1>
         <p class="lede">${c.blurb}</p>
         <div class="meta" style="margin-top:22px;gap:10px 22px">
-          <span>${I('clock',16)} ${c.duration}</span>
+          <span>${I('clock',16)} One 2-hour session</span>
           <span>${I('user',16)} Up to 10 people</span>
-          <span>${I('play',16)} ${c.format}</span>
+          <span>${I('play',16)} Live · online or in person</span>
         </div>
       </div>
       <div class="sticky-card">
         <div class="card" id="enroll" style="border-radius:var(--r-xl);box-shadow:var(--shadow-lg);padding:var(--s5)">
           <dl style="margin:0 0 18px">
             <div class="spec"><dt>Level</dt><dd>${c.level}</dd></div>
-            <div class="spec"><dt>Sessions</dt><dd>${c.sessions.length} × ${c.sessions[0].minutes} min</dd></div>
-            <div class="spec"><dt>Total</dt><dd>${c.duration.split(' · ')[1]}</dd></div>
+            <div class="spec"><dt>Length</dt><dd>2 hours, one session</dd></div>
+            <div class="spec"><dt>Price</dt><dd>$99</dd></div>
             <div class="spec"><dt>Format</dt><dd style="max-width:16ch">Live, up to 10 people, online or in person</dd></div>
+            <div class="spec"><dt>Before class</dt><dd>About ${c.prep.minutes} min of prep</dd></div>
             <div class="spec"><dt>Tracks</dt><dd style="max-width:16ch">${tracks.map(t=>t.short).join(', ')}</dd></div>
           </dl>
           <a class="btn btn-primary" style="width:100%" href="${url('/ai-training/join/')}?topic=${encodeURIComponent(c.title)}">Ask for this class</a>
           <a class="btn btn-quiet btn-sm" style="width:100%;margin-top:8px;justify-content:center" href="${url('/assessment/')}">Not sure? Take the assessment</a>
           <div class="divider"></div>
-          <p class="tiny muted" style="margin:0">Planned class — on the roadmap, not yet scheduled. It’s scheduled once 10 people ask for it. Typically $99 per seat; the date, format, and final price are confirmed before anyone pays.</p>
+          <p class="tiny muted" style="margin:0">Scheduled once 10 people ask for it. The date and format are confirmed before anyone pays.</p>
         </div>
       </div>
     </div>
@@ -94,9 +95,9 @@ function viewClass(slug){
       </div>
 
       <div>
-        <h2 style="font-size:1.6rem;margin-bottom:16px">How the sessions run</h2>
-        <p class="small muted" style="margin-bottom:16px">Live, with up to 10 people, online or in person. Sessions are usually a week apart, with a short practice task in between.</p>
-        <ol class="session-list">${c.sessions.map((s,i)=>`<li><span class="session-num">${i+1}</span><div><h3>${esc(s.title)} <span class="muted small">· ${s.minutes} min</span></h3><p>${esc(s.focus)}</p></div></li>`).join('')}</ol>
+        <h2 style="font-size:1.6rem;margin-bottom:16px">How the two hours run</h2>
+        <ol class="session-list agenda">${c.agenda.map((a,i)=>`<li${/break/i.test(a.title)?' class="is-break"':''}><span class="session-num">${a.minutes}<small>min</small></span><div><h3>${esc(a.title)}</h3></div></li>`).join('')}</ol>
+        <div class="good-to-know"><p class="eyebrow amber">Good to know</p><ul>${c.goodToKnow.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
       </div>
 
       <div>
@@ -113,32 +114,8 @@ function viewClass(slug){
       </div>
 
       <div>
-        <div class="row-between" style="margin-bottom:18px">
-          <h2 style="font-size:1.6rem">Curriculum</h2>
-          <span class="small muted">${c.modules.length} modules · ${c.lessons} topics</span>
-        </div>
-        <div class="acc" id="acc">
-          ${c.modules.map((m,i)=>`<div class="acc-item">
-            <button class="acc-btn" aria-expanded="${i===0}" aria-controls="p${i}">
-              <span class="acc-idx">${String(i+1).padStart(2,'0')}</span>
-              <span>${m.title}</span>
-              <span class="chev">${I('chev',18)}</span>
-            </button>
-            <div class="acc-panel ${i===0?'open':''}" id="p${i}">
-              <ul>${m.lessons.map(l=>`<li>${l}</li>`).join('')}</ul>
-            </div>
-          </div>`).join('')}
-        </div>
-      </div>
-
-      <div>
-        <h2 style="font-size:1.6rem;margin-bottom:16px">Hands-on exercises</h2>
-        <div class="grid" style="gap:12px">
-          ${c.exercises.map((e,i)=>`<div class="card" style="flex-direction:row;gap:16px;align-items:flex-start;padding:18px 20px">
-            <div class="card-icon amber" style="margin:0;width:36px;height:36px;border-radius:10px">${I('flask',18)}</div>
-            <div><div style="font-family:var(--sans);font-weight:600">${e}</div></div>
-          </div>`).join('')}
-        </div>
+        <h2 style="font-size:1.6rem;margin-bottom:16px">What you’ll do in class</h2>
+        <ul class="check-list">${c.exercises.map(e=>`<li>${esc(e)}</li>`).join('')}</ul>
       </div>
 
       <div class="try-now">
@@ -152,7 +129,7 @@ function viewClass(slug){
       </div>
 
       <div class="grid g2" style="gap:24px">
-        <div class="card"><h2 style="font-size:1.25rem;margin-bottom:12px">What to bring</h2><ul class="check-list">${c.bring.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div class="card"><h2 style="font-size:1.25rem;margin-bottom:12px">Before class <span class="muted small">· about ${c.prep.minutes} minutes</span></h2><ul class="check-list">${c.prep.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
         <div class="card"><h2 style="font-size:1.25rem;margin-bottom:12px">What you leave with</h2><ul class="check-list">${c.leaveWith.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
       </div>
 
@@ -170,6 +147,11 @@ function viewClass(slug){
         <h2 style="font-size:1.6rem;margin-bottom:16px">Questions about this class</h2>
         <div class="class-faq">${c.faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>
       </div>
+
+      ${(c.nextIds||[]).length?`<div>
+        <h2 style="font-size:1.6rem;margin-bottom:16px">What’s next after this class</h2>
+        <div class="grid g2">${c.nextIds.map(id=>byId(id)).filter(n=>n&&n.status!=='hidden'&&n.status!=='retired').map(n=>`<a class="card card-hover" href="${url('/classes/'+n.slug+'/')}"><p class="eyebrow">Class ${n.num}</p><h3 style="font-size:1.1rem">${esc(n.title)}</h3><p class="small" style="color:var(--ink-2)">${esc(n.blurb)}</p></a>`).join('')}</div>
+      </div>`:''}
     </div>
 
     <div class="stack" style="gap:var(--s5)">
@@ -196,7 +178,7 @@ function viewClass(slug){
 
   <section class="sec tint"><div class="wrap">
     <div class="sec-head"><h2 style="font-size:1.8rem">Related classes</h2></div>
-    <div class="grid g3">${c.relatedIds.map(id=>CourseCard(byId(id))).join('')}</div>
+    <div class="grid g3">${c.relatedIds.map(id=>byId(id)).filter(n=>n&&(n.status==='active'||n.status==='coming')).map(CourseCard).join('')}</div>
   </div></section>
   ${CtaBand()}`;
 }

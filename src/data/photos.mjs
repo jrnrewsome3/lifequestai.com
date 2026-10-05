@@ -20,7 +20,7 @@ const PHOTOS = {
   nonprofits:      {id:'1529209076408-5a115ec9f1c6', alt:'A community group gathered around a table for a meeting'}
 };
 function photoUrl(key,w,h){
-  const p = PHOTOS[key];
+  const p = PHOTOS[key] || PHOTOS.hero;   // classes without their own photo use the hero photo
   if(!p) return null;
   return U + p.id + '?w=' + w + '&h=' + h + '&fit=crop&crop=entropy&auto=format&q=68&fm=jpg';
 }

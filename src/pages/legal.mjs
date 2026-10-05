@@ -68,7 +68,7 @@ export function viewTerms(){
 
     ['Interest lists are not registration', `<p>Joining an interest list is free and doesn’t reserve a seat or commit you to anything. A class is scheduled when ${LAUNCH.minimum} people ask for the same class. We then send the date, length, format, tool requirements, and price, and you decide whether to enroll. We can’t guarantee that any particular class will be scheduled.</p>`],
 
-    ['Prices, enrollment, and payment', `<p>Classes are typically ${LAUNCH.typicalPrice} per seat. The final price for each class is confirmed before you pay. Enrollment is complete when your payment through our Stripe checkout link succeeds. Seats are limited and are filled in the order payments are received.</p>`],
+    ['Prices, enrollment, and payment', `<p>Classes are typically ${LAUNCH.typicalPrice} per 2-hour class. The final price for each class is confirmed before you pay. Enrollment is complete when your payment through our Stripe checkout link succeeds. Seats are limited and are filled in the order payments are received.</p>`],
 
     ['Cancellations, rescheduling, and refunds', `<ul>
       <li><strong>If you cancel</strong> at least 48 hours before the class starts, you receive a full refund. Inside 48 hours, we’ll offer a seat in a future session of the same class instead.</li>

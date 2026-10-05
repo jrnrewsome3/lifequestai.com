@@ -2,7 +2,9 @@
 
 import {I, MARK} from './icons.mjs';
 import {url} from '../config.mjs';
-import {CLASSES} from '../data/classes.mjs';
+import {CLASSES, visibleClasses} from '../data/classes.mjs';
+/* For labs and posts: the class they point at, or the first shown class if that one is retired or hidden. */
+const shownClass = id => { const c = CLASSES.find(x => x.id === id); return c && (c.status === 'active' || c.status === 'coming') ? c : visibleClasses()[0]; };
 import {TRACKS} from '../data/tracks.mjs';
 import {LABS} from '../data/labs.mjs';
 import {LADDER} from '../data/site.mjs';
@@ -67,11 +69,11 @@ function CourseCard(c){
 }
 
 function LabCard(l){
-  const c = byId(l.classId);
+  const c = shownClass(l.classId);
   return `<article class="lab-card">
     <div class="row-between" style="gap:10px">
       <span class="badge ${levelClass(l.level)}"><span class="badge-dot"></span>${l.level}</span>
-      <span class="tiny muted">${l.duration}</span>
+      <span class="tiny muted">Follow-on lab · ${l.duration} · $99</span>
     </div>
     <h3 style="font-size:1.08rem">${l.title}</h3>
     <p style="font-size:.93rem;color:var(--ink-2);margin:0">${l.desc}</p>
@@ -137,7 +139,7 @@ function longDate(iso){
 }
 
 function PostCard(p, featured){
-  const c = byId(p.classId);
+  const c = shownClass(p.classId);
   const postImage = p.image
     ? `<span class="media media-16-9"><img src="${url(p.image)}" alt="${esc(p.imageAlt || '')}" loading="lazy" decoding="async" width="${featured?1000:800}" height="${featured?560:500}"></span>`
     : Photo(c.slug, featured?1000:800, featured?560:500, 'media-16-9');
@@ -162,7 +164,7 @@ function PostCard(p, featured){
 
 /** The conversion block: every post points at the class it teaches toward. */
 function PostToClass(p){
-  const c = byId(p.classId);
+  const c = shownClass(p.classId);
   return `<aside class="convert">
     <div class="convert-in">
       <p class="eyebrow amber" style="margin-bottom:12px">Take it further</p>
@@ -203,7 +205,7 @@ function NewsletterInline(){
   </aside>`;
 }
 
-export {
+export {shownClass, 
   esc, byId, bySlug, labBySlug, trackBySlug, levelClass, levelBadges,
   Photo, Figure, CourseCard, LabCard, PathCard, CtaBand, LadderStrip, PageHero,
   postsSorted, postBySlug, readingTime, longDate, PostCard, PostToClass,

@@ -146,11 +146,41 @@ and learners is the single biggest credibility upgrade available here.
 
 ---
 
+## How classes work (the model, as of October 2026)
+
+- **Every class is one live 2-hour session**, up to 10 people, online (Zoom/Teams) or in person in Tallahassee. **$99 per class.** Never multi-session.
+- **Three tiers** on the Classes page: Start here (01, 02), Build on it (03–07, 11), Advanced (08–10). Each class lists prerequisites, a "Before class" prep checklist with a time estimate, a free "Try it now" prompt, two or three "Good to know" facts, and "What's next".
+- **Labs** are follow-on 2-hour build sessions, also $99, each tied to the class it follows.
+- **The AI Training funnel** (`/ai-training/`) sends every group to **Class 01, taught with that group's examples**. Each group page shows its own "After your first class" path (`path` in `src/data/training.mjs`).
+
+## Adding, changing, and retiring classes (the content playbook)
+
+All class content is in **`src/data/classes.mjs`**; the comment at the top explains every field. Labs are in `labs.mjs`, learning paths in `tracks.mjs`, the AI Training groups in `training.mjs`.
+
+**Add a class**
+1. Copy an existing entry in `classes.mjs`. Give it the next `id`, a two-digit `num`, a unique `slug`, and a `title`.
+2. Write the fields. `agenda` must add up to 120 minutes and include a break. `prep.items` is what people do before class. `tryNow` uses fictional sample data only.
+3. Set `status:'coming'` while the facilitator guide is being written (the page shows an "In development" badge). Switch to `'active'` when you're ready to run it.
+4. Add its `id` to the right learning paths in `tracks.mjs`, and to other classes' `nextIds` where it fits. Optionally add a photo key in `photos.mjs` (otherwise the hero photo is used).
+5. `npm run build`. The build **fails on purpose** if a track, lab, post, `nextIds`, or `relatedIds` points at a class that isn't shown, or if an agenda doesn't add up to 120.
+6. Write the facilitator guide (private, not in this repo) in the same shape as the others.
+
+**Change a class**: edit the entry, rebuild, push. Page sections update themselves.
+
+**Retire a class**
+- `status:'retired'`: the page stays up with a "No longer offered" note pointing at its `nextIds`, and drops out of the catalog, paths, and sitemap. Use this when people may have the link.
+- `status:'hidden'`: the page is replaced by a redirect to `/classes/`. Use this when nobody has the link yet.
+- Either way, remove its `id` from `tracks.mjs` and from other classes' `nextIds`/`relatedIds` (the build tells you where). Blog posts that pointed at it fall back automatically.
+
+**Add a lab**: add an entry to `labs.mjs` with the `classId` it follows, a `slug`, title, description, deliverable, and tools. Add its `slug` to a track's `labSlugs` if it belongs on a path. Duration is always `'2 hours'`.
+
+**Add a learning group** (AI Training): add an entry to `GROUPS` in `training.mjs` with examples, a sample task, a `photo` key, and a `path` of class ids. The join form's group list updates itself; also add the label to `GROUP_LABELS` in `src/training-form.mjs`.
+
 ## Running classes: interest lists, confirmed dates, and Stripe
 
 There is no fixed launch month. A class is scheduled when **10 people ask for the same
-class** (`LAUNCH.minimum` in `src/data/training.mjs`). Classes are typically **$99 per seat**
-(`LAUNCH.typicalPrice`), with the final price confirmed with each group.
+class** (`LAUNCH.minimum` in `src/data/training.mjs`). Every class is **$99** (`LAUNCH.typicalPrice`),
+one 2-hour session.
 
 When a group reaches 10 and you've picked a date:
 

@@ -1,7 +1,7 @@
 import {I} from '../lib/icons.mjs';
 import {url} from '../config.mjs';
 import {esc, byId, levelBadges, Photo, Figure, PageHero, CtaBand,
-        postsSorted, readingTime, longDate, PostCard, PostToClass,
+        postsSorted, readingTime, longDate, PostCard, PostToClass, shownClass,
         RelatedPosts, NewsletterInline} from '../lib/components.mjs';
 import {POSTS} from '../data/posts.mjs';
 
@@ -47,7 +47,7 @@ function viewBlog(){
 
 /* ======================= SINGLE POST ======================= */
 function viewPost(post){
-  const c = byId(post.classId);
+  const c = shownClass(post.classId);
   return `
   <article class="article">
     <header class="article-head"><div class="wrap-narrow">

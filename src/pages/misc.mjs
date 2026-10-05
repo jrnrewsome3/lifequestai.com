@@ -15,7 +15,7 @@ import {NewsletterSection, DashboardPreview} from './shared.mjs';
 
 function viewLabs(){
   return PageHero('AI Labs','Learn By Building',
-    'LifeQuest AI Labs turn lessons into working solutions. Every lab is scoped to a single sitting, uses your own real work as the assignment, and ends with something that actually runs.')
+    'A lab is the follow-on to a class: one live 2-hour build session, up to 10 people, $99. You bring the thing the class started, and you leave with it working.')
   + `<section class="sec-tight"><div class="wrap">
       <div class="grid g3" style="margin-bottom:48px">
         ${[['target','Your real work','No toy exercises. You bring the actual task, document, or process you have been avoiding.'],
@@ -50,7 +50,7 @@ function viewResources(){
         </article>`).join('')}
       </div>` : ''}
     </div></section>
-    <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">Groups forming now</p><h2>Practical AI classes for your kind of work</h2><p class="lede">A class is scheduled when 10 people ask for the same class. Classes are typically $99 per seat; the date and final price are confirmed before anyone pays.</p></div><a class="btn btn-primary" href="${url('/ai-training/')}">Explore the learning groups</a></div></section>`
+    <section class="sec tint"><div class="wrap"><div class="sec-head"><p class="eyebrow">Groups forming now</p><h2>Practical AI classes for your kind of work</h2><p class="lede">A class is scheduled when 10 people ask for the same class. Classes are typically $99 per 2-hour class; the date and final price are confirmed before anyone pays.</p></div><a class="btn btn-primary" href="${url('/ai-training/')}">Explore the learning groups</a></div></section>`
   + CtaBand();
 }
 
